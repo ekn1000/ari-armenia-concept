@@ -1,0 +1,17 @@
+{
+  "name": "ari-armenia-concept",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Trilingual ARI personal travel assistance website",
+  "scripts": {
+    "start": "python -m http.server 4187 --bind 127.0.0.1",
+    "test": "playwright test",
+    "test:update-snapshots": "playwright test --update-snapshots",
+    "format": "prettier --write index.html styles.css app.js translations.js site-config.js tests playwright.config.js README.md CONTRIBUTING.md docs .github package.json",
+    "check:format": "prettier --check index.html styles.css app.js translations.js site-config.js tests playwright.config.js README.md CONTRIBUTING.md docs .github package.json"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "prettier": "3.10.1"
+  }
+}

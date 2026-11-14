@@ -1,0 +1,17 @@
+# Developing ARI together
+
+Clone `https://github.com/ekn1000/ari-armenia-concept.git`. A GitHub collaborator must accept their repository invitation before pushing. Write access is sufficient for normal code contributions; owner/admin access is not required.
+
+1. Pull the latest `main` and create a branch for the change.
+2. Run the static site locally as described in the README.
+3. Update all three languages in `translations.js` together.
+4. Keep verified public business contacts in `site-config.js`; never commit passwords, tokens or private customer information.
+5. Run `npm ci`, `npx playwright install chromium`, `npm test` and `npm run check:format`.
+6. Push the branch and open a pull request with the behaviour change and validation results.
+7. Merge reviewed changes into `main`. GitHub Pages automatically publishes the root of that branch.
+
+Preserve the `#plan` link and the `?lang=hy|ru|en` language URLs. The site has no build step. Do not introduce fixed price packages, automatic pricing, guaranteed response times or 24/7 promises without an explicit business decision.
+
+Browser tests use test-only messenger destinations and inspect links without opening them. Keep real messages, booking requests and payments out of automated tests.
+
+Photo attributions and font licences in `assets/` must stay with the relevant assets. See `docs/BUSINESS_CONCEPT.md` for product requirements and `docs/LAUNCH_CHECKLIST.md` for outstanding operational setup.

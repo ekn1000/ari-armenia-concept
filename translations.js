@@ -1,0 +1,878 @@
+"use strict";
+
+window.ARI_TRANSLATIONS = {
+  hy: {
+    title: "ARI — Բացահայտիր Հայաստանը։ Մենք քո կողքին ենք։",
+    description:
+      "Քո անձնական ասիստենտը Հայաստանում։ Աջակցություն WhatsApp-ով կամ Telegram-ով, ընտրովի անձնական ուղեկցում և անհատական առաջարկ։",
+    skip: "Անցնել բովանդակությանը",
+    navServices: "Ծառայություններ",
+    navHow: "Ինչպես է աշխատում",
+    navPricing: "Անհատական գին",
+    offerCta: "Ստանալ իմ առաջարկը",
+    contactCta: "Կապվել ARI-ի հետ",
+    heroLabel: "Քո անձնական ասիստենտը Հայաստանում",
+    heroTitle: "Բացահայտիր<br>Հայաստանը։<br><span>Մենք քո կողքին ենք։</span>",
+    heroDescription:
+      "Ճանապարհորդիր ինքնուրույն՝ իմանալով, որ ունես քո վստահելի տեղացի մարդուն։ Խորհուրդներ, գործնական աջակցություն և օգնություն, երբ դրա կարիքն ունես։",
+    heroExplore: "Ինչով կարող ենք օգնել",
+    heroNote: "Մեկ տեղացի կապ։ Անհատական աջակցություն։ Քո ազատությունը։",
+    heroAlt: "Խոր Վիրապի վանքը՝ Արարատի ձյունածածկ գագաթների ֆոնին",
+    heroPlace: "Խոր Վիրապ, Հայաստան",
+    heroImageNote: "Քո ճանապարհորդությունը։ Մեր աջակցությունը։",
+    localTitle: "Քո տեղացի մարդը",
+    strip1: "Առցանց անձնական աջակցություն",
+    strip2: "Ընտրովի անձնական ուղեկցում",
+    strip3: "Քո կարիքներով որոշվող գին",
+    introLabel: "ԲԱՐԵՎ, ՄԵՆՔ ARI-Ն ԵՆՔ",
+    introTitle: "Քո ազատությունը։<br>Մեր տեղական փորձը։",
+    introText:
+      "Հայաստանը վայելելու համար պարտադիր չէ ամեն ինչ իմանալ Հայաստանի մասին։ Բավական է ունենալ վստահելի տեղացի ասիստենտ, որին կարող ես դիմել քո այցի ընթացքում։",
+    introSub:
+      "ARI-ն անձնական աջակցության ծառայություն է, ոչ թե ավանդական տուրիստական գործակալություն կամ միայն էքսկուրսիաների ամրագրման հարթակ։ Դու ես որոշում՝ ուր գնալ և երբ օգնություն ստանալ։",
+    value1Title: "Մեկ վստահելի կապ",
+    value1Text:
+      "Տարբեր կոնտակտների փոխարեն՝ քո ասիստենտը, ով արդեն գիտի քո ծրագրերն ու նախասիրությունները։",
+    value2Title: "Անկախություն և ճկունություն",
+    value2Text:
+      "Բացահայտիր քո տեմպով։ Աջակցությունն ու ուղեկցումը հարմարեցվում են քո կարիքներին։",
+    value3Title: "Գործնական լուծումներ",
+    value3Text:
+      "Միայն հարցի պատասխան չէ․ օգնում ենք գտնել ծառայություններ և կազմակերպել հաջորդ քայլը։",
+    servicesLabel: "ԱՋԱԿՑՈՒԹՅՈՒՆ՝ ՔՈ ՁԵՎՈՎ",
+    servicesTitle: "Մի մարդ։ Շատ հնարավորություններ։",
+    servicesIntro:
+      "Առցանց աջակցությունը՝ հիմքում։ Անձնական ուղեկցումը՝ երբ ցանկանում ես։",
+    primaryLabel: "Հիմնական ծառայություն",
+    optionalLabel: "Ընտրովի հավելում",
+    onlineTitle: "Առցանց անձնական ասիստենտ",
+    onlineIntro:
+      "Քո տեղացի ասիստենտը WhatsApp-ում կամ Telegram-ում՝ համաձայնեցված ժամանակահատվածում։",
+    onlinePractical:
+      "Պատասխաններից դեպի գործնական լուծումներ՝ քո շահերն ու նախասիրությունները հաշվի առնելով։",
+    categories: [
+      [
+        "Խորհուրդներ և ճանապարհորդություն",
+        "Վայրեր, սրճարաններ, ռեստորաններ, մշակույթ և անհատական երթուղիներ՝ քո հետաքրքրություններով ու բյուջեով։",
+      ],
+      [
+        "Տրանսպորտ",
+        "Տաքսի, վարորդ, օդանավակայանի տրանսֆեր և միջքաղաքային փոխադրումներ գտնելու ու կազմակերպելու օգնություն։",
+      ],
+      [
+        "Ամրագրումներ և ժամանց",
+        "Ռեստորաններ, հյուրանոցների խորհուրդներ, միջոցառումների տոմսեր և տեղական ծառայություններ։",
+      ],
+      [
+        "Առօրյա աջակցություն",
+        "Թարգմանություն, հաղորդակցություն, տեղական սովորույթներ, գնումներ և անհրաժեշտ ապրանքների ու ծառայությունների որոնում։",
+      ],
+      [
+        "Անսպասելի իրավիճակներ",
+        "Կորած իրերի, հյուրանոցի կամ տրանսպորտի հետ դժվարությունների դեպքում՝ օգնություն համապատասխան տեղական ծառայություն և գործնական լուծում գտնելու հարցում։",
+      ],
+    ],
+    companionTitle: "Անձնական ուղեկից",
+    companionIntro:
+      "Երբ ուզում ես կողքիդ տեղացի մարդ ունենալ՝ մի քանի ժամով կամ ընտրված օրերին։",
+    companionItems: [
+      "Զբոսանքներ Երևանում և հետաքրքիր վայրերի այցելություններ։",
+      "Ռեստորաններ, սրճարաններ և տեղական մշակույթի բացահայտում։",
+      "Գնումների ու տեղացիների հետ հաղորդակցվելու օգնություն։",
+      "Ընկերակցություն, երբ չես ուզում մենակ բացահայտել անծանոթ վայրը։",
+    ],
+    companionContinuity:
+      "Հնարավորության դեպքում քեզ կուղեկցի նույն ասիստենտը՝ վստահությունն ու շարունակական կապը պահպանելու համար։",
+    companionScope:
+      "Սա պարտադիր չէ, որ լինի գիդով էքսկուրսիա։ Դու ընտրում ես օրերը, ժամերն ու զբաղմունքները, իսկ հասանելիությունն ու արժեքը համաձայնեցվում են առանձին։",
+    companionCta: "Ուզում եմ նաև ուղեկից",
+    partnersTitle: "Տեղական ծառայություններ՝ մեկ կապի միջոցով",
+    partnersText:
+      "Օդանավակայանի տրանսֆեր, մասնավոր վարորդ, էքսկուրսիա, հյուրանոց, ռեստորան կամ միջոցառման տոմս․ օգնում ենք գտնել և կազմակերպել տեղական գործընկերների միջոցով։",
+    partnersCost:
+      "Գործընկերների ծառայությունները կարող են ունենալ առանձին վճար։ Դրանք առանձնացվում են ARI-ի աջակցության վճարից և նախապես համաձայնեցվում են։",
+    howLabel: "ԵՐԵՔ ՊԱՐԶ ՔԱՅԼ",
+    howTitle: "Բացահայտիր ազատ։<br>Մենք քո կողքին ենք։",
+    howIntro:
+      "Առաջին զրույցից մինչև այցիդ վերջին օրը՝ ամեն ինչ պարզ և նախապես համաձայնեցված։",
+    step1Title: "Պատմիր քո այցի մասին",
+    step1Text:
+      "Կապվիր ARI-ի հետ, նշիր ամսաթվերը և պատմիր՝ ինչ աջակցություն է քեզ պետք։ Միասին կհստակեցնենք կարիքներդ։",
+    step2Title: "Համաձայնեցրու քո անհատական առաջարկը",
+    step2Text:
+      "Կստանաս անհատական գին՝ աջակցության ծավալով, ժամերով և առանձին ծախսերով։ Հաստատումից և համաձայնեցված վճարումից հետո կստանաս ասիստենտիդ կոնտակտը։",
+    step3Title: "Ճանապարհորդիր՝ աջակցություն ունենալով",
+    step3Text:
+      "Այցիդ ընթացքում դիմիր քո ասիստենտին՝ համաձայնեցված ժամերին։ Ցանկության դեպքում առանձին կազմակերպիր նաև անձնական ուղեկցում։",
+    pricingLabel: "ԱՆՀԱՏԱԿԱՆ ԳԻՆ",
+    pricingTitle: "Ամեն այց տարբեր է։<br>Մեր աջակցությունը՝ նույնպես։",
+    pricingIntro:
+      "Պատմիր քո ճանապարհորդության մասին, և մենք կպատրաստենք առաջարկ՝ հենց քո կարիքների հիման վրա։ Պարտադիր փաթեթներ կամ նախապես սահմանված գներ չկան։",
+    pricingCta: "Հարցնել անհատական գինը",
+    pricingFactorsTitle: "Ի՞նչը հաշվի կառնենք",
+    pricingFactors: [
+      "Հայաստանում մնալու տևողությունը։",
+      "Աջակցության տեսակը և սպասվող ծավալը։",
+      "Առցանց աջակցության կարիքներն ու համաձայնեցված ժամերը։",
+      "Անձնական ուղեկցման ընտրված օրերն ու ժամերը։",
+      "Լրացուցիչ ծառայությունները և անհատական պահանջները։",
+    ],
+    pricingAgreement:
+      "Արժեքը քննարկվում է անձամբ և համաձայնեցվում մինչև ծառայության հաստատումը։ ARI-ի վճարը և երրորդ կողմերի ծախսերը ներկայացվում են առանձին։",
+    experiencesLabel: "ՈՒՐ ԷԼ ԳՆԱՍ՝ ՄԻ ԿԱՊԻ ՀԵՌԱՎՈՐՈՒԹՅԱՄԲ",
+    experiencesTitle: "Քո Հայաստանը։ Քո ձևով։",
+    experiencesIntro:
+      "Մի քանի գաղափար, որոնց շուրջ կարող է օգնել քո ասիստենտը։",
+    experiencesFoot:
+      "Սրանք ոգեշնչման գաղափարներ են։ Ուղեկցումը, տրանսպորտը և այլ ծառայությունները համաձայնեցվում են առանձին։",
+    filters: ["Բոլորը", "Քաղաք", "Մշակույթ", "Բնություն"],
+    cardMore: "Ինչպես կարող ենք օգնել",
+    cards: [
+      {
+        id: "city",
+        image: "yerevan",
+        tag: "ՔԱՂԱՔԻ ՌԻԹՄԸ",
+        location: "ԵՐԵՎԱՆ",
+        title: "Քաղաքը՝ քո տեմպով",
+        text: "Սուրճ, արվեստ, փոքրիկ փողոցներ և մի տեղացի մարդ՝ խորհուրդ հարցնելու համար։",
+        detail:
+          "Քայլիր քաղաքով ինքնուրույն։ Ասիստենտդ կարող է խորհուրդ տալ սրճարան, օգնել ռեստորանի ամրագրման կամ հաղորդակցման հարցում։ Եթե ցանկանաս միասին զբոսնել՝ անձնական ուղեկցումը քննարկենք առանձին։",
+        alt: "Երևանի համայնապատկերը և Արարատը",
+      },
+      {
+        id: "culture",
+        image: "garni",
+        tag: "ԱՎԵԼԻ ՄՈՏ՝ ՊԱՏՄՈՒԹՅԱՆԸ",
+        location: "ԳԱՌՆԻ ԵՎ ԳԵՂԱՐԴ",
+        title: "Քո հետաքրքրություններով",
+        text: "Ընտրիր՝ ինչ ես ուզում տեսնել։ Մենք կօգնենք երթուղու, վարորդի կամ տեղական կապերի հարցում։",
+        detail:
+          "Հետաքրքրվո՞ւմ ես Գառնիով կամ Գեղարդով։ Ասիստենտդ կարող է օգնել պլանավորել երթուղին, գտնել փոխադրում, խորհուրդ տալ ճաշի կանգառ կամ անհրաժեշտության դեպքում ուղեկցորդ գտնել։ Տոմսերը, տրանսպորտը և մասնագետների ծառայություններն առանձին են։",
+        alt: "Գառնիի տաճարը՝ լեռների մեջ",
+      },
+      {
+        id: "nature",
+        image: "dilijan",
+        tag: "ՔԱՂԱՔԻՑ ՄԻ ՓՈՔՐ ՀԵՌՈՒ",
+        location: "ԴԻԼԻՋԱՆ",
+        title: "Անշտապ՝ կանաչի մեջ",
+        text: "Անտառային տեսարաններ ու հանգիստ օր․ գործնական հարցերում՝ տեղական աջակցություն։",
+        detail:
+          "Դիլիջանի շուրջ օրդ պլանավորելիս կարող ես խորհուրդ հարցնել տեղանքի, եղանակի կամ ճանապարհների մասին և օգնություն ստանալ փոխադրում գտնելու հարցում։ Երթուղին ու ծառայությունները կախված են հասանելիությունից։ ARI-ն փրկարար կամ շտապ օգնության ծառայություն չէ։",
+        alt: "Հաղարծնի վանքը՝ Դիլիջանի կանաչ անտառներում",
+      },
+    ],
+    expectationsLabel: "ՎՍՏԱՀՈՒԹՅՈՒՆԸ ՍԿՍՎՈՒՄ Է ՀՍՏԱԿՈՒԹՅՈՒՆԻՑ",
+    expectationsTitle: "Ի՞նչ կարող ես ակնկալել։",
+    includedTitle: "Քո աջակցության հիմքը",
+    includedItems: [
+      "Անձնական հաղորդակցություն և անհատական խորհուրդներ։",
+      "Կազմակերպչական օգնություն, տեղական ծառայությունների որոնում և ամրագրումների աջակցություն։",
+      "Գործնական օգնություն անսպասելի առօրյա իրավիճակներում։",
+      "Ընտրովի անձնական ուղեկցում՝ նախնական պայմանավորվածությամբ։",
+    ],
+    agreedTitle: "Նախապես համաձայնեցվում է",
+    agreedItems: [
+      "Ծառայության մեկնարկի և ավարտի օրերը։",
+      "Կապի ժամերը և պատասխանելու ակնկալվող ժամանակը։",
+      "Աջակցության ծավալն ու ուղեկցման կոնկրետ ժամերը։",
+      "ARI-ի վճարը և գործընկերների առանձին ծախսերը։",
+      "Շուրջօրյա հասանելիություն՝ միայն առանձին համաձայնությամբ։",
+    ],
+    expectationsNote:
+      "Երրորդ կողմերի ծառայությունների հասանելիությունը երաշխավորված չէ։ Տրանսպորտն ու կացությունը անվճար չեն, իսկ ֆիզիկական ուղեկցումն անսահմանափակ չէ։ ARI-ն շտապ բժշկական կամ փրկարար ծառայություն չէ։",
+    planLabel: "ՍԿՍԵՆՔ ՔՈ ԱՅՑԻՑ",
+    planTitle: "Քո կարիքները։<br>Քո առաջարկը։",
+    planIntro:
+      "Նշիր քո այցի մանրամասները։ Գինը կքննարկենք անձամբ՝ հասկանալով աջակցության կարիքն ու ծավալը։",
+    formLabel: "Պատրաստենք անհատական հարցումը",
+    nameLabel: "Քո անունը",
+    namePlaceholder: "Ինչպե՞ս դիմենք քեզ",
+    arrivalLabel: "Ժամանման օրը",
+    departureLabel: "Մեկնելու օրը",
+    guestsLabel: "Ճանապարհորդների թիվը",
+    supportLabel: "Աջակցության տեսակը",
+    supportOnline: "Առցանց աջակցություն",
+    supportCompanion: "Առցանց + անձնական ուղեկից",
+    supportDiscuss: "Եկեք միասին որոշենք",
+    companionTimeLabel: "Ուղեկցման օրերն ու ժամերը",
+    companionTimePlaceholder: "Օրինակ՝ 2 օր, օրական 3 ժամ",
+    optional: "(ըստ ցանկության)",
+    needsLabel: "Ինչո՞վ կարող ենք օգնել",
+    needsPlaceholder:
+      "Նախասիրություններ, բյուջե, տրանսպորտ, լեզու կամ հատուկ պահանջներ…",
+    formCta: "Պատրաստել իմ հարցումը",
+    formNote:
+      "Սկզբում կտեսնես հարցման տեքստը։ Ուղարկումը կատարում ես ինքդ՝ ընտրված մեսենջերում։ Այստեղ ամրագրում կամ վճարում չի կատարվում։",
+    contactUnavailable:
+      "Սա ցուցադրական տարբերակ է․ ARI-ի պաշտոնական WhatsApp/Telegram կոնտակտները դեռ ավելացված չեն։ Կարող ես պատրաստել, պատճենել կամ ներբեռնել հարցումը, բայց այն չի ուղարկվի։",
+    contactAvailable:
+      "Ընտրիր պաշտոնական կապի միջոցը կամ նախ պատրաստիր մանրամասն հարցումը։ Առաջարկն ու պայմանները կքննարկվեն անձամբ։",
+    faqLabel: "ՄԻ ՔԱՆԻ ՊԱՏԱՍԽԱՆ",
+    faqTitle: "Հարցե՞ր ունես։<br>Մենք կպատասխանենք։",
+    faq: [
+      [
+        "Ի՞նչ է ARI-ն։",
+        "ARI-ն անձնական տեղական աջակցության ծառայություն է Հայաստանի հյուրերի համար։ Քո հիմնական կապը անձնական ասիստենտն է, ով օգնում է առցանց՝ համաձայնեցված ժամանակահատվածում։ Սա ավանդական տուրիստական գործակալություն չէ։",
+      ],
+      [
+        "Արդյո՞ք ինձ պարտադիր գիդ է պետք։",
+        "Ոչ։ Կարող ես ինքնուրույն բացահայտել Հայաստանը՝ ասիստենտիդ դիմելով խորհուրդների և գործնական օգնության համար։ Գիդի կամ էքսկուրսիայի կարիք ունենալու դեպքում կօգնենք գտնել համապատասխան ծառայություն՝ առանձին արժեքով։",
+      ],
+      [
+        "Կարո՞ղ է ասիստենտը նաև անձամբ ուղեկցել ինձ։",
+        "Այո՝ առանձին պայմանավորվածությամբ և ըստ հասանելիության։ Դու ընտրում ես օրերը, ժամերն ու զբաղմունքները։ Հնարավորության դեպքում քեզ հետ կլինի նույն ասիստենտը ողջ այցի ընթացքում։",
+      ],
+      [
+        "Ինչպե՞ս է որոշվում գինը։",
+        "Հաստատուն փաթեթներ չկան։ Քննարկում ենք քո այցի տևողությունը, աջակցության տեսակը, ծավալը և ուղեկցման կարիքը, հետո ներկայացնում անհատական առաջարկ։ ARI-ի վճարն ու երրորդ կողմերի ծախսերն առանձնացվում են։",
+      ],
+      [
+        "Տրանսպորտը, կացությունն ու տոմսերը ներառվա՞ծ են։",
+        "Դրանք ավտոմատ ներառված չեն ARI-ի աջակցության վճարում։ Կարող ենք օգնել գտնել և կազմակերպել այդ ծառայությունները, իսկ դրանց արժեքն ու հասանելիությունը համաձայնեցվում են առանձին։",
+      ],
+      [
+        "Ասիստենտը հասանելի՞ է շուրջօրյա։",
+        "Ոչ, եթե այդպես առանձին չի համաձայնեցվել։ Ծառայության ժամկետը, կապի ժամերը, պատասխանելու ակնկալվող ժամանակն ու աջակցության ծավալը որոշվում են յուրաքանչյուր հաճախորդի հետ։",
+      ],
+      [
+        "Ի՞նչ կլինի անսպասելի խնդրի դեպքում։",
+        "Կօգնենք հաղորդակցվել, կողմնորոշվել և համապատասխան տեղական ծառայություն գտնել։ ARI-ն չի փոխարինում բժշկական օգնությանը, փրկարար ծառայություններին կամ շտապ արձագանքման մարմիններին։",
+      ],
+      [
+        "Ինչպե՞ս սկսել։",
+        "Կիսվիր ամսաթվերով ու կարիքներով, քննարկիր առաջարկը, հետո հաստատիր պայմաններն ու վճարումը։ Այնուհետև կստանաս քո ասիստենտի կոնտակտը։ Այս ցուցադրական կայքը դեռ չի ընդունում վճարումներ կամ ամրագրումներ։",
+      ],
+    ],
+    footerTag: "Բացահայտիր Հայաստանը։ Մենք քո կողքին ենք։",
+    demoLabel: "Ծառայության ցուցադրական կայք",
+    madeWith: "Սիրով՝ Հայաստանից",
+    credits: "Լուսանկարներ",
+    close: "Փակել",
+    menu: "Բացել ընտրացանկը",
+    mainNav: "Հիմնական ընտրացանկ",
+    languageLabel: "Լեզու",
+    categoriesLabel: "Տպավորությունների տեսակները",
+    requestLabel: "ՔՈ ԱՆՀԱՏԱԿԱՆ ՀԱՐՑՈՒՄԸ",
+    requestTitle: "Սկսենք այս զրույցից։",
+    requestPreviewLabel: "Պատրաստված հաղորդագրությունը",
+    requestIntro:
+      "Ստուգիր տեքստը։ Այն չի ուղարկվել։ Կարող ես պատճենել կամ ներբեռնել այն։",
+    sendWhatsapp: "Բացել WhatsApp-ը",
+    sendTelegram: "Բացել Telegram-ը",
+    sendNotice:
+      "Սեղմելով՝ կբացես ընտրված մեսենջերը՝ հարցման տեքստով։ Հաղորդագրությունը ուղարկելու համար հաստատիր այնտեղ։",
+    copy: "Պատճենել հարցումը",
+    download: "Ներբեռնել հարցումը",
+    copied: "Հարցումը պատճենված է",
+    copyError: "Պատճենել չհաջողվեց։ Կարող ես ներբեռնել տեքստը։",
+    invalidDates: "Մեկնելու օրը պետք է լինի ժամանման օրը կամ դրանից հետո։",
+    invalidArrival: "Ընտրիր այսօրվա կամ ավելի ուշ ամսաթիվ։",
+    invalidName: "Խնդրում ենք նշել քո անունը։",
+    invalidTravellers: "Նշիր ճանապարհորդների թիվը՝ 1-ից 100։",
+    choose: "Քննարկել իմ այցը",
+    ideaNote: "Ոգեշնչման գաղափար, ոչ թե ամրագրվող փաթեթ։",
+    messageGreeting: "Բարև ARI։ Կցանկանայի անհատական առաջարկ ստանալ։",
+    messageName: "Անուն",
+    messageArrival: "Ժամանում",
+    messageDeparture: "Մեկնում",
+    messageTravellers: "Ճանապարհորդների թիվը",
+    messageSupport: "Աջակցություն",
+    messageCompanion: "Ուղեկցման ցանկալի օրեր և ժամեր",
+    messageNeeds: "Իմ կարիքներն ու նախասիրությունները",
+    messageLanguage: "Հաղորդակցման նախընտրելի լեզուն",
+    messageLanguageValue: "Հայերեն",
+    messageClosing:
+      "Խնդրում եմ քննարկել աջակցության ծավալը, ժամերն ու անհատական գինը՝ ARI-ի վճարն առանձնացնելով երրորդ կողմերի ծախսերից։",
+    creditsTitle: "Լուսանկարների հեղինակները",
+    creditsNote:
+      "Լուսանկարները Wikimedia Commons-ից են։ Դրանք փոքրացվել են, փոխարկվել WebP ձևաչափի և ցուցադրվում են կադրված։",
+    source: "Բնօրինակ",
+    fontCredits:
+      "Տառատեսակներ՝ Manrope և Noto Sans Armenian, SIL Open Font License 1.1։",
+    creditsError:
+      "Լուսանկարների աղբյուրները հասանելի են assets/credits.json ֆայլում։",
+  },
+  ru: {
+    title: "ARI — Открывай Армению. Мы рядом.",
+    description:
+      "Твой персональный ассистент в Армении. Поддержка в WhatsApp или Telegram, сопровождение по желанию и индивидуальное предложение.",
+    skip: "Перейти к содержимому",
+    navServices: "Услуги",
+    navHow: "Как это работает",
+    navPricing: "Индивидуальная цена",
+    offerCta: "Получить предложение",
+    contactCta: "Связаться с ARI",
+    heroLabel: "Твой персональный ассистент в Армении",
+    heroTitle: "Открывай<br>Армению.<br><span>Мы рядом.</span>",
+    heroDescription:
+      "Путешествуй самостоятельно, зная, что у тебя есть надёжный местный помощник. Советы, практическая поддержка и помощь, когда она нужна.",
+    heroExplore: "Чем мы можем помочь",
+    heroNote: "Один местный контакт. Личная поддержка. Твоя свобода.",
+    heroAlt: "Монастырь Хор Вирап на фоне снежных вершин Арарата",
+    heroPlace: "Хор Вирап, Армения",
+    heroImageNote: "Твоё путешествие. Наша поддержка.",
+    localTitle: "Твой местный помощник",
+    strip1: "Персональная онлайн-поддержка",
+    strip2: "Личное сопровождение по желанию",
+    strip3: "Цена под твои потребности",
+    introLabel: "БАРЕВ, МЫ — ARI",
+    introTitle: "Твоя свобода.<br>Наш местный опыт.",
+    introText:
+      "Чтобы наслаждаться Арменией, необязательно всё о ней знать. Достаточно иметь надёжного местного ассистента, к которому можно обратиться во время поездки.",
+    introSub:
+      "ARI — сервис персональной помощи, а не традиционное турагентство или просто платформа бронирования экскурсий. Ты решаешь, куда идти и когда нужна поддержка.",
+    value1Title: "Один надёжный контакт",
+    value1Text:
+      "Вместо множества контактов — твой ассистент, который уже знает твои планы и предпочтения.",
+    value2Title: "Независимость и гибкость",
+    value2Text:
+      "Открывай страну в своём темпе. Помощь и сопровождение подстраиваются под твои потребности.",
+    value3Title: "Практические решения",
+    value3Text:
+      "Больше, чем ответ на вопрос: помогаем найти нужную услугу и организовать следующий шаг.",
+    servicesLabel: "ПОДДЕРЖКА НА ТВОИХ УСЛОВИЯХ",
+    servicesTitle: "Один человек. Много возможностей.",
+    servicesIntro:
+      "Онлайн-помощь — основа. Личное сопровождение — когда хочется.",
+    primaryLabel: "Основная услуга",
+    optionalLabel: "По желанию, отдельно",
+    onlineTitle: "Персональный онлайн-ассистент",
+    onlineIntro:
+      "Твой местный ассистент в WhatsApp или Telegram в согласованный период.",
+    onlinePractical:
+      "От ответов к практическим решениям — с учётом твоих интересов и предпочтений.",
+    categories: [
+      [
+        "Поездки и рекомендации",
+        "Достопримечательности, кафе, рестораны, культура и личные маршруты с учётом твоих интересов и бюджета.",
+      ],
+      [
+        "Транспорт",
+        "Помощь с поиском такси, водителей, трансфера из аэропорта и поездок между городами.",
+      ],
+      [
+        "Бронирования и досуг",
+        "Рестораны, рекомендации отелей, билеты на события, развлечения и местные услуги.",
+      ],
+      [
+        "Повседневная помощь",
+        "Перевод, общение, местные обычаи, покупки, поиск нужных товаров и услуг.",
+      ],
+      [
+        "Неожиданные ситуации",
+        "При потере вещей, сложностях с отелем или транспортом поможем найти подходящую местную службу и практическое решение.",
+      ],
+    ],
+    companionTitle: "Личный сопровождающий",
+    companionIntro:
+      "Когда хочется, чтобы местный человек был рядом — на несколько часов или в выбранные дни.",
+    companionItems: [
+      "Прогулки по Еревану и посещение интересных мест.",
+      "Рестораны, кафе и знакомство с местной культурой.",
+      "Помощь с покупками и общением с местными.",
+      "Компания, когда не хочется открывать незнакомые места одному.",
+    ],
+    companionContinuity:
+      "По возможности тебя будет сопровождать тот же ассистент, чтобы сохранить доверие и непрерывность общения.",
+    companionScope:
+      "Это не обязательно экскурсия с гидом. Ты выбираешь дни, часы и занятия; доступность и стоимость согласовываются отдельно.",
+    companionCta: "Мне нужен и сопровождающий",
+    partnersTitle: "Местные услуги через один контакт",
+    partnersText:
+      "Трансфер из аэропорта, частный водитель, экскурсия, отель, ресторан или билет на событие — поможем найти и организовать через местных партнёров.",
+    partnersCost:
+      "Услуги партнёров могут оплачиваться отдельно. Их стоимость отделяется от платы за помощь ARI и согласовывается заранее.",
+    howLabel: "ТРИ ПРОСТЫХ ШАГА",
+    howTitle: "Открывай свободно.<br>Мы рядом.",
+    howIntro:
+      "От первого разговора до последнего дня поездки — всё понятно и заранее согласовано.",
+    step1Title: "Расскажи о своей поездке",
+    step1Text:
+      "Свяжись с ARI, назови даты и расскажи, какая помощь нужна. Вместе уточним твои потребности.",
+    step2Title: "Согласуй личное предложение",
+    step2Text:
+      "Получи индивидуальную цену с объёмом помощи, часами связи и отдельными расходами. После подтверждения и согласованной оплаты получишь контакт ассистента.",
+    step3Title: "Путешествуй с поддержкой",
+    step3Text:
+      "Обращайся к ассистенту в согласованные часы во время поездки. При желании отдельно договорись о личном сопровождении.",
+    pricingLabel: "ИНДИВИДУАЛЬНАЯ ЦЕНА",
+    pricingTitle: "Каждая поездка особенная.<br>Наша помощь — тоже.",
+    pricingIntro:
+      "Расскажи о поездке, и мы подготовим предложение под твои потребности. Обязательных пакетов и заранее установленных цен нет.",
+    pricingCta: "Запросить личную цену",
+    pricingFactorsTitle: "Что мы учтём",
+    pricingFactors: [
+      "Длительность пребывания в Армении.",
+      "Тип и ожидаемый объём помощи.",
+      "Потребности в онлайн-поддержке и согласованные часы.",
+      "Выбранные часы и дни личного сопровождения.",
+      "Дополнительные услуги и индивидуальные пожелания.",
+    ],
+    pricingAgreement:
+      "Стоимость обсуждается лично и согласовывается до подтверждения услуги. Плата ARI и расходы на сторонние услуги указываются отдельно.",
+    experiencesLabel: "КУДА БЫ ТЫ НИ ОТПРАВИЛСЯ — МЫ НА СВЯЗИ",
+    experiencesTitle: "Твоя Армения. Твои правила.",
+    experiencesIntro: "Несколько идей, с которыми может помочь твой ассистент.",
+    experiencesFoot:
+      "Это идеи для вдохновения. Сопровождение, транспорт и другие услуги согласовываются отдельно.",
+    filters: ["Все идеи", "Город", "Культура", "Природа"],
+    cardMore: "Как мы можем помочь",
+    cards: [
+      {
+        id: "city",
+        image: "yerevan",
+        tag: "В РИТМЕ ГОРОДА",
+        location: "ЕРЕВАН",
+        title: "Город в твоём темпе",
+        text: "Кофе, искусство, маленькие улицы и местный человек, у которого можно спросить совета.",
+        detail:
+          "Гуляй по городу самостоятельно. Ассистент может посоветовать кафе, помочь с бронью ресторана или общением. Если захочешь прогуляться вместе — обсудим личное сопровождение отдельно.",
+        alt: "Панорама Еревана на фоне Арарата",
+      },
+      {
+        id: "culture",
+        image: "garni",
+        tag: "БЛИЖЕ К ИСТОРИИ",
+        location: "ГАРНИ И ГЕГАРД",
+        title: "По твоим интересам",
+        text: "Выбирай, что хочешь увидеть. Поможем с маршрутом, водителем или местными контактами.",
+        detail:
+          "Интересуешься Гарни и Гегардом? Ассистент поможет продумать маршрут, найти транспорт, посоветовать место для обеда или при необходимости найти гида. Билеты, транспорт и услуги специалистов оплачиваются отдельно.",
+        alt: "Храм Гарни среди гор",
+      },
+      {
+        id: "nature",
+        image: "dilijan",
+        tag: "ЧУТЬ ДАЛЬШЕ ОТ ГОРОДА",
+        location: "ДИЛИЖАН",
+        title: "Не спеша, среди зелени",
+        text: "Лесные виды и спокойный день, с местной поддержкой в практических вопросах.",
+        detail:
+          "Планируя день в Дилижане, можно спросить о местах, погоде и дорогах, получить помощь с поиском транспорта. Маршрут и услуги зависят от доступности. ARI не является спасательной или экстренной службой.",
+        alt: "Монастырь Агарцин в зелёных лесах Дилижана",
+      },
+    ],
+    expectationsLabel: "ДОВЕРИЕ НАЧИНАЕТСЯ С ЯСНОСТИ",
+    expectationsTitle: "На что можно рассчитывать?",
+    includedTitle: "Основа твоей поддержки",
+    includedItems: [
+      "Личное общение и рекомендации под твои интересы.",
+      "Организационная помощь, поиск местных услуг и помощь с бронированиями.",
+      "Практическая поддержка в неожиданных бытовых ситуациях.",
+      "Личное сопровождение по желанию и предварительной договорённости.",
+    ],
+    agreedTitle: "Согласовываем заранее",
+    agreedItems: [
+      "Даты начала и окончания услуги.",
+      "Часы связи и ожидаемое время ответа.",
+      "Объём помощи и конкретные часы сопровождения.",
+      "Плату ARI и отдельные расходы партнёров.",
+      "Круглосуточную доступность — только по отдельной договорённости.",
+    ],
+    expectationsNote:
+      "Доступность сторонних услуг не гарантируется. Транспорт и жильё не бесплатны, физическое сопровождение не безлимитно. ARI не оказывает экстренную медицинскую или спасательную помощь.",
+    planLabel: "НАЧНЁМ С ТВОЕЙ ПОЕЗДКИ",
+    planTitle: "Твои потребности.<br>Твоё предложение.",
+    planIntro:
+      "Поделись деталями поездки. Стоимость обсудим лично, когда поймём, какая помощь и в каком объёме нужна.",
+    formLabel: "Подготовим личный запрос",
+    nameLabel: "Твоё имя",
+    namePlaceholder: "Как к тебе обращаться?",
+    arrivalLabel: "Дата приезда",
+    departureLabel: "Дата отъезда",
+    guestsLabel: "Число путешественников",
+    supportLabel: "Вид поддержки",
+    supportOnline: "Онлайн-поддержка",
+    supportCompanion: "Онлайн + личное сопровождение",
+    supportDiscuss: "Давайте обсудим вместе",
+    companionTimeLabel: "Дни и часы сопровождения",
+    companionTimePlaceholder: "Например: 2 дня, по 3 часа",
+    optional: "(необязательно)",
+    needsLabel: "Чем мы можем помочь?",
+    needsPlaceholder: "Интересы, бюджет, транспорт, язык или особые пожелания…",
+    formCta: "Подготовить мой запрос",
+    formNote:
+      "Сначала увидишь текст запроса. Ты сам отправишь его в выбранном мессенджере. Здесь нет бронирования или оплаты.",
+    contactUnavailable:
+      "Это демонстрационная версия. Официальные контакты ARI в WhatsApp/Telegram ещё не добавлены. Запрос можно подготовить, скопировать или скачать, но он не будет отправлен.",
+    contactAvailable:
+      "Выбери официальный способ связи или сначала подготовь подробный запрос. Предложение и условия обсудим лично.",
+    faqLabel: "НЕСКОЛЬКО ОТВЕТОВ",
+    faqTitle: "Есть вопросы?<br>Мы ответим.",
+    faq: [
+      [
+        "Что такое ARI?",
+        "ARI — сервис персональной местной помощи для гостей Армении. Основной контакт — твой ассистент, который помогает онлайн в согласованный период. Это не традиционное турагентство.",
+      ],
+      [
+        "Мне обязательно нужен гид?",
+        "Нет. Ты можешь самостоятельно открывать Армению, обращаясь за советом и практической помощью. Если нужен гид или экскурсия, поможем найти подходящую услугу за отдельную плату.",
+      ],
+      [
+        "Может ли ассистент сопровождать меня лично?",
+        "Да, по отдельной договорённости и при наличии возможности. Ты выбираешь дни, часы и занятия. По возможности с тобой будет один ассистент на протяжении поездки.",
+      ],
+      [
+        "Как определяется стоимость?",
+        "Фиксированных пакетов нет. Обсудим длительность поездки, тип и объём помощи, необходимость сопровождения, затем подготовим индивидуальное предложение. Плата ARI и расходы на сторонние услуги указываются отдельно.",
+      ],
+      [
+        "Включены ли транспорт, жильё и билеты?",
+        "Они не включены автоматически в плату за помощь ARI. Мы можем помочь найти и организовать эти услуги; их стоимость и доступность согласовываются отдельно.",
+      ],
+      [
+        "Ассистент доступен круглосуточно?",
+        "Только если об этом договорились отдельно. Период услуги, часы связи, ожидаемое время ответа и объём поддержки согласовываются с каждым клиентом.",
+      ],
+      [
+        "Что произойдёт в неожиданной ситуации?",
+        "Поможем с общением, ориентированием и поиском подходящей местной службы. ARI не заменяет медицинскую помощь, спасательные или экстренные службы.",
+      ],
+      [
+        "Как начать?",
+        "Расскажи о датах и потребностях, обсуди предложение, подтверди условия и оплату. Затем получишь контакт ассистента. Этот демонстрационный сайт пока не принимает платежи и бронирования.",
+      ],
+    ],
+    footerTag: "Открывай Армению. Мы рядом.",
+    demoLabel: "Демонстрационный сайт сервиса",
+    madeWith: "С любовью из Армении",
+    credits: "Фотографии",
+    close: "Закрыть",
+    menu: "Открыть меню",
+    mainNav: "Главная навигация",
+    languageLabel: "Язык",
+    categoriesLabel: "Категории впечатлений",
+    requestLabel: "ТВОЙ ПЕРСОНАЛЬНЫЙ ЗАПРОС",
+    requestTitle: "Начнём с этого разговора.",
+    requestPreviewLabel: "Подготовленное сообщение",
+    requestIntro:
+      "Проверь текст. Он не отправлен. Его можно скопировать или скачать.",
+    sendWhatsapp: "Открыть WhatsApp",
+    sendTelegram: "Открыть Telegram",
+    sendNotice:
+      "Кнопка откроет выбранный мессенджер с текстом запроса. Чтобы отправить сообщение, подтверди отправку там.",
+    copy: "Скопировать запрос",
+    download: "Скачать запрос",
+    copied: "Запрос скопирован",
+    copyError: "Не удалось скопировать. Можно скачать текст.",
+    invalidDates:
+      "Дата отъезда должна совпадать с датой приезда или быть позже.",
+    invalidArrival: "Выбери сегодняшнюю или более позднюю дату.",
+    invalidName: "Пожалуйста, укажи своё имя.",
+    invalidTravellers: "Укажи число путешественников от 1 до 100.",
+    choose: "Обсудить мою поездку",
+    ideaNote: "Идея для вдохновения, а не пакет для бронирования.",
+    messageGreeting: "Привет, ARI! Хочу получить индивидуальное предложение.",
+    messageName: "Имя",
+    messageArrival: "Приезд",
+    messageDeparture: "Отъезд",
+    messageTravellers: "Число путешественников",
+    messageSupport: "Поддержка",
+    messageCompanion: "Желаемые дни и часы сопровождения",
+    messageNeeds: "Мои потребности и интересы",
+    messageLanguage: "Предпочитаемый язык общения",
+    messageLanguageValue: "Русский",
+    messageClosing:
+      "Прошу обсудить объём помощи, часы связи и индивидуальную цену, указав плату ARI отдельно от расходов на сторонние услуги.",
+    creditsTitle: "Авторы фотографий",
+    creditsNote:
+      "Фотографии с Wikimedia Commons: уменьшены, преобразованы в WebP и отображаются с кадрированием.",
+    source: "Оригинал",
+    fontCredits:
+      "Шрифты: Manrope и Noto Sans Armenian, SIL Open Font License 1.1.",
+    creditsError: "Источники фотографий доступны в файле assets/credits.json.",
+  },
+  en: {
+    title: "ARI — Explore Armenia. We've got your back.",
+    description:
+      "Your personal assistant in Armenia. Local support on WhatsApp or Telegram, optional personal companionship and an offer tailored to your needs.",
+    skip: "Skip to content",
+    navServices: "Our assistance",
+    navHow: "How it works",
+    navPricing: "Individual pricing",
+    offerCta: "Get your personal offer",
+    contactCta: "Contact ARI",
+    heroLabel: "Your personal assistant in Armenia",
+    heroTitle: "Explore Armenia.<br><span>We've got<br>your back.</span>",
+    heroDescription:
+      "Explore independently, with a reliable local in your corner. Useful recommendations, practical support and a helping hand whenever you need it.",
+    heroExplore: "See how we can help",
+    heroNote: "One local contact. Personal support. Your freedom.",
+    heroAlt:
+      "Khor Virap monastery beneath the snow-covered peaks of Mount Ararat",
+    heroPlace: "Khor Virap, Armenia",
+    heroImageNote: "Your journey. Our support.",
+    localTitle: "Your person in Armenia",
+    strip1: "Personal online assistance",
+    strip2: "Optional personal companion",
+    strip3: "Pricing around your needs",
+    introLabel: "BAREV. WE’RE ARI.",
+    introTitle: "Your independence.<br>Our local know-how.",
+    introText:
+      "You don’t need to know Armenia to enjoy Armenia. You just need a reliable local assistant you can turn to throughout your stay.",
+    introSub:
+      "ARI is a personal assistance service, rather than a traditional tour agency or simply an excursion booking platform. You choose where to go and when you’d like a helping hand.",
+    value1Title: "One reliable local contact",
+    value1Text:
+      "Instead of a list of different contacts, your assistant already knows your plans and preferences.",
+    value2Title: "Freedom and flexibility",
+    value2Text:
+      "Discover at your own pace. Support and companionship adapt to what you actually need.",
+    value3Title: "Practical solutions",
+    value3Text:
+      "More than answering questions: we help you find the right service and work out the next step.",
+    servicesLabel: "SUPPORT, YOUR WAY",
+    servicesTitle: "One person. So many possibilities.",
+    servicesIntro:
+      "Online assistance at the heart. A personal companion when you want one.",
+    primaryLabel: "Our main service",
+    optionalLabel: "Optional extra",
+    onlineTitle: "Your personal online assistant",
+    onlineIntro:
+      "Your local assistant on WhatsApp or Telegram, throughout your agreed service period.",
+    onlinePractical:
+      "From answers to practical solutions, with your interests and preferences in mind.",
+    categories: [
+      [
+        "Travel & recommendations",
+        "Places to visit, cafés, restaurants, culture and personal itineraries around your interests and budget.",
+      ],
+      [
+        "Transportation",
+        "Help finding taxis, drivers, airport transfers and transport between cities.",
+      ],
+      [
+        "Reservations & entertainment",
+        "Restaurant reservations, hotel recommendations, event tickets, entertainment and local services.",
+      ],
+      [
+        "Everyday assistance",
+        "Translation, communication, local customs, shopping and finding particular products or services.",
+      ],
+      [
+        "Unexpected situations",
+        "Lost belongings or difficulties with hotels and transport: help finding an appropriate local service and a practical way forward.",
+      ],
+    ],
+    companionTitle: "A personal companion",
+    companionIntro:
+      "When you’d like a local by your side, for a few hours or on the days you choose.",
+    companionItems: [
+      "Walk around Yerevan and visit interesting places.",
+      "Enjoy restaurants, cafés and local culture together.",
+      "Get help shopping and communicating with local people.",
+      "Have company when you’d rather not explore unfamiliar places alone.",
+    ],
+    companionContinuity:
+      "Where availability allows, the same assistant will accompany you throughout your stay, keeping that familiar connection.",
+    companionScope:
+      "This doesn’t have to be a guided tour. You choose the days, hours and activities; availability and the cost are agreed separately.",
+    companionCta: "I’d like a companion too",
+    partnersTitle: "Local services, through one contact",
+    partnersText:
+      "Airport transfers, private drivers, excursions, hotels, restaurant reservations and event tickets. We help find and arrange them through local partners.",
+    partnersCost:
+      "Partner services may have separate costs. These are clearly separated from ARI’s assistance fee and agreed in advance.",
+    howLabel: "THREE SIMPLE STEPS",
+    howTitle: "Explore freely.<br>We’re in your corner.",
+    howIntro:
+      "From our first conversation to your last day in Armenia, clear and agreed together.",
+    step1Title: "Tell us about your trip",
+    step1Text:
+      "Contact ARI with your travel dates and the help you have in mind. We’ll talk through your needs together.",
+    step2Title: "Agree your personal offer",
+    step2Text:
+      "Receive an individual price with the scope, contact hours and separate costs. Once you confirm and make the agreed payment, you’ll receive your assistant’s contact details.",
+    step3Title: "Explore with someone to turn to",
+    step3Text:
+      "Contact your assistant during the agreed hours throughout your stay. Arrange personal companionship separately whenever you’d like it.",
+    pricingLabel: "INDIVIDUAL PRICING",
+    pricingTitle: "Every journey is different.<br>So is our assistance.",
+    pricingIntro:
+      "Tell us about your trip and we’ll prepare a personalized offer based on your needs. There are no mandatory packages or predefined prices.",
+    pricingCta: "Request individual pricing",
+    pricingFactorsTitle: "What shapes your offer",
+    pricingFactors: [
+      "The length of your stay in Armenia.",
+      "The type and expected amount of assistance.",
+      "Your online support needs and agreed contact hours.",
+      "The hours and days of any personal companionship.",
+      "Additional services and individual requirements.",
+    ],
+    pricingAgreement:
+      "We discuss pricing personally and agree it before confirming the service. ARI’s fee and third-party service costs are presented separately.",
+    experiencesLabel: "WHEREVER YOU GO, SOMEONE TO TURN TO",
+    experiencesTitle: "Your Armenia. Your way.",
+    experiencesIntro:
+      "A little inspiration, with your assistant there to help with the details.",
+    experiencesFoot:
+      "These are ideas for inspiration. Companionship, transport and other services are agreed separately.",
+    filters: ["All ideas", "City life", "Culture", "Nature"],
+    cardMore: "How we can help",
+    cards: [
+      {
+        id: "city",
+        image: "yerevan",
+        tag: "FIND THE CITY’S RHYTHM",
+        location: "YEREVAN",
+        title: "The city, at your pace",
+        text: "Coffee, art, little streets and a local you can ask for a recommendation.",
+        detail:
+          "Explore the city independently. Your assistant can recommend a café, help reserve a restaurant or support you with communication. If you’d like to walk together, we can discuss personal companionship separately.",
+        alt: "Yerevan skyline with Mount Ararat in the background",
+      },
+      {
+        id: "culture",
+        image: "garni",
+        tag: "A LITTLE CLOSER TO HISTORY",
+        location: "GARNI & GEGHARD",
+        title: "Follow your curiosity",
+        text: "Choose what you want to see. We can help with a route, a driver or the right local contact.",
+        detail:
+          "Curious about Garni or Geghard? Your assistant can help plan a route, find transport, suggest a lunch stop or find a guide if you want one. Tickets, transportation and specialist services are separate costs.",
+        alt: "Garni Temple surrounded by mountains",
+      },
+      {
+        id: "nature",
+        image: "dilijan",
+        tag: "A LITTLE FURTHER FROM IT ALL",
+        location: "DILIJAN",
+        title: "Take the slower, greener way",
+        text: "Forest views and a gentle day, with local help for the practical questions.",
+        detail:
+          "When planning a day around Dilijan, ask about places, weather and roads, or get help finding transport. Routes and services depend on availability. ARI is not a rescue or emergency assistance service.",
+        alt: "Haghartsin Monastery nestled in the green forests of Dilijan",
+      },
+    ],
+    expectationsLabel: "TRUST STARTS WITH CLARITY",
+    expectationsTitle: "What can you expect?",
+    includedTitle: "At the heart of your support",
+    includedItems: [
+      "Personal communication and recommendations around your interests.",
+      "Organizational help, finding local services and assistance with reservations.",
+      "Practical support with unexpected everyday situations.",
+      "Optional physical companionship by prior agreement.",
+    ],
+    agreedTitle: "Agreed together, in advance",
+    agreedItems: [
+      "The start and end of your service period.",
+      "Contact hours and response expectations.",
+      "The scope of assistance and specific companion hours.",
+      "ARI’s assistance fee and separate partner costs.",
+      "24/7 availability only if separately agreed.",
+    ],
+    expectationsNote:
+      "Third-party availability is not guaranteed. Transport and accommodation are not free, and physical companionship is not unlimited. ARI does not provide emergency medical or rescue services.",
+    planLabel: "LET’S START WITH YOUR TRIP",
+    planTitle: "Your needs.<br>Your personal offer.",
+    planIntro:
+      "Share a few details about your visit. We’ll discuss the price personally once we understand the support and scope you need.",
+    formLabel: "Prepare your personal enquiry",
+    nameLabel: "Your name",
+    namePlaceholder: "What should we call you?",
+    arrivalLabel: "Arrival date",
+    departureLabel: "Departure date",
+    guestsLabel: "Number of travellers",
+    supportLabel: "Kind of support",
+    supportOnline: "Online assistance",
+    supportCompanion: "Online + personal companion",
+    supportDiscuss: "Let’s work it out together",
+    companionTimeLabel: "Companion days and hours",
+    companionTimePlaceholder: "For example: 2 days, 3 hours each",
+    optional: "(optional)",
+    needsLabel: "How can we help?",
+    needsPlaceholder:
+      "Your interests, budget, transport, language or any special requests…",
+    formCta: "Prepare my enquiry",
+    formNote:
+      "Review your message first. You send it yourself in your chosen messenger. No booking or payment is made here.",
+    contactUnavailable:
+      "This is a preview. ARI’s official WhatsApp/Telegram contacts have not been added yet. You can prepare, copy or download your enquiry, but it will not be sent.",
+    contactAvailable:
+      "Choose an official contact channel or prepare a detailed enquiry first. We’ll discuss your offer and service terms personally.",
+    faqLabel: "A FEW THINGS TO KNOW",
+    faqTitle: "You might<br>be wondering.",
+    faq: [
+      [
+        "What is ARI?",
+        "ARI is a personal local assistance service for visitors to Armenia. Your main contact is a personal assistant who helps you online during an agreed service period. It is not a traditional tour agency.",
+      ],
+      [
+        "Do I need to hire a tour guide?",
+        "No. Explore independently and turn to your assistant for recommendations and practical help. If you want a guide or excursion, we can help find an appropriate service at a separate cost.",
+      ],
+      [
+        "Can my assistant accompany me in person?",
+        "Yes, by separate agreement and subject to availability. You choose the days, hours and activities. Where possible, the same assistant stays with you throughout your trip.",
+      ],
+      [
+        "How is pricing determined?",
+        "There are no fixed packages. We discuss your stay, the type and amount of assistance and any companion time, then prepare an individual offer. ARI’s fee and third-party costs are separated.",
+      ],
+      [
+        "Are transport, accommodation and tickets included?",
+        "They are not automatically included in ARI’s assistance fee. We can help find and arrange these services; their costs and availability are agreed separately.",
+      ],
+      [
+        "Is my assistant available 24/7?",
+        "Only if separately agreed. The service period, contact hours, response expectations and scope of assistance are agreed with each customer.",
+      ],
+      [
+        "What happens if something unexpected goes wrong?",
+        "We can help with communication, finding your way and locating an appropriate local service. ARI does not replace medical care, rescue teams or emergency services.",
+      ],
+      [
+        "How do I get started?",
+        "Share your dates and needs, discuss your offer, then confirm the terms and payment. You’ll receive your assistant’s contact details. This preview website does not yet accept bookings or payments.",
+      ],
+    ],
+    footerTag: "Explore Armenia. We've got your back.",
+    demoLabel: "Service website / preview",
+    madeWith: "With love, from Armenia",
+    credits: "Photo credits",
+    close: "Close",
+    menu: "Open menu",
+    mainNav: "Main navigation",
+    languageLabel: "Language",
+    categoriesLabel: "Experience categories",
+    requestLabel: "YOUR PERSONAL ENQUIRY",
+    requestTitle: "Let’s start this conversation.",
+    requestPreviewLabel: "Your prepared message",
+    requestIntro:
+      "Review your message. It has not been sent. You can copy or download it.",
+    sendWhatsapp: "Open WhatsApp",
+    sendTelegram: "Open Telegram",
+    sendNotice:
+      "These buttons open your chosen messenger with your enquiry text. Confirm sending there to send the message.",
+    copy: "Copy enquiry",
+    download: "Download enquiry",
+    copied: "Enquiry copied",
+    copyError: "Could not copy. You can download the text instead.",
+    invalidDates: "Departure must be on or after your arrival date.",
+    invalidArrival: "Please choose today or a later date.",
+    invalidName: "Please enter your name.",
+    invalidTravellers: "Please enter a number of travellers from 1 to 100.",
+    choose: "Discuss my trip",
+    ideaNote: "An idea for inspiration, not a package to book.",
+    messageGreeting: "Hi ARI! I’d like a personalized offer.",
+    messageName: "Name",
+    messageArrival: "Arrival",
+    messageDeparture: "Departure",
+    messageTravellers: "Number of travellers",
+    messageSupport: "Assistance",
+    messageCompanion: "Preferred companion days and hours",
+    messageNeeds: "My needs and interests",
+    messageLanguage: "Preferred communication language",
+    messageLanguageValue: "English",
+    messageClosing:
+      "Please discuss the scope of assistance, contact hours and individual pricing, with ARI’s fee separated from third-party service costs.",
+    creditsTitle: "Behind the photographs",
+    creditsNote:
+      "Images from Wikimedia Commons. Resized, converted to WebP and displayed with cropping.",
+    source: "Original image",
+    fontCredits:
+      "Fonts: Manrope and Noto Sans Armenian, SIL Open Font License 1.1.",
+    creditsError: "Photo sources are available in assets/credits.json.",
+  },
+};

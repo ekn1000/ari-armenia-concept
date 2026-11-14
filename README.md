@@ -1,26 +1,75 @@
-# ARI — Your person in Armenia
+# ARI — Explore Armenia. We've got your back.
 
-A responsive, three-language website concept for a personal travel and leisure assistant in Armenia.
+A responsive Armenian, Russian and English website for a personal travel assistance service in Armenia. The primary service is a personal local assistant over WhatsApp or Telegram. In-person companionship is optional and agreed separately. Every customer receives an individual offer; there are no fixed packages, public prices or automatic price calculations.
 
-## Open and edit
+**Live site:** https://ekn1000.github.io/ari-armenia-concept/
 
-No build step or framework is needed. Serve this folder with any static web server, for example `python -m http.server 4173`, then visit `http://localhost:4173`.
+**Business specification:** [docs/BUSINESS_CONCEPT.md](docs/BUSINESS_CONCEPT.md)
 
-- `index.html`: page structure
-- `styles.css`: responsive layout and visual design
-- `app.js`: Armenian, Russian and English copy, filters, dialogs and sample day planner
-- `assets/`: local photographs, fonts, favicon and photo attribution
+## Run locally
 
-Armenian is the default language. Use `?lang=hy`, `?lang=ru` or `?lang=en` for direct language links. The selected language is remembered on the visitor's device.
+The website itself has no runtime dependencies and needs no build step. With Python 3 installed:
 
-## Demo behaviour
+```sh
+python -m http.server 4187 --bind 127.0.0.1
+```
 
-The day planner creates an example itinerary in the browser. It supports downloading or copying the plan. It does not transmit form data, create reservations or accept payments. Connect a real enquiry endpoint and replace the demo notices when developing the business site. ARI is a working brand name; replace it as needed.
+Open http://127.0.0.1:4187. Armenian is the default. Direct language links use `?lang=hy`, `?lang=ru` and `?lang=en`; the selected language is remembered locally. The original `#plan` enquiry anchor remains available.
+
+## Files
+
+| File              | Purpose                                                             |
+| ----------------- | ------------------------------------------------------------------- |
+| `index.html`      | Page structure and Armenian fallback content                        |
+| `styles.css`      | Responsive layout, brand styling and accessibility states           |
+| `translations.js` | All Armenian, Russian and English content                           |
+| `app.js`          | Language switching, filters, dialogs, validation and enquiry drafts |
+| `site-config.js`  | Public, verified WhatsApp and Telegram destinations                 |
+| `assets/`         | Local photos, fonts, favicon and attribution                        |
+| `tests/`          | Browser tests for the business rules and enquiry flow               |
+
+## Contact configuration and current limitation
+
+**Official ARI contact details have not been provided.** Both destinations in `site-config.js` are intentionally empty. The published preview says so, never invents a destination and never claims that a request was sent.
+
+Once verified business contacts are available, edit:
+
+```js
+window.ARI_CONTACT = Object.freeze({
+  whatsapp: "", // International number, digits only, without + or spaces.
+  telegram: "", // Business username, without @ or https://t.me/.
+});
+```
+
+Only valid destination formats produce contact buttons. WhatsApp opens `https://wa.me/<number>` and Telegram opens `https://t.me/<username>`. The enquiry dialog adds the encoded draft as the `text` parameter. Messenger support for prefilling may vary; copying and downloading remain available.
+
+The form prepares a message containing the visitor's name, travel dates, group size, desired support, optional companion hours and needs. It does not send a network request with these details. Nothing is submitted automatically. Visitors review the text, choose a configured messenger and confirm sending there. Without a configured contact, they can only copy or download the draft.
+
+Enquiries are not bookings or payments. ARI discusses requirements and pricing manually before confirmation. No backend, payment processor, automatic assistant assignment or pricing engine is implemented.
+
+The site stores only the language preference in local storage. Form details are not persisted. Opening a messenger transfers the draft to that external service; public contact information must never contain secrets or personal credentials.
+
+## Checks
+
+Node.js 22+ is used for development checks only:
+
+```sh
+npm ci
+npx playwright install chromium
+npm test
+npm run check:format
+```
+
+The browser suite checks all three translations, pricing rules, date/count validation, optional companion input, safe request rendering, clipboard/download, messenger configuration, mobile navigation, layout widths and photo credits. It does not contact messenger recipients. Use `npm run format` after edits.
+
+## Publishing and collaboration
+
+GitHub Pages serves the `main` branch from `/`. `.nojekyll` keeps the site static. Merging or pushing reviewed changes to `main` triggers the existing Pages deployment. There is no paid hosting dependency.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow and [docs/LAUNCH_CHECKLIST.md](docs/LAUNCH_CHECKLIST.md) for the remaining operational decisions.
 
 ## Credits
 
-Photos are from Wikimedia Commons. Authors, original image links, licences and modification details are in [`assets/credits.json`](assets/credits.json) and available through the website footer. Photos have been resized, converted to WebP and are displayed with cropping.
+Photo authors, source links, licences and modification details are in [assets/credits.json](assets/credits.json) and the footer dialog. Photos were resized, converted to WebP and are displayed with cropping. Their original licences continue to apply.
 
-Manrope and Noto Sans Armenian fonts are distributed under the SIL Open Font License 1.1. See the font licence files in `assets/`.
-
-The static site is suitable for GitHub Pages and other free static hosting providers.
+Manrope and Noto Sans Armenian use SIL Open Font License 1.1; licence files are included in `assets/`.
