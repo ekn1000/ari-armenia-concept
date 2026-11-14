@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f0">
+  <meta name="description" content="ARI — քո անձնական ասիստենտը Հայաստանում։ Անհատական ժամանց, տեղական բացահայտումներ և քո ռիթմով կազմակերպված օրեր։">
+  <meta property="og:title" content="ARI — Հայաստանը՝ քո ռիթմով">
+  <meta property="og:description" content="Your person in Armenia. Personal assistance, local experiences, and days made for you.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/ararat.webp">
+  <title>ARI — Հայաստանը՝ քո ռիթմով</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/ararat.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M5 6h13v13"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="m12 21-8.4-8.4a5.6 5.6 0 0 1 8-8L12 5l.4-.4a5.6 5.6 0 0 1 8 8Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H3l2-5a8.5 8.5 0 1 1 16-3.5Z"/><path d="M8 10h8m-8 4h5"/></symbol>
+</svg>
+<a class="skip" href="#main" data-t="skip">Անցնել բովանդակությանը</a>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="#" aria-label="ARI"><span class="brand-sun" aria-hidden="true">✳</span><span>ari<span class="brand-dot">.</span></span></a>
+    <nav class="nav" id="navigation" aria-label="Main navigation">
+      <a href="#how" data-t="navHow">Ինչպես է աշխատում</a>
+      <a href="#experiences" data-t="navExperiences">Տպավորություններ</a>
+      <a href="#about" data-t="navAbout">Մեր մասին</a>
+    </nav>
+    <div class="header-actions">
+      <div class="languages" role="group" aria-label="Language">
+        <button type="button" data-lang="hy" lang="hy" aria-label="Հայերեն" aria-pressed="true">ՀԱՅ</button>
+        <button type="button" data-lang="ru" lang="ru" aria-label="Русский" aria-pressed="false">РУС</button>
+        <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">ENG</button>
+      </div>
+      <a class="button button-small header-cta" href="#plan"><span data-t="navCta">Պլանավորենք այցը</span><svg><use href="#i-diagonal"/></svg></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section class="hero container">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="tiny-sun">✳</span><span data-t="heroLabel">Քո մարդը՝ Հայաստանում</span></div>
+      <h1 data-html="heroTitle">Հայաստանը՝<br><span>քո ռիթմով։</span></h1>
+      <p class="hero-description" data-t="heroDescription">Մի տեղացի ընկեր, ով գիտի՝ ուր գնալ, ինչ փորձել ու ինչպես քո ամեն օրը դարձնել հիշարժան։ Մնացած հոգսերը թող մեզ։</p>
+      <div class="hero-buttons"><a class="button" href="#plan"><span data-t="heroCta">Կազմակերպենք իմ օրը</span><svg><use href="#i-diagonal"/></svg></a><a class="text-link" href="#experiences"><span data-t="heroExplore">Մի փոքր ոգեշնչում</span><svg><use href="#i-arrow"/></svg></a></div>
+      <div class="hero-footnote"><span class="check-circle"><svg><use href="#i-check"/></svg></span><span data-t="heroNote">Քո ցանկությունները։ Քո բյուջեն։ Քո Հայաստանը։</span></div>
+    </div>
+    <div class="hero-visual">
+      <img class="hero-image" src="assets/ararat.webp" width="2300" height="1533" alt="Խոր Վիրապը՝ Արարատի ֆոնին" data-alt="heroAlt" fetchpriority="high">
+      <div class="image-top"><span><svg><use href="#i-pin"/></svg><span data-t="heroPlace">Խոր Վիրապ, Հայաստան</span></span><span class="image-coordinate">39°52′ N &nbsp; 44°34′ E</span></div>
+      <div class="image-bottom"><span data-t="heroImageNote">Մեծ բացահայտումները սկսվում են մի «արի»-ից։</span><span class="image-spark" aria-hidden="true">✳</span></div>
+      <div class="local-note"><span class="local-icon"><svg><use href="#i-heart"/></svg></span><div><strong data-t="localTitle">Տեղացու աչքերով</strong><span data-t="localText">Քեզ համար, ոչ բոլորի նման։</span></div><span class="note-dot"></span></div>
+    </div>
+  </section>
+  <div class="trust-strip container"><div><svg><use href="#i-chat"/></svg><span data-t="strip1">Մեկ անձնական ասիստենտ</span></div><div><svg><use href="#i-heart"/></svg><span data-t="strip2">Քո նախասիրություններին համապատասխան</span></div><div><svg><use href="#i-sun"/></svg><span data-t="strip3">Ավելի շատ պահեր, ավելի քիչ հոգսեր</span></div></div>
+
+  <section class="section container intro" id="about">
+    <div><span class="eyebrow" data-t="introLabel">ԲԱՐԵՎ, ՄԵՆՔ ARI-Ն ԵՆՔ</span><h2 data-html="introTitle">Հայաստանում՝<br>ինչպես ընկերոջ մոտ։</h2></div>
+    <div class="intro-copy"><p class="large-copy" data-t="introText">Երբ կողքիդ քո մարդն է, ամեն ինչ ավելի հեշտ է։ Մենք օգնում ենք բացահայտել Հայաստանը ու կազմակերպում այն ամենը, ինչ պետք է լավ օր ունենալու համար։</p><p data-t="introSub">Առաջին անգամ ես այստեղ, մի քանի օրով ես վերադարձել, թե պարզապես ուզում ես նորովի բացահայտել քո քաղաքը՝ մենք քո կողքին ենք։</p></div>
+    <div class="service-grid">
+      <article><span class="service-icon"><svg><use href="#i-pin"/></svg></span><h3 data-t="service1Title">Քո ճաշակով վայրեր</h3><p data-t="service1Text">Հարմար սրճարանից մինչև թաքնված արահետ․ ընտրություններ, որոնք իսկապես քոնն են։</p></article>
+      <article><span class="service-icon"><svg><use href="#i-chat"/></svg></span><h3 data-t="service2Title">Կազմակերպչական հոգսերը՝ մեզ</h3><p data-t="service2Text">Ռեստորան, տրանսպորտ, միջոցառումներ ու ամրագրումներ՝ մեկ մարդու օգնությամբ։</p></article>
+      <article><span class="service-icon"><svg><use href="#i-heart"/></svg></span><h3 data-t="service3Title">Տեղացի մարդու աջակցություն</h3><p data-t="service3Text">Ասիստենտ, ով լսում է քեզ, օգնում կողմնորոշվել և հարմարվում քո ծրագրերին։</p></article>
+    </div>
+  </section>
+
+  <section class="section experiences" id="experiences">
+    <div class="container">
+      <div class="section-top"><div><span class="eyebrow" data-t="experiencesLabel">ՓՈՔՐ ԵՐԿԻՐ, ՄԵԾ ՏՊԱՎՈՐՈՒԹՅՈՒՆՆԵՐ</span><h2 data-t="experiencesTitle">Ի՞նչ տրամադրություն ունես։</h2></div><p data-t="experiencesIntro">Մի քանի գաղափար՝ սկսելու համար։<br>Մնացածը կստեղծենք միասին։</p></div>
+      <div class="filters" role="group" aria-label="Experience categories"></div>
+      <div class="experience-grid" id="experience-grid"></div>
+      <div class="experience-footer"><span class="small-spark" aria-hidden="true">✳</span><p data-t="experiencesFoot">Սրանք ընդամենը գաղափարներ են։ Քո օրը կարող է լրիվ ուրիշ լինել։</p></div>
+    </div>
+  </section>
+
+  <section class="section container" id="how">
+    <div class="how-panel"><div class="how-heading"><span class="eyebrow" data-t="howLabel">ԱՅՍՔԱՆ ՊԱՐԶ</span><h2 data-html="howTitle">Դու վայելիր։<br>Մենք կկազմակերպենք։</h2><p data-t="howIntro">Երկար որոնումների փոխարեն՝ մի պարզ զրույց քո ասիստենտի հետ։</p><a class="button button-light" href="#plan"><span data-t="howCta">Սկսենք մի գաղափարից</span><svg><use href="#i-diagonal"/></svg></a><span class="how-sun" aria-hidden="true">✳</span></div><ol class="steps"><li><span class="step-num">01</span><div><h3 data-t="step1Title">Պատմիր՝ ինչ ես սիրում</h3><p data-t="step1Text">Երբ ես գալիս, ում հետ և ինչպես ես ուզում անցկացնել ժամանակդ։ Մենք նախ լսում ենք։</p></div></li><li><span class="step-num">02</span><div><h3 data-t="step2Title">Ստացիր քո անհատական պլանը</h3><p data-t="step2Text">Առաջարկում ենք տարբերակներ, միասին հստակեցնում ծրագիրն ու բյուջեն։</p></div></li><li><span class="step-num">03</span><div><h3 data-t="step3Title">Ապրիր պահը</h3><p data-t="step3Text">Մենք օգնում ենք կազմակերպման հարցերում ու կապի մեջ ենք մնում պայմանավորված ժամերին։</p></div></li></ol></div>
+  </section>
+
+  <section class="section container plan-section" id="plan">
+    <div class="plan-copy"><span class="eyebrow"><span class="tiny-sun">✳</span><span data-t="planLabel">ՔՈ ՀԱՋՈՐԴ ԼԱՎ ՕՐԸ</span></span><h2 data-html="planTitle">Արի մի լավ<br>օր պլանավորենք։</h2><p data-t="planIntro">Լեռներ, համեր, մշակույթ, թե պարզապես անշտապ զբոսանք։ Ընտրիր քո տրամադրությունը և տես օրվա օրինակ։</p><div class="plan-mark" aria-hidden="true">բարև<span>barev / hello</span><svg viewBox="0 0 160 40"><path d="M3 25c35-25 74-25 122-8m-24-15 26 15-25 12"/></svg></div></div>
+    <form id="plan-form" class="plan-form">
+      <div class="form-heading"><span class="status-dot"></span><span data-t="formLabel">Մի փոքր քո ծրագրերի մասին</span></div>
+      <div class="form-row"><label><span data-t="dateLabel">Ո՞ր օրը</span><input id="trip-date" name="date" type="date" required></label><label><span data-t="guestsLabel">Քանի՞ հոգով</span><select id="trip-guests" name="guests"><option value="1" data-t="guest1">Միայն ես</option><option value="2" selected data-t="guest2">2 հոգով</option><option value="3" data-t="guest3">3–4 հոգով</option><option value="5" data-t="guest5">5 և ավելի</option></select></label></div>
+      <label><span data-t="moodLabel">Ինչպիսի՞ օր ես պատկերացնում</span><select id="trip-mood" name="mood"><option value="city" data-t="moodCity">Քաղաք, սուրճ ու նոր բացահայտումներ</option><option value="culture" data-t="moodCulture">Մշակույթ, պատմություն ու տեղական համեր</option><option value="nature" data-t="moodNature">Բնություն, լեռներ ու մաքուր օդ</option></select></label>
+      <label><span data-t="wishesLabel">Ուրիշ ցանկություններ կա՞ն <small data-t="optional">(ըստ ցանկության)</small></span><textarea id="trip-wishes" name="wishes" maxlength="500" rows="2" data-placeholder="wishesPlaceholder" placeholder="Օրինակ՝ սիրում եմ լուսանկարել ու տեղական ուտեստներ փորձել…"></textarea></label>
+      <button class="button form-submit" type="submit"><span data-t="formCta">Տեսնել օրվա պլանի օրինակը</span><svg><use href="#i-diagonal"/></svg></button>
+      <p class="form-note"><svg><use href="#i-check"/></svg><span data-t="formNote">Սա ցուցադրական ձև է։ Տվյալները չեն ուղարկվում, ամրագրում չի կատարվում։</span></p>
+    </form>
+  </section>
+
+  <section class="section container faq-section"><div><span class="eyebrow" data-t="faqLabel">ՄԻ ՔԱՆԻ ՊԱՏԱՍԽԱՆ</span><h2 data-html="faqTitle">Գուցե ուզում<br>էիր իմանալ։</h2></div><div class="faq-list" id="faq-list"></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-top"><a class="brand" href="#" aria-label="ARI"><span class="brand-sun" aria-hidden="true">✳</span><span>ari<span class="brand-dot">.</span></span></a><p data-t="footerTag">Քո մարդը։ Քո ռիթմը։ Քո Հայաստանը։</p><a class="footer-cta" href="#plan"><span data-t="footerCta">Արի Հայաստան</span><svg><use href="#i-diagonal"/></svg></a></div><div class="footer-bottom"><span>© 2026 ARI<span class="footer-separator">/</span><span data-t="demoLabel">Կայքի ցուցադրական մակետ</span></span><span class="footer-right"><span data-t="madeWith">Սիրով՝ Հայաստանից</span><button type="button" id="credits-button" data-t="credits">Լուսանկարներ</button></span></div></div></footer>
+<dialog id="detail-dialog" class="dialog"><div class="dialog-content"><button type="button" class="dialog-close" aria-label="Փակել" data-label="close">×</button><div id="dialog-body"></div></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p class="noscript">Կայքի եռալեզու տարբերակն ու ցուցադրական գործառույթներն օգտագործելու համար միացրեք JavaScript-ը։ Enable JavaScript to use the language switcher and interactive demo.</p></noscript>
+</body>
+</html>

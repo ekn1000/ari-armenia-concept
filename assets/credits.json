@@ -1,0 +1,34 @@
+[
+  {
+    "image": "assets/ararat.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Monasterio_Khor_Virap,_Armenia,_2016-10-01,_DD_25.jpg",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized, converted to WebP; displayed with cropping."
+  },
+  {
+    "image": "assets/yerevan.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Ararat_and_the_Yerevan_skyline_(June_2018).jpg",
+    "author": "Սէրուժ Ուրիշեան (Serouj Ourishian)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "changes": "Resized, converted to WebP; displayed with cropping."
+  },
+  {
+    "image": "assets/garni.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:Garni_temple_2021_drone.jpg",
+    "author": "Yerevantsi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized, converted to WebP; displayed with cropping."
+  },
+  {
+    "image": "assets/dilijan.webp",
+    "source": "https://commons.wikimedia.org/wiki/File:AR504_-_Monastero_Haghartsin.jpg",
+    "author": "GRANDE PUFFO VCO",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized, converted to WebP; displayed with cropping."
+  }
+]
