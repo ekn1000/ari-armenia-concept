@@ -8,25 +8,28 @@ A responsive Armenian, Russian and English website for a personal travel assista
 
 ## Run locally
 
-The website itself has no runtime dependencies and needs no build step. With Python 3 installed:
+The website serves committed static files and has no runtime dependencies. To preview it with Python 3:
 
 ```sh
 python -m http.server 4187 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:4187. Armenian is the default. Direct language links use `?lang=hy`, `?lang=ru` and `?lang=en`; the selected language is remembered locally. The original `#plan` enquiry anchor remains available.
+Open http://127.0.0.1:4187. Armenian is at `/`, Russian at `/ru/`, and English at `/en/`. Each URL contains the complete translated HTML, including without JavaScript. Legacy `?lang=hy|ru|en` links still work with JavaScript. The original `#plan` enquiry anchor remains available.
 
 ## Files
 
-| File              | Purpose                                                             |
-| ----------------- | ------------------------------------------------------------------- |
-| `index.html`      | Page structure and Armenian fallback content                        |
-| `styles.css`      | Responsive layout, brand styling and accessibility states           |
-| `translations.js` | All Armenian, Russian and English content                           |
-| `app.js`          | Language switching, filters, dialogs, validation and enquiry drafts |
-| `site-config.js`  | Public, verified WhatsApp and Telegram destinations                 |
-| `assets/`         | Local photos, fonts, favicon and attribution                        |
-| `tests/`          | Browser tests for the business rules and enquiry flow               |
+| File                                | Purpose                                                              |
+| ----------------------------------- | -------------------------------------------------------------------- |
+| `index.html`                        | Shared structure and fully rendered Armenian content                 |
+| `ru/index.html`, `en/index.html`    | Generated Russian and English pages                                  |
+| `styles.css`                        | Responsive layout, brand styling and accessibility states            |
+| `translations.js`                   | All Armenian, Russian and English content                            |
+| `app.js`                            | Language switching, filters, dialogs, validation and enquiry drafts  |
+| `site-config.js`                    | Public, verified WhatsApp and Telegram destinations                  |
+| `seo.js`, `scripts/build-pages.cjs` | Shared metadata/schema and static language-page generator            |
+| `sitemap.xml`, `robots.txt`         | Canonical URL discovery; see the host-root limitation in docs/SEO.md |
+| `assets/`                           | Local photos, fonts, favicon and attribution                         |
+| `tests/`                            | Browser tests for the business rules and enquiry flow                |
 
 ## Contact configuration and current limitation
 
@@ -57,10 +60,13 @@ Node.js 22+ is used for development checks only:
 npm ci
 npx playwright install chromium
 npm test
+npm run check:generated
 npm run check:format
 ```
 
 The browser suite checks all three translations, pricing rules, date/count validation, optional companion input, safe request rendering, clipboard/download, messenger configuration, mobile navigation, layout widths and photo credits. It does not contact messenger recipients. Use `npm run format` after edits.
+
+It also checks the complete HTML without JavaScript, canonical/hreflang consistency, JSON-LD against visible FAQs, legacy language URLs, sitemap destinations, optimized fonts and the noindex error page. After editing layout, translations, contacts or SEO metadata, run `npm run build` and commit the generated pages. See [docs/SEO.md](docs/SEO.md) for details and Search Console setup that remains outside this repository.
 
 ## Publishing and collaboration
 

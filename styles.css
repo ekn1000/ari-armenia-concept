@@ -1,32 +1,32 @@
 @font-face {
   font-family: Manrope;
-  src: url("assets/manrope-regular.ttf") format("truetype");
+  src: url("assets/manrope-regular.woff2") format("woff2");
   font-weight: 400 500;
   font-display: swap;
 }
 @font-face {
   font-family: Manrope;
-  src: url("assets/manrope-bold.ttf") format("truetype");
+  src: url("assets/manrope-bold.woff2") format("woff2");
   font-weight: 600 800;
   font-display: swap;
 }
 @font-face {
   font-family: Armenian;
-  src: url("assets/armenian-regular.ttf") format("truetype");
+  src: url("assets/armenian-regular.woff2") format("woff2");
   font-weight: 400 500;
   font-display: swap;
 }
 @font-face {
   font-family: Armenian;
-  src: url("assets/armenian-bold.ttf") format("truetype");
+  src: url("assets/armenian-bold.woff2") format("woff2");
   font-weight: 600 800;
   font-display: swap;
 }
 :root {
   --ink: #243f35;
-  --muted: #6d766e;
+  --muted: #596552;
   --paper: #f7f6f0;
-  --orange: #ce5935;
+  --orange: #be4e2d;
   --orange-hover: #b84928;
   --line: #ddded3;
   --green: #244a3b;
@@ -273,20 +273,20 @@ p {
   display: flex;
   gap: 3px;
 }
-.languages button {
+.languages a {
   background: none;
   border: 0;
   font-family: Manrope, Armenian, sans-serif;
   font-size: 10px;
   font-weight: 700;
-  color: #7d837c;
+  color: #596552;
   padding: 6px 5px;
   position: relative;
 }
-.languages button[aria-pressed="true"] {
+.languages a[aria-current="page"] {
   color: var(--ink);
 }
-.languages button[aria-pressed="true"]:after {
+.languages a[aria-current="page"]:after {
   content: "";
   height: 3px;
   width: 3px;
@@ -921,7 +921,7 @@ textarea:focus {
   outline-offset: 0;
 }
 ::placeholder {
-  color: #878b7f;
+  color: #596552;
 }
 .form-submit {
   width: 100%;
@@ -1492,7 +1492,7 @@ textarea:focus {
   .languages {
     gap: 1px;
   }
-  .languages button {
+  .languages a {
     font-size: 9px;
     padding: 6px 5px;
   }

@@ -1,0 +1,198 @@
+const { test, expect } = require("@playwright/test");
+const fs = require("node:fs");
+const seo = require("../seo.js");
+
+for (const lang of seo.languages) {
+  test(`${lang}: complete localized HTML and SEO work without JavaScript`, async ({
+    browser,
+  }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false });
+    const page = await context.newPage();
+    const failures = [];
+    page.on("response", (response) => {
+      if (response.status() >= 400) failures.push(response.url());
+    });
+    await page.goto("http://127.0.0.1:4187/" + seo.paths[lang]);
+    await expect(page.locator("html")).toHaveAttribute("lang", lang);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator("h1")).not.toBeEmpty();
+    await expect(page.locator("#support-categories>div")).toHaveCount(5);
+    await expect(page.locator(".experience-card")).toHaveCount(3);
+    await expect(page.locator("#pricing-factors li")).toHaveCount(5);
+    await expect(page.locator("#faq-list details")).toHaveCount(8);
+    await expect(page.locator("#offer-form")).toHaveAttribute("inert", "");
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      seo.pageUrl(lang),
+    );
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+      "content",
+      seo.pageUrl(lang),
+    );
+    await expect(page.locator('meta[property="og:locale"]')).toHaveAttribute(
+      "content",
+      seo.locales[lang],
+    );
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      "content",
+      /index, follow/,
+    );
+    await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+      "content",
+      "summary_large_image",
+    );
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      "content",
+      seo.baseUrl + `assets/social-${lang}.png`,
+    );
+    const description = await page
+      .locator('meta[name="description"]')
+      .getAttribute("content");
+    expect(description.length).toBeGreaterThan(100);
+    expect(description.length).toBeLessThan(190);
+    const alternates = await page
+      .locator('link[rel="alternate"][hreflang]')
+      .evaluateAll((links) =>
+        Object.fromEntries(links.map((link) => [link.hreflang, link.href])),
+      );
+    expect(alternates).toEqual({
+      ...Object.fromEntries(seo.languages.map((l) => [l, seo.pageUrl(l)])),
+      "x-default": seo.baseUrl,
+    });
+    for (const other of seo.languages) {
+      const link = page.locator(`[data-lang="${other}"]`);
+      expect(
+        new URL(await link.getAttribute("href"), page.url()).pathname,
+      ).toBe("/" + seo.paths[other]);
+      await expect(link).toHaveAttribute("hreflang", other);
+    }
+    const schema = JSON.parse(
+      await page.locator("#structured-data").textContent(),
+    );
+    const faq = schema["@graph"].find((item) => item["@type"] === "FAQPage");
+    const visibleFaq = await page
+      .locator("#faq-list details")
+      .evaluateAll((items) =>
+        items.map((item) => ({
+          q: item
+            .querySelector("summary")
+            .textContent.replace(/\s+/g, " ")
+            .trim(),
+          a: item.querySelector("p").textContent.replace(/\s+/g, " ").trim(),
+        })),
+      );
+    expect(
+      faq.mainEntity.map((item) => ({
+        q: item.name,
+        a: item.acceptedAnswer.text,
+      })),
+    ).toEqual(visibleFaq);
+    const service = schema["@graph"].find(
+      (item) => item["@type"] === "Service",
+    );
+    expect(service.areaServed.name).toBe("Armenia");
+    expect(JSON.stringify(schema)).not.toMatch(
+      /"(price|aggregateRating|review|telephone|streetAddress|openingHours)"/,
+    );
+    const preload = page.locator('link[rel="preload"][as="image"]');
+    expect(
+      (await preload.getAttribute("imagesrcset")).replace(/\s+/g, " ").trim(),
+    ).toBe(
+      (await page.locator(".hero-image").getAttribute("srcset"))
+        .replace(/\s+/g, " ")
+        .trim(),
+    );
+    await page.locator(`[data-lang="${lang === "en" ? "ru" : "en"}"]`).click();
+    await expect(page.locator("html")).toHaveAttribute(
+      "lang",
+      lang === "en" ? "ru" : "en",
+    );
+    expect(failures).toEqual([]);
+    await context.close();
+  });
+}
+
+test("language switching and legacy URLs keep metadata and shared assets consistent", async ({
+  page,
+}) => {
+  const failures = [];
+  page.on("response", (response) => {
+    if (response.status() >= 400) failures.push(response.url());
+  });
+  await page.goto("/?lang=en&utm_source=test#plan");
+  await expect(page).toHaveURL(/\/en\/\?utm_source=test#plan$/);
+  for (const lang of ["ru", "hy", "en"]) {
+    await page.locator(`[data-lang="${lang}"]`).click();
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      seo.pageUrl(lang),
+    );
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+      "content",
+      seo.pageUrl(lang),
+    );
+    const json = JSON.parse(
+      await page.locator("#structured-data").textContent(),
+    );
+    expect(
+      json["@graph"].find((item) => item["@type"] === "WebPage").inLanguage,
+    ).toBe(lang);
+    await page.locator("#credits-button").click();
+    await expect(page.locator(".credits-list>div")).toHaveCount(4);
+    await page.keyboard.press("Escape");
+  }
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  expect(failures).toEqual([]);
+});
+
+test("sitemap lists the three canonical pages with reciprocal language alternatives", async ({
+  request,
+  page,
+}) => {
+  const response = await request.get("/sitemap.xml");
+  expect(response.status()).toBe(200);
+  const xml = await response.text();
+  await page.goto("/");
+  const urls = await page.evaluate((xml) => {
+    const doc = new DOMParser().parseFromString(xml, "application/xml");
+    if (doc.querySelector("parsererror")) throw new Error("Invalid XML");
+    return [...doc.getElementsByTagName("url")].map((url) => ({
+      loc: url.getElementsByTagName("loc")[0].textContent,
+      alternates: [
+        ...url.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "link"),
+      ].map((link) => ({
+        lang: link.getAttribute("hreflang"),
+        href: link.getAttribute("href"),
+      })),
+    }));
+  }, xml);
+  expect(urls.map((url) => url.loc)).toEqual(seo.languages.map(seo.pageUrl));
+  expect(urls.every((url) => url.alternates.length === 4)).toBe(true);
+  const robots = await request.get("/robots.txt");
+  expect(await robots.text()).toContain(
+    "Sitemap: " + seo.baseUrl + "sitemap.xml",
+  );
+  for (const url of urls) {
+    const local = "/" + url.loc.replace(seo.baseUrl, "");
+    expect((await request.get(local)).status()).toBe(200);
+  }
+});
+
+test("optimized assets are available and 404 page stays out of search results", async ({
+  request,
+}) => {
+  for (const file of [
+    "armenian-regular",
+    "armenian-bold",
+    "manrope-regular",
+    "manrope-bold",
+  ]) {
+    const response = await request.get(`/assets/${file}.woff2`);
+    expect(response.status()).toBe(200);
+    expect((await response.body()).length).toBeLessThan(40000);
+  }
+  expect(fs.statSync("assets/ararat-800.webp").size).toBeLessThan(130000);
+  const response = await request.get("/404.html");
+  expect(await response.text()).toContain('content="noindex, follow"');
+});

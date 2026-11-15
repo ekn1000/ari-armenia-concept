@@ -142,13 +142,13 @@ test("dates, counts and required fields reject invalid requests", async ({
   await expect(page.locator("dialog")).toBeVisible();
 });
 
-test("language links preserve form input, selection, anchor and saved preference", async ({
+test("language links preserve form input, selection and canonical locale paths", async ({
   page,
 }) => {
   await page.goto("/?lang=ru#plan");
   await fillRequest(page);
   await page.locator('[data-lang="en"]').click();
-  await expect(page).toHaveURL(/lang=en#plan$/);
+  await expect(page).toHaveURL(/\/en\/#plan$/);
   await expect(page.locator("#request-name")).toHaveValue(
     "Alex <img src=x onerror=alert(1)>",
   );
@@ -156,9 +156,9 @@ test("language links preserve form input, selection, anchor and saved preference
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await page.goto("/");
-  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator("html")).toHaveAttribute("lang", "hy");
   await page.goto("/?lang=invalid");
-  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator("html")).toHaveAttribute("lang", "hy");
 });
 
 test("verified contact configuration produces encoded drafts without sending", async ({

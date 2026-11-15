@@ -2,7 +2,7 @@
 
 window.ARI_TRANSLATIONS = {
   hy: {
-    title: "ARI — Բացահայտիր Հայաստանը։ Մենք քո կողքին ենք։",
+    title: "Անձնական տուրիստական ասիստենտ Հայաստանում | ARI",
     description:
       "Քո անձնական ասիստենտը Հայաստանում։ Աջակցություն WhatsApp-ով կամ Telegram-ով, ընտրովի անձնական ուղեկցում և անհատական առաջարկ։",
     skip: "Անցնել բովանդակությանը",
@@ -294,7 +294,7 @@ window.ARI_TRANSLATIONS = {
       "Լուսանկարների աղբյուրները հասանելի են assets/credits.json ֆայլում։",
   },
   ru: {
-    title: "ARI — Открывай Армению. Мы рядом.",
+    title: "Личный помощник туриста в Армении | ARI",
     description:
       "Твой персональный ассистент в Армении. Поддержка в WhatsApp или Telegram, сопровождение по желанию и индивидуальное предложение.",
     skip: "Перейти к содержимому",
@@ -584,7 +584,7 @@ window.ARI_TRANSLATIONS = {
     creditsError: "Источники фотографий доступны в файле assets/credits.json.",
   },
   en: {
-    title: "ARI — Explore Armenia. We've got your back.",
+    title: "Personal Travel Assistant in Armenia | ARI",
     description:
       "Your personal assistant in Armenia. Local support on WhatsApp or Telegram, optional personal companionship and an offer tailored to your needs.",
     skip: "Skip to content",

@@ -1,6 +1,14 @@
 "use strict";
 
 const translations = window.ARI_TRANSLATIONS;
+const seo = window.ARI_SEO;
+// Resolve shared resources before a language switch changes the visible URL.
+const siteRoot = new URL(
+  ".",
+  document.querySelector('script[src$="app.js"]').src,
+);
+const assetUrl = (filename) => new URL("assets/" + filename, siteRoot).href;
+const languageUrl = (lang) => new URL(seo.paths[lang], siteRoot);
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const icon = (name) => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
@@ -28,12 +36,9 @@ const storage = {
 };
 const supportedLanguages = ["hy", "ru", "en"];
 const queryLanguage = new URLSearchParams(location.search).get("lang");
-const storedLanguage = storage.get("ari-language");
 let language = supportedLanguages.includes(queryLanguage)
   ? queryLanguage
-  : supportedLanguages.includes(storedLanguage)
-    ? storedLanguage
-    : "hy";
+  : document.documentElement.lang;
 let activeFilter = "all";
 let lastRequest;
 let lastDialogTrigger;
@@ -76,15 +81,19 @@ function renderList(selector, items) {
     .join("");
 }
 
+function updateLanguageUrl() {
+  const url = languageUrl(language);
+  url.search = location.search;
+  url.searchParams.delete("lang");
+  url.hash = location.hash;
+  history.replaceState({}, "", url);
+}
+
 function setLanguage(next, updateUrl = true) {
   if (!supportedLanguages.includes(next)) return;
   language = next;
   const t = translations[language];
-  document.documentElement.lang = language;
-  document.title = t.title;
-  $('meta[name="description"]').content = t.description;
-  $('meta[property="og:title"]').content = t.title;
-  $('meta[property="og:description"]').content = t.description;
+  seo.updateDocument(document, language, t);
   $$("[data-t]").forEach((el) => {
     el.textContent = t[el.dataset.t];
   });
@@ -100,9 +109,11 @@ function setLanguage(next, updateUrl = true) {
   $$("[data-label]").forEach((el) =>
     el.setAttribute("aria-label", t[el.dataset.label]),
   );
-  $$("[data-lang]").forEach((el) =>
-    el.setAttribute("aria-pressed", String(el.dataset.lang === language)),
-  );
+  $$("[data-lang]").forEach((el) => {
+    el.href = languageUrl(el.dataset.lang).href;
+    if (el.dataset.lang === language) el.setAttribute("aria-current", "page");
+    else el.removeAttribute("aria-current");
+  });
   $("#navigation").setAttribute("aria-label", t.mainNav);
   $("#languages").setAttribute("aria-label", t.languageLabel);
   $(".menu-toggle").setAttribute("aria-label", t.menu);
@@ -118,10 +129,8 @@ function setLanguage(next, updateUrl = true) {
   renderFaq();
   renderContactChannels();
   storage.set("ari-language", language);
-  if (updateUrl) {
-    const url = new URL(location.href);
-    url.searchParams.set("lang", language);
-    history.replaceState({}, "", url);
+  if (updateUrl || supportedLanguages.includes(queryLanguage)) {
+    updateLanguageUrl();
   }
   $$("input").forEach((el) => el.setCustomValidity(""));
   closeMenu();
@@ -155,8 +164,8 @@ function renderExperiences() {
     .filter((card) => activeFilter === "all" || card.id === activeFilter)
     .map(
       (card) => `
-    <button class="experience-card" type="button" data-card="${card.id}" aria-label="${escapeHtml(card.title)}">
-      <div class="card-image"><img src="assets/${card.image}.webp" width="1200" height="800" alt="${escapeHtml(card.alt)}" loading="lazy"><span class="card-tag"><span></span>${card.tag}</span></div>
+    <button class="experience-card" type="button" data-card="${card.id}">
+      <div class="card-image"><img src="${assetUrl(card.image + "-800.webp")}" srcset="${assetUrl(card.image + "-480.webp")} 480w, ${assetUrl(card.image + "-800.webp")} 800w, ${assetUrl(card.image + ".webp")} 1200w" sizes="(max-width: 650px) calc(100vw - 42px), (max-width: 900px) 30vw, 400px" width="1200" height="800" alt="${escapeHtml(card.alt)}" loading="lazy" decoding="async"><span class="card-tag"><span></span>${card.tag}</span></div>
       <div class="card-content"><span class="card-kicker">${icon("pin")}${card.location}</span><h3>${card.title}</h3><p>${card.text}</p><div class="card-bottom"><span>${t.cardMore}</span><span class="card-arrow">${icon("diagonal")}</span></div></div>
     </button>`,
     )
@@ -189,7 +198,7 @@ function showExperience(id) {
   const card = t.cards.find((item) => item.id === id);
   if (!card) return;
   openDialog(
-    `<img src="assets/${card.image}.webp" alt="${escapeHtml(card.alt)}"><span class="eyebrow">${card.location}</span><h2>${card.title}</h2><p>${card.detail}</p><p class="demo-notice">${t.ideaNote}</p><button class="button" type="button" data-discuss>${t.choose}${icon("diagonal")}</button>`,
+    `<img src="${assetUrl(card.image + "-800.webp")}" alt="${escapeHtml(card.alt)}"><span class="eyebrow">${card.location}</span><h2>${card.title}</h2><p>${card.detail}</p><p class="demo-notice">${t.ideaNote}</p><button class="button" type="button" data-discuss>${t.choose}${icon("diagonal")}</button>`,
   );
 }
 
@@ -278,8 +287,19 @@ function validateRequest() {
   return form.reportValidity();
 }
 
-$$("[data-lang]").forEach((button) =>
-  button.addEventListener("click", () => setLanguage(button.dataset.lang)),
+$$("[data-lang]").forEach((link) =>
+  link.addEventListener("click", (event) => {
+    if (
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      event.altKey ||
+      event.button !== 0
+    )
+      return;
+    event.preventDefault();
+    setLanguage(link.dataset.lang);
+  }),
 );
 $(".menu-toggle").addEventListener("click", () => {
   const open = $(".menu-toggle").getAttribute("aria-expanded") !== "true";
@@ -390,7 +410,7 @@ $("#credits-button").addEventListener("click", async () => {
   const t = translations[language];
   try {
     if (!creditsData) {
-      const response = await fetch("assets/credits.json");
+      const response = await fetch(assetUrl("credits.json"));
       if (!response.ok) throw new Error("Photo credits unavailable");
       creditsData = await response.json();
     }
@@ -403,7 +423,18 @@ $("#credits-button").addEventListener("click", async () => {
 });
 syncDates();
 updateCompanionField();
-setLanguage(language, false);
+const hero = $(".hero-image");
+hero.src = assetUrl("ararat-800.webp");
+hero.srcset = [480, 800, 1200]
+  .map((size) => `${assetUrl(`ararat-${size}.webp`)} ${size}w`)
+  .join(", ");
+// Keep the complete static HTML on a normal load. Re-render only when an old
+// query-string link requests a different language, or the visitor switches it.
+if (language === document.documentElement.lang) {
+  renderContactChannels();
+  storage.set("ari-language", language);
+  if (supportedLanguages.includes(queryLanguage)) updateLanguageUrl();
+} else setLanguage(language, false);
 // The static fallback remains inert if scripts fail; it cannot submit personal
 // details through the browser's default GET form behaviour.
 form.inert = false;

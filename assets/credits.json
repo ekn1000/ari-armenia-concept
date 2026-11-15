@@ -5,7 +5,8 @@
     "author": "Diego Delso",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "changes": "Resized, converted to WebP; displayed with cropping."
+    "changes": "Resized, converted to WebP; responsive derivatives resized and, for the hero, cropped. Displayed with cropping. Derivatives retain the original image licence.",
+    "variants": ["ararat-1200.webp", "ararat-480.webp", "ararat-800.webp"]
   },
   {
     "image": "assets/yerevan.webp",
@@ -13,7 +14,8 @@
     "author": "Սէրուժ Ուրիշեան (Serouj Ourishian)",
     "license": "CC BY 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "changes": "Resized, converted to WebP; displayed with cropping."
+    "changes": "Resized, converted to WebP; responsive derivatives resized and, for the hero, cropped. Displayed with cropping. Derivatives retain the original image licence.",
+    "variants": ["yerevan-480.webp", "yerevan-800.webp"]
   },
   {
     "image": "assets/garni.webp",
@@ -21,7 +23,8 @@
     "author": "Yerevantsi",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "changes": "Resized, converted to WebP; displayed with cropping."
+    "changes": "Resized, converted to WebP; responsive derivatives resized and, for the hero, cropped. Displayed with cropping. Derivatives retain the original image licence.",
+    "variants": ["garni-480.webp", "garni-800.webp"]
   },
   {
     "image": "assets/dilijan.webp",
@@ -29,6 +32,7 @@
     "author": "GRANDE PUFFO VCO",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "changes": "Resized, converted to WebP; displayed with cropping."
+    "changes": "Resized, converted to WebP; responsive derivatives resized and, for the hero, cropped. Displayed with cropping. Derivatives retain the original image licence.",
+    "variants": ["dilijan-480.webp", "dilijan-800.webp"]
   }
 ]

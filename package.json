@@ -7,11 +7,15 @@
     "start": "python -m http.server 4187 --bind 127.0.0.1",
     "test": "playwright test",
     "test:update-snapshots": "playwright test --update-snapshots",
-    "format": "prettier --write index.html styles.css app.js translations.js site-config.js tests playwright.config.js README.md CONTRIBUTING.md docs .github package.json",
-    "check:format": "prettier --check index.html styles.css app.js translations.js site-config.js tests playwright.config.js README.md CONTRIBUTING.md docs .github package.json"
+    "format": "prettier --write index.html en/index.html ru/index.html 404.html styles.css app.js translations.js site-config.js seo.js scripts/*.cjs tests playwright.config.js README.md CONTRIBUTING.md docs .github package.json assets/credits.json",
+    "check:format": "prettier --check index.html en/index.html ru/index.html 404.html styles.css app.js translations.js site-config.js seo.js scripts/*.cjs tests playwright.config.js README.md CONTRIBUTING.md docs .github package.json assets/credits.json",
+    "build": "node scripts/build-pages.cjs",
+    "check:generated": "node scripts/build-pages.cjs --check"
   },
   "devDependencies": {
     "@playwright/test": "1.65.1",
+    "lighthouse": "13.6.0",
+    "linkedom": "0.18.15",
     "prettier": "3.10.1"
   }
 }
