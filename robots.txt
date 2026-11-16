@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ekn1000.github.io/ari-armenia-concept/sitemap.xml
+Sitemap: https://ekn1000.github.io/armmate/sitemap.xml

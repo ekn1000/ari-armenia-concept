@@ -218,6 +218,16 @@ async function build() {
       );
       document.head.append(font);
     }
+    const headingFont = document.createElement("link");
+    headingFont.setAttribute("rel", "preload");
+    headingFont.setAttribute("as", "font");
+    headingFont.setAttribute("type", "font/woff2");
+    headingFont.setAttribute("crossorigin", "anonymous");
+    headingFont.setAttribute(
+      "href",
+      `${prefix}assets/${language === "hy" ? "armenian-serif" : "lora"}-heading.woff2`,
+    );
+    document.head.append(headingFont);
     $(".noscript").textContent = {
       hy: "Բովանդակությունը կարող ես կարդալ առանց JavaScript-ի։ Հարցում պատրաստելու և ֆիլտրերն օգտագործելու համար միացրու JavaScript-ը։",
       ru: "Содержание доступно без JavaScript. Включите JavaScript, чтобы подготовить запрос и пользоваться фильтрами.",

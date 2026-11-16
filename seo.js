@@ -1,7 +1,7 @@
 "use strict";
 
 (function (global) {
-  const baseUrl = "https://ekn1000.github.io/ari-armenia-concept/";
+  const baseUrl = "https://ekn1000.github.io/armmate/";
   const locales = { hy: "hy_AM", ru: "ru_RU", en: "en_GB" };
   const paths = { hy: "", ru: "ru/", en: "en/" };
   const languages = Object.keys(paths);

@@ -4,11 +4,11 @@
 
 ARMMATE has three complete, crawlable HTML pages:
 
-| Language | Canonical URL                                     |
-| -------- | ------------------------------------------------- |
-| Armenian | https://ekn1000.github.io/ari-armenia-concept/    |
-| Russian  | https://ekn1000.github.io/ari-armenia-concept/ru/ |
-| English  | https://ekn1000.github.io/ari-armenia-concept/en/ |
+| Language | Canonical URL                         |
+| -------- | ------------------------------------- |
+| Armenian | https://ekn1000.github.io/armmate/    |
+| Russian  | https://ekn1000.github.io/armmate/ru/ |
+| English  | https://ekn1000.github.io/armmate/en/ |
 
 Each page contains its translated service descriptions, pricing explanation, inspiration cards and FAQ in the initial HTML. Search engines and visitors do not need JavaScript to read them. The enquiry form remains inert until JavaScript has initialized; it never falls back to sending personal data in a GET request.
 
@@ -42,13 +42,13 @@ To recreate the committed responsive images, social cards and WOFF2 fonts, insta
 
 ## GitHub Pages robots.txt limitation
 
-The standard robots file is **https://ekn1000.github.io/robots.txt**, at the host root. A project-site file at `/ari-armenia-concept/robots.txt` does not control crawling. The host-root file returned HTTP 404 at the time of this update, which does not disallow crawling.
+The standard robots file is **https://ekn1000.github.io/robots.txt**, at the host root. A project-site file at `/armmate/robots.txt` does not control crawling. The host-root file returned HTTP 404 at the time of this update, which does not disallow crawling.
 
 The repository includes a permissive robots file with the sitemap URL for a future domain-root deployment. Effective host-root robots rules would have to be managed by the owner of the separate root site. This task does not modify other repositories or domain-wide crawling rules.
 
 ## Remaining work outside the repository
 
-- Verify the URL-prefix property for `https://ekn1000.github.io/ari-armenia-concept/` in Google Search Console and submit its `sitemap.xml`. Verification and indexing requests require the owner's account; no verification tokens are fabricated or claimed to have been submitted.
+- Verify the URL-prefix property for `https://ekn1000.github.io/armmate/` in Google Search Console and submit its `sitemap.xml`. Verification and indexing requests require the owner's account; no verification tokens are fabricated or claimed to have been submitted.
 - Add the real business WhatsApp/Telegram contacts before accepting enquiries. The site clearly remains a preview until operational setup is complete.
 - Once the business has verified public business details and a location it is entitled to represent, decide whether a business profile or additional local-business markup is appropriate. Do not invent an address to obtain local search placement.
 - Build useful, original destination/service content and legitimate references as the business develops. Avoid purchased links, repeated keyword pages and fabricated reviews.

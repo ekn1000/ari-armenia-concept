@@ -4,6 +4,8 @@ from PIL import Image, ImageOps, ImageDraw, ImageFont
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
+from fontTools.varLib.instancer import instantiateVariableFont
+from fontTools.subset import Options, Subsetter
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,6 +15,29 @@ ORANGE = '#be4e2d'
 BRAND_GREEN = '#3d6d4e'
 BRAND_ORANGE = '#c77944'
 PAPER = '#f7f6f0'
+
+
+def heading_font(source, output, family):
+    font = TTFont(ASSETS/source, recalcTimestamp=False)
+    axes = {axis.axisTag: 600 if axis.axisTag == 'wght' else axis.defaultValue for axis in font['fvar'].axes}
+    font = instantiateVariableFont(font, axes, inplace=True)
+    font.recalcTimestamp = False
+    # Keep Latin, Cyrillic, Armenian and punctuation used by the three locales.
+    options = Options()
+    options.layout_features = ['*']
+    subset = Subsetter(options=options)
+    subset.populate(unicodes=list(range(0x20,0x250))+list(range(0x400,0x590))+list(range(0x2000,0x2070))+[0x20ac,0x2116])
+    subset.subset(font)
+    font['name'].names = [record for record in font['name'].names if record.nameID not in [1,2,3,4,6,16,17,25]]
+    for name_id, value in [(1,family),(2,'SemiBold'),(3,family+';600'),(4,family+' SemiBold'),(6,family.replace(' ','')+'-SemiBold'),(16,family),(17,'SemiBold')]:
+        font['name'].setName(value,name_id,3,1,0x409)
+    font.flavor = 'woff2'
+    font.save(ASSETS/output)
+
+
+heading_font('lora-source.ttf','lora-heading.woff2','ARMMATE Display')
+heading_font('armenian-serif-source.ttf','armenian-serif-heading.woff2','ARMMATE Armenian Display')
+
 MARK_WIDTH, MARK_HEIGHT = 480, 306
 # A symmetric, clean redraw of the supplied two-person / letter-m reference.
 PEOPLE_PATH = (
@@ -128,13 +153,15 @@ for language, (lines, subtitle) in copy.items():
     canvas = Image.new('RGB', (1200, 630), PAPER)
     draw = ImageDraw.Draw(canvas)
     family = 'armenian' if language == 'hy' else 'manrope'
+    heading_source = 'armenian-serif-source.ttf' if language == 'hy' else 'lora-source.ttf'
     draw_mark(canvas, 80, 72, 118)
     brand_font = ImageFont.truetype(str(ASSETS/'manrope-bold.ttf'), 100)
     draw.text((225, 55), 'armmate', font=brand_font, fill=BRAND_GREEN)
     for index, line in enumerate(lines):
         size = 64
         while True:
-            font = ImageFont.truetype(str(ASSETS/f'{family}-bold.ttf'), size)
+            font = ImageFont.truetype(str(ASSETS/heading_source), size)
+            font.set_variation_by_axes([600,100] if language == 'hy' else [600])
             if draw.textlength(line, font=font) <= 1030: break
             size -= 1
         draw.text((80, 225 + index*104), line, font=font, fill=INK if index == 0 else ORANGE)

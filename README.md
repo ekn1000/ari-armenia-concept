@@ -2,7 +2,7 @@
 
 A responsive Armenian, Russian and English website for a personal travel assistance service in Armenia. The primary service is a personal local assistant over WhatsApp or Telegram. In-person companionship is optional and agreed separately. Every customer receives an individual offer; there are no fixed packages, public prices or automatic price calculations.
 
-**Live site:** https://ekn1000.github.io/ari-armenia-concept/
+**Live site:** https://ekn1000.github.io/armmate/
 
 **Business specification:** [docs/BUSINESS_CONCEPT.md](docs/BUSINESS_CONCEPT.md)
 
@@ -80,4 +80,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow and [docs/LA
 
 Photo authors, source links, licences and modification details are in [assets/credits.json](assets/credits.json) and the footer dialog. Photos were resized, converted to WebP and are displayed with cropping. Their original licences continue to apply.
 
-Manrope and Noto Sans Armenian use SIL Open Font License 1.1; licence files are included in `assets/`.
+Manrope, Noto Sans Armenian, Lora and Noto Serif Armenian use SIL Open Font License 1.1; licence files are included in `assets/`. Heading fonts are hosted locally as compact WOFF2 files.

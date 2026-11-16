@@ -1,6 +1,6 @@
 # Developing ARMMATE together
 
-Clone `https://github.com/ekn1000/ari-armenia-concept.git`. A GitHub collaborator must accept their repository invitation before pushing. Write access is sufficient for normal code contributions; owner/admin access is not required.
+Clone `https://github.com/ekn1000/armmate.git`. A GitHub collaborator must accept their repository invitation before pushing. Write access is sufficient for normal code contributions; owner/admin access is not required.
 
 1. Pull the latest `main` and create a branch for the change.
 2. Run the static site locally as described in the README.
