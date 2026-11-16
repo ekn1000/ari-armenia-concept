@@ -1,4 +1,10 @@
 @font-face {
+  font-family: "ARMMATE Wordmark";
+  src: url("assets/outfit-wordmark.woff2") format("woff2");
+  font-weight: 650;
+  font-display: swap;
+}
+@font-face {
   font-family: Manrope;
   src: url("assets/manrope-regular.woff2") format("woff2");
   font-weight: 400 500;
@@ -22,18 +28,6 @@
   font-weight: 600 800;
   font-display: swap;
 }
-@font-face {
-  font-family: "ARMMATE Display";
-  src: url("assets/lora-heading.woff2") format("woff2");
-  font-weight: 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: "ARMMATE Armenian Display";
-  src: url("assets/armenian-serif-heading.woff2") format("woff2");
-  font-weight: 600;
-  font-display: swap;
-}
 :root {
   --ink: #243f35;
   --muted: #596552;
@@ -46,7 +40,6 @@
   --brand-orange: #c77944;
   --cream: #efeee4;
   --font: Manrope, Armenian, Arial, sans-serif;
-  --heading-font: "ARMMATE Display", Georgia, serif;
 }
 * {
   box-sizing: border-box;
@@ -66,7 +59,6 @@ body {
 }
 html[lang="hy"] {
   --font: Armenian, Manrope, Arial, sans-serif;
-  --heading-font: "ARMMATE Armenian Display", "ARMMATE Display", Georgia, serif;
 }
 button,
 input,
@@ -134,11 +126,6 @@ h1,
 h2,
 h3 {
   font-weight: 600;
-}
-h1,
-h2 {
-  font-family: var(--heading-font);
-  font-synthesis: none;
 }
 h2 {
   font-size: clamp(32px, 3.3vw, 46px);
@@ -243,9 +230,9 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: Manrope, Arial, sans-serif;
+  font-family: "ARMMATE Wordmark", Manrope, Arial, sans-serif;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 650;
   color: var(--brand-green);
   line-height: 1;
   letter-spacing: -1px;

@@ -188,7 +188,10 @@ async function build() {
       element.setAttribute("sizes", size);
       element.setAttribute("type", "image/png");
     }
-    $('link[rel="stylesheet"]').setAttribute("href", prefix + "styles.css");
+    $('link[rel="stylesheet"]').setAttribute(
+      "href",
+      prefix + "styles.css?v=outfit-1",
+    );
     if (!$('script[src$="seo.js"]')) {
       const script = document.createElement("script");
       script.setAttribute("defer", "");
@@ -218,16 +221,13 @@ async function build() {
       );
       document.head.append(font);
     }
-    const headingFont = document.createElement("link");
-    headingFont.setAttribute("rel", "preload");
-    headingFont.setAttribute("as", "font");
-    headingFont.setAttribute("type", "font/woff2");
-    headingFont.setAttribute("crossorigin", "anonymous");
-    headingFont.setAttribute(
-      "href",
-      `${prefix}assets/${language === "hy" ? "armenian-serif" : "lora"}-heading.woff2`,
-    );
-    document.head.append(headingFont);
+    const wordmarkFont = document.createElement("link");
+    wordmarkFont.setAttribute("rel", "preload");
+    wordmarkFont.setAttribute("as", "font");
+    wordmarkFont.setAttribute("type", "font/woff2");
+    wordmarkFont.setAttribute("crossorigin", "anonymous");
+    wordmarkFont.setAttribute("href", `${prefix}assets/outfit-wordmark.woff2`);
+    document.head.append(wordmarkFont);
     $(".noscript").textContent = {
       hy: "Բովանդակությունը կարող ես կարդալ առանց JavaScript-ի։ Հարցում պատրաստելու և ֆիլտրերն օգտագործելու համար միացրու JavaScript-ը։",
       ru: "Содержание доступно без JavaScript. Включите JavaScript, чтобы подготовить запрос и пользоваться фильтрами.",

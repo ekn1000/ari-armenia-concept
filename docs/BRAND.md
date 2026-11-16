@@ -26,11 +26,11 @@ The user's supplied reference is redrawn as a clean, symmetric vector: two peopl
 - Logo green: `#3d6d4e`; logo sun: `#c77944`; paper: `#f7f6f0`. Text and buttons retain darker `#243f35` and `#be4e2d` shades for contrast.
 - Manrope and Noto Sans Armenian are bundled under their included SIL Open Font Licenses.
 
-## Heading typography
+## Wordmark typography
 
-Main and section headings use a locally hosted display serif: **Lora SemiBold** for English/Russian and **Noto Serif Armenian SemiBold** for Armenian. Body copy and the approved logo wordmark retain their sans-serif faces. This gives the headlines a warmer editorial character while keeping forms and navigation easy to read.
+The lowercase `armmate` wordmark uses **Outfit at weight 650**, a rounded geometric sans serif. The website, outlined SVG logos, PNG logo and social cards use the same face. Page headings and body copy retain their original Manrope and Noto Sans Armenian faces.
 
-The committed source fonts and their OFL licences come from [Google Fonts / Lora](https://github.com/google/fonts/tree/main/ofl/lora) and [Google Fonts / Noto Serif Armenian](https://github.com/google/fonts/tree/main/ofl/notoserifarmenian). `scripts/optimize-assets.py` instantiates weight 600, subsets the relevant scripts and creates the small WOFF2 files. The derived family names are `ARMMATE Display` and `ARMMATE Armenian Display`; original copyright and licence information are retained. Each page preloads its heading face and uses `font-display: swap`.
+The source font and its SIL Open Font License come from [Google Fonts / Outfit](https://github.com/google/fonts/tree/main/ofl/outfit). `scripts/optimize-assets.py` creates the static `ARMMATE Wordmark` face and a small WOFF2 subset containing the logo lettering. Each page preloads this local subset with `font-display: swap`.
 
 Regenerate these files with `python scripts/optimize-assets.py`. The page generator reads the generated `brand-mark.svg` into the inline symbol, so the site and downloadable files share the same geometry. After changing assets, the page, translations or metadata, run `npm run build`.
 

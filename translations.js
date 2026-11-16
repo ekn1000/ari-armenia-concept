@@ -289,7 +289,7 @@ window.ARMMATE_TRANSLATIONS = {
       "Լուսանկարները Wikimedia Commons-ից են։ Դրանք փոքրացվել են, փոխարկվել WebP ձևաչափի և ցուցադրվում են կադրված։",
     source: "Բնօրինակ",
     fontCredits:
-      "Տառատեսակներ՝ Manrope, Noto Sans Armenian, Lora և Noto Serif Armenian, SIL Open Font License 1.1։",
+      "Տառատեսակներ՝ Manrope, Noto Sans Armenian և Outfit, SIL Open Font License 1.1։",
     creditsError:
       "Լուսանկարների աղբյուրները հասանելի են assets/credits.json ֆայլում։",
   },
@@ -581,7 +581,7 @@ window.ARMMATE_TRANSLATIONS = {
       "Фотографии с Wikimedia Commons: уменьшены, преобразованы в WebP и отображаются с кадрированием.",
     source: "Оригинал",
     fontCredits:
-      "Шрифты: Manrope, Noto Sans Armenian, Lora и Noto Serif Armenian, SIL Open Font License 1.1.",
+      "Шрифты: Manrope, Noto Sans Armenian и Outfit, SIL Open Font License 1.1.",
     creditsError: "Источники фотографий доступны в файле assets/credits.json.",
   },
   en: {
@@ -873,7 +873,7 @@ window.ARMMATE_TRANSLATIONS = {
       "Images from Wikimedia Commons. Resized, converted to WebP and displayed with cropping.",
     source: "Original image",
     fontCredits:
-      "Fonts: Manrope, Noto Sans Armenian, Lora and Noto Serif Armenian, SIL Open Font License 1.1.",
+      "Fonts: Manrope, Noto Sans Armenian and Outfit, SIL Open Font License 1.1.",
     creditsError: "Photo sources are available in assets/credits.json.",
   },
 };

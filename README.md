@@ -80,4 +80,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow and [docs/LA
 
 Photo authors, source links, licences and modification details are in [assets/credits.json](assets/credits.json) and the footer dialog. Photos were resized, converted to WebP and are displayed with cropping. Their original licences continue to apply.
 
-Manrope, Noto Sans Armenian, Lora and Noto Serif Armenian use SIL Open Font License 1.1; licence files are included in `assets/`. Heading fonts are hosted locally as compact WOFF2 files.
+Manrope, Noto Sans Armenian and Outfit use SIL Open Font License 1.1; licence files are included in `assets/`. The logo wordmark uses a locally hosted Outfit subset; page headings retain the original sans-serif fonts.

@@ -15,28 +15,18 @@ ORANGE = '#be4e2d'
 BRAND_GREEN = '#3d6d4e'
 BRAND_ORANGE = '#c77944'
 PAPER = '#f7f6f0'
-
-
-def heading_font(source, output, family):
-    font = TTFont(ASSETS/source, recalcTimestamp=False)
-    axes = {axis.axisTag: 600 if axis.axisTag == 'wght' else axis.defaultValue for axis in font['fvar'].axes}
-    font = instantiateVariableFont(font, axes, inplace=True)
-    font.recalcTimestamp = False
-    # Keep Latin, Cyrillic, Armenian and punctuation used by the three locales.
-    options = Options()
-    options.layout_features = ['*']
-    subset = Subsetter(options=options)
-    subset.populate(unicodes=list(range(0x20,0x250))+list(range(0x400,0x590))+list(range(0x2000,0x2070))+[0x20ac,0x2116])
-    subset.subset(font)
-    font['name'].names = [record for record in font['name'].names if record.nameID not in [1,2,3,4,6,16,17,25]]
-    for name_id, value in [(1,family),(2,'SemiBold'),(3,family+';600'),(4,family+' SemiBold'),(6,family.replace(' ','')+'-SemiBold'),(16,family),(17,'SemiBold')]:
-        font['name'].setName(value,name_id,3,1,0x409)
-    font.flavor = 'woff2'
-    font.save(ASSETS/output)
-
-
-heading_font('lora-source.ttf','lora-heading.woff2','ARMMATE Display')
-heading_font('armenian-serif-source.ttf','armenian-serif-heading.woff2','ARMMATE Armenian Display')
+# Keep the rounded wordmark identical across the website and vector downloads.
+wordmark_font = instantiateVariableFont(TTFont(ASSETS / 'outfit-source.ttf', recalcTimestamp=False), {'wght': 650}, inplace=True)
+wordmark_font.recalcTimestamp = False
+wordmark_font['name'].names = [record for record in wordmark_font['name'].names if record.nameID not in [1,2,3,4,6,16,17,25]]
+for name_id, value in [(1,'ARMMATE Wordmark'),(2,'SemiBold'),(3,'ARMMATE Wordmark;650'),(4,'ARMMATE Wordmark SemiBold'),(6,'ARMMATEWordmark-SemiBold'),(16,'ARMMATE Wordmark'),(17,'SemiBold')]:
+    wordmark_font['name'].setName(value,name_id,3,1,0x409)
+wordmark_font.save(ASSETS/'outfit-wordmark.ttf')
+subsetter = Subsetter(options=Options())
+subsetter.populate(text='armmate')
+subsetter.subset(wordmark_font)
+wordmark_font.flavor = 'woff2'
+wordmark_font.save(ASSETS/'outfit-wordmark.woff2')
 
 MARK_WIDTH, MARK_HEIGHT = 480, 306
 # A symmetric, clean redraw of the supplied two-person / letter-m reference.
@@ -98,7 +88,7 @@ def draw_mark(canvas, x, y, width, primary=BRAND_GREEN, accent=BRAND_ORANGE):
 
 
 # Vector outlines keep the standalone wordmark independent of installed fonts.
-font = TTFont(ASSETS / 'manrope-bold.ttf', recalcTimestamp=False)
+font = TTFont(ASSETS / 'outfit-wordmark.ttf', recalcTimestamp=False)
 glyphs = font.getGlyphSet()
 cmap = font.getBestCmap()
 scale = 98 / font['head'].unitsPerEm
@@ -153,15 +143,13 @@ for language, (lines, subtitle) in copy.items():
     canvas = Image.new('RGB', (1200, 630), PAPER)
     draw = ImageDraw.Draw(canvas)
     family = 'armenian' if language == 'hy' else 'manrope'
-    heading_source = 'armenian-serif-source.ttf' if language == 'hy' else 'lora-source.ttf'
     draw_mark(canvas, 80, 72, 118)
-    brand_font = ImageFont.truetype(str(ASSETS/'manrope-bold.ttf'), 100)
+    brand_font = ImageFont.truetype(str(ASSETS/'outfit-wordmark.ttf'), 100)
     draw.text((225, 55), 'armmate', font=brand_font, fill=BRAND_GREEN)
     for index, line in enumerate(lines):
         size = 64
         while True:
-            font = ImageFont.truetype(str(ASSETS/heading_source), size)
-            font.set_variation_by_axes([600,100] if language == 'hy' else [600])
+            font = ImageFont.truetype(str(ASSETS/f'{family}-bold.ttf'), size)
             if draw.textlength(line, font=font) <= 1030: break
             size -= 1
         draw.text((80, 225 + index*104), line, font=font, fill=INK if index == 0 else ORANGE)
@@ -182,14 +170,14 @@ avatar.save(ASSETS/'brand-mark.png', optimize=True)
 # Transparent horizontal PNG for documents and social profiles.
 wordmark = Image.new('RGBA', (logo_width*3, 144*3))
 draw_mark(wordmark, 24, 66, 480)
-ImageDraw.Draw(wordmark).text((600,333), 'armmate', font=ImageFont.truetype(str(ASSETS/'manrope-bold.ttf'),294), fill=BRAND_GREEN, anchor='ls')
+ImageDraw.Draw(wordmark).text((600,333), 'armmate', font=ImageFont.truetype(str(ASSETS/'outfit-wordmark.ttf'),294), fill=BRAND_GREEN, anchor='ls')
 wordmark.save(ASSETS/'logo.png', optimize=True)
 
 # A compact stacked lockup follows the supplied reference, with outlined type.
 stack_width, stack_height = 720, 600
 stacked_paths = []
 for text, family, size, baseline, tracking, color in [
-    ('armmate', 'manrope-bold', 108, 445, 1.5, BRAND_GREEN),
+    ('armmate', 'outfit-wordmark', 108, 445, 1.5, BRAND_GREEN),
     ('your friend in armenia', 'manrope-regular', 28, 511, 3.5, BRAND_ORANGE),
 ]:
     face = TTFont(ASSETS/f'{family}.ttf', recalcTimestamp=False)
