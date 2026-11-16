@@ -190,13 +190,13 @@ async function build() {
     }
     $('link[rel="stylesheet"]').setAttribute(
       "href",
-      prefix + "styles.css?v=outfit-1",
+      prefix + "styles.css?v=experience-modal-1",
     );
     if (!$('script[src$="seo.js"]')) {
       const script = document.createElement("script");
       script.setAttribute("defer", "");
       script.setAttribute("src", prefix + "seo.js");
-      $('script[src$="app.js"]').before(script);
+      $('script[src*="app.js"]').before(script);
     }
     document
       .querySelectorAll("script[src]")
@@ -206,6 +206,10 @@ async function build() {
           prefix + path.posix.basename(el.getAttribute("src")),
         ),
       );
+    $('script[src*="app.js"]').setAttribute(
+      "src",
+      prefix + "app.js?v=experience-modal-1",
+    );
     document
       .querySelectorAll('link[rel="preload"][as="font"]')
       .forEach((el) => el.remove());

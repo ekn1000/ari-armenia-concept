@@ -5,7 +5,7 @@ const seo = window.ARMMATE_SEO;
 // Resolve shared resources before a language switch changes the visible URL.
 const siteRoot = new URL(
   ".",
-  document.querySelector('script[src$="app.js"]').src,
+  document.querySelector('script[src*="app.js"]').src,
 );
 const assetUrl = (filename) => new URL("assets/" + filename, siteRoot).href;
 const languageUrl = (lang) => new URL(seo.paths[lang], siteRoot);
@@ -184,12 +184,17 @@ function renderFaq() {
     .join("");
 }
 
-function openDialog(html) {
+function openDialog(html, { experience = false } = {}) {
   lastDialogTrigger = document.activeElement;
+  dialog.classList.toggle("dialog-experience", experience);
   $("#dialog-body").innerHTML = html;
   $("#dialog-body h2").id = "dialog-title";
   dialog.setAttribute("aria-labelledby", "dialog-title");
   dialog.showModal();
+  if (experience) {
+    dialog.focus({ preventScroll: true });
+    dialog.scrollTop = 0;
+  }
   document.body.style.overflow = "hidden";
 }
 
@@ -199,6 +204,7 @@ function showExperience(id) {
   if (!card) return;
   openDialog(
     `<img src="${assetUrl(card.image + "-800.webp")}" alt="${escapeHtml(card.alt)}"><span class="eyebrow">${card.location}</span><h2>${card.title}</h2><p>${card.detail}</p><p class="demo-notice">${t.ideaNote}</p><button class="button" type="button" data-discuss>${t.choose}${icon("diagonal")}</button>`,
+    { experience: true },
   );
 }
 

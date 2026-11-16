@@ -1067,6 +1067,16 @@ textarea:focus {
   background: #10261dd1;
   backdrop-filter: blur(6px);
 }
+.dialog-experience {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.dialog-experience::-webkit-scrollbar {
+  display: none;
+}
+.dialog-experience .dialog-close {
+  display: none;
+}
 .dialog-content {
   position: relative;
   padding: 40px;
