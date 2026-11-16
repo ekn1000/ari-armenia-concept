@@ -15,8 +15,8 @@ vm.runInNewContext(
   fs.readFileSync(path.join(root, "site-config.js"), "utf8"),
   sandbox,
 );
-const translations = sandbox.window.ARI_TRANSLATIONS;
-const contacts = sandbox.window.ARI_CONTACT || {};
+const translations = sandbox.window.ARMMATE_TRANSLATIONS;
+const contacts = sandbox.window.ARMMATE_CONTACT || {};
 const source = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const check = process.argv.includes("--check");
 const escape = (value) =>
@@ -84,7 +84,7 @@ async function build() {
       anchor.setAttribute("href", prefix + seo.paths[lang] || "./");
       anchor.setAttribute(
         "aria-label",
-        el.textContent +
+        el.textContent.trim() +
           " — " +
           { hy: "Հայերեն", ru: "Русский", en: "English" }[lang],
       );
@@ -147,7 +147,10 @@ async function build() {
     preload.setAttribute("imagesrcset", heroSrcset);
     preload.setAttribute("imagesizes", sizes);
     preload.setAttribute("type", "image/webp");
-    $('link[rel="icon"]').setAttribute("href", prefix + "assets/favicon.svg");
+    $('link[rel="icon"]').setAttribute(
+      "href",
+      prefix + "assets/favicon.svg?v=armmate",
+    );
     for (const [rel, filename, size] of [
       ["icon", "icon-48.png", "48x48"],
       ["apple-touch-icon", "icon-180.png", "180x180"],
@@ -160,7 +163,10 @@ async function build() {
         document.head.append(element);
       }
       element.setAttribute("rel", rel);
-      element.setAttribute("href", prefix + "assets/" + filename);
+      element.setAttribute(
+        "href",
+        prefix + "assets/" + filename + "?v=armmate",
+      );
       element.setAttribute("sizes", size);
       element.setAttribute("type", "image/png");
     }

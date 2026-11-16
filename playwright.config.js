@@ -13,7 +13,7 @@ module.exports = defineConfig({
     trace: "retain-on-failure",
   },
   webServer: {
-    command: "python -m http.server 4187 --bind 127.0.0.1",
+    command: "npm start",
     url: "http://127.0.0.1:4187",
     reuseExistingServer: !process.env.CI,
     stdout: "ignore",

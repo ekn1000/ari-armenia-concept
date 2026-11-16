@@ -46,8 +46,8 @@ for (const lang of ["hy", "ru", "en"]) {
     await page.goto(`/?lang=${lang}#plan`);
     await expect(page.locator("html")).toHaveAttribute("lang", lang);
     const audit = await page.evaluate(() => {
-      const t = window.ARI_TRANSLATIONS[document.documentElement.lang];
-      const dictionaryKeys = Object.keys(window.ARI_TRANSLATIONS.hy).sort();
+      const t = window.ARMMATE_TRANSLATIONS[document.documentElement.lang];
+      const dictionaryKeys = Object.keys(window.ARMMATE_TRANSLATIONS.hy).sort();
       return {
         missing: [
           ...document.querySelectorAll(
@@ -110,6 +110,7 @@ for (const lang of ["hy", "ru", "en"]) {
     const downloadPromise = page.waitForEvent("download");
     await page.locator("[data-download]").click();
     const download = await downloadPromise;
+    expect(download.suggestedFilename()).toMatch(/^ARMMATE-enquiry-/);
     const file = await download.path();
     expect(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, "")).toBe(text);
     expect(download.suggestedFilename()).toContain(lang + ".txt");
@@ -168,7 +169,7 @@ test("verified contact configuration produces encoded drafts without sending", a
   await page.route("**/site-config.js", (route) =>
     route.fulfill({
       contentType: "application/javascript",
-      body: "window.ARI_CONTACT={whatsapp:'15555550123',telegram:'ari_example'};",
+      body: "window.ARMMATE_CONTACT={whatsapp:'15555550123',telegram:'armmate_example'};",
     }),
   );
   await page.goto("/?lang=en");
@@ -200,7 +201,7 @@ test("invalid messenger configuration never becomes a link", async ({
   await page.route("**/site-config.js", (route) =>
     route.fulfill({
       contentType: "application/javascript",
-      body: "window.ARI_CONTACT={whatsapp:'javascript:alert(1)',telegram:'https://wrong.example'};",
+      body: "window.ARMMATE_CONTACT={whatsapp:'javascript:alert(1)',telegram:'https://wrong.example'};",
     }),
   );
   await page.goto("/?lang=en");

@@ -5,7 +5,7 @@
   const locales = { hy: "hy_AM", ru: "ru_RU", en: "en_GB" };
   const paths = { hy: "", ru: "ru/", en: "en/" };
   const languages = Object.keys(paths);
-  const updated = "2026-11-15";
+  const updated = "2026-11-16";
 
   function pageUrl(language) {
     return new URL(paths[language], baseUrl).href;
@@ -22,14 +22,14 @@
         {
           "@type": "Organization",
           "@id": organization,
-          name: "ARI",
+          name: "ARMMATE",
           url: baseUrl,
           logo: { "@type": "ImageObject", url: baseUrl + "assets/logo.svg" },
         },
         {
           "@type": "WebSite",
           "@id": website,
-          name: "ARI",
+          name: "ARMMATE",
           url: baseUrl,
           publisher: { "@id": organization },
           inLanguage: languages,
@@ -45,7 +45,7 @@
           about: { "@id": service },
           primaryImageOfPage: {
             "@type": "ImageObject",
-            url: baseUrl + `assets/social-${language}.png`,
+            url: baseUrl + `assets/social-armmate-${language}.png`,
             width: 1200,
             height: 630,
           },
@@ -110,12 +110,16 @@
     meta("name", "description", copy.description);
     meta("name", "robots", "index, follow, max-image-preview:large");
     meta("property", "og:type", "website");
-    meta("property", "og:site_name", "ARI");
+    meta("property", "og:site_name", "ARMMATE");
     meta("property", "og:title", copy.title);
     meta("property", "og:description", copy.description);
     meta("property", "og:url", pageUrl(language));
     meta("property", "og:locale", locales[language]);
-    meta("property", "og:image", baseUrl + `assets/social-${language}.png`);
+    meta(
+      "property",
+      "og:image",
+      baseUrl + `assets/social-armmate-${language}.png`,
+    );
     meta("property", "og:image:type", "image/png");
     meta("property", "og:image:width", "1200");
     meta("property", "og:image:height", "630");
@@ -132,7 +136,11 @@
     meta("name", "twitter:card", "summary_large_image");
     meta("name", "twitter:title", copy.title);
     meta("name", "twitter:description", copy.description);
-    meta("name", "twitter:image", baseUrl + `assets/social-${language}.png`);
+    meta(
+      "name",
+      "twitter:image",
+      baseUrl + `assets/social-armmate-${language}.png`,
+    );
     meta("name", "twitter:image:alt", copy.footerTag);
     link("canonical", pageUrl(language));
     for (const other of languages)
@@ -163,5 +171,5 @@
     updateDocument,
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
-  else global.ARI_SEO = api;
+  else global.ARMMATE_SEO = api;
 })(typeof window !== "undefined" ? window : globalThis);

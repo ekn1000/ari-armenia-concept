@@ -141,10 +141,9 @@ p {
   line-height: 1.7;
 }
 .tiny-sun {
-  font-size: 28px;
-  line-height: 1;
+  width: 28px;
+  height: 24px;
   color: var(--orange);
-  font-family: Arial, sans-serif;
 }
 .skip {
   position: fixed;
@@ -222,21 +221,20 @@ p {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: Manrope, Arial, sans-serif;
-  font-size: 49px;
+  font-size: 36px;
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -3px;
+  letter-spacing: -1.8px;
   flex-shrink: 0;
 }
-.brand-sun {
-  font-size: 49px;
-  color: var(--orange);
-  line-height: 1;
-  letter-spacing: 0;
-  font-family: Arial, sans-serif;
-  margin-top: 6px;
+.brand-mark {
+  width: 42px;
+  height: 33px;
+}
+.brand-accent {
+  stroke: var(--mark-accent, var(--orange));
 }
 .brand-dot {
   color: var(--orange);
@@ -433,10 +431,13 @@ p {
   max-width: 270px;
 }
 .image-spark {
-  font-family: Arial, sans-serif;
-  font-size: 66px;
-  line-height: 1;
+  width: 66px;
+  height: 50px;
   color: #f2e5c8;
+}
+.image-spark,
+.how-sun {
+  --mark-accent: currentColor;
 }
 .local-note {
   position: absolute;
@@ -723,8 +724,8 @@ p {
 }
 .small-spark {
   color: var(--orange);
-  font-family: Arial, sans-serif;
-  font-size: 25px;
+  width: 25px;
+  height: 21px;
 }
 .how-panel {
   background: var(--green);
@@ -769,9 +770,8 @@ p {
 }
 .how-sun {
   position: absolute;
-  font-family: Arial, sans-serif;
-  font-size: 290px;
-  line-height: 1;
+  width: 290px;
+  height: 220px;
   right: -70px;
   bottom: -144px;
   color: #ffffff06;
@@ -1000,10 +1000,7 @@ textarea:focus {
   padding-bottom: 40px;
 }
 .footer .brand {
-  font-size: 44px;
-}
-.footer .brand-sun {
-  font-size: 44px;
+  font-size: 36px;
 }
 .footer-top > p {
   font-size: 12px;
@@ -1349,7 +1346,8 @@ textarea:focus {
     max-width: none;
   }
   .image-spark {
-    font-size: 50px;
+    width: 50px;
+    height: 38px;
   }
   .local-note {
     min-width: 215px;
@@ -1480,11 +1478,13 @@ textarea:focus {
     gap: 12px;
   }
   .brand {
-    font-size: 41px;
+    font-size: 28px;
     gap: 6px;
+    letter-spacing: -1.4px;
   }
-  .brand-sun {
-    font-size: 40px;
+  .brand-mark {
+    width: 31px;
+    height: 25px;
   }
   .header-actions {
     gap: 14px;
@@ -1738,7 +1738,8 @@ textarea:focus {
   .how-sun {
     right: -65px;
     bottom: -35px;
-    font-size: 230px;
+    width: 230px;
+    height: 175px;
   }
   .steps {
     z-index: 1;
@@ -1838,10 +1839,7 @@ textarea:focus {
     width: 18px;
   }
   .footer .brand {
-    font-size: 40px;
-  }
-  .footer .brand-sun {
-    font-size: 40px;
+    font-size: 28px;
   }
   .footer-bottom {
     display: flex;
@@ -1880,7 +1878,8 @@ textarea:focus {
     margin-top: 12px;
   }
   .image-spark {
-    font-size: 48px;
+    width: 48px;
+    height: 36px;
   }
 }
 /* Personal-assistance service sections */
@@ -1898,9 +1897,9 @@ h4 {
   line-height: 1.15;
   letter-spacing: -2.5px;
 }
-html[lang="hy"] .hero h1 span {
-  font-size: 0.7em;
-  letter-spacing: -1.5px;
+html[lang="hy"] .hero h1 {
+  font-size: clamp(35px, 4vw, 58px);
+  letter-spacing: -1.8px;
 }
 .hero-description {
   font-size: 15px;
@@ -2146,7 +2145,8 @@ html[lang="hy"] .hero h1 span {
   font-size: 14px;
 }
 .form-heading .tiny-sun {
-  font-size: 25px;
+  width: 25px;
+  height: 21px;
 }
 .plan-form .form-submit {
   font-size: 13px;
@@ -2261,6 +2261,9 @@ html[lang="hy"] .hero h1 span {
   }
 }
 @media (max-width: 900px) {
+  html[lang="hy"] .hero h1 {
+    font-size: 32px;
+  }
   .hero h1 {
     font-size: 43px;
   }
@@ -2330,6 +2333,9 @@ html[lang="hy"] .hero h1 span {
   }
 }
 @media (max-width: 650px) {
+  html[lang="hy"] .hero h1 {
+    font-size: clamp(33px, 9vw, 52px);
+  }
   .hero h1 {
     font-size: clamp(39px, 10.5vw, 60px);
     letter-spacing: -1.8px;
@@ -2450,7 +2456,8 @@ html[lang="hy"] .hero h1 span {
     font-size: 12px;
   }
   .form-heading .tiny-sun {
-    font-size: 22px;
+    width: 22px;
+    height: 19px;
   }
   .plan-form .form-note {
     font-size: 10px;
@@ -2519,10 +2526,18 @@ html[lang="hy"] .hero h1 span {
     display: none;
   }
   .brand {
-    font-size: 36px;
+    font-size: 23px;
+    letter-spacing: -1px;
   }
-  .brand-sun {
-    font-size: 35px;
+  .brand-mark {
+    width: 26px;
+    height: 21px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .footer-cta {
+    justify-content: flex-start;
   }
   .header-actions {
     gap: 6px;

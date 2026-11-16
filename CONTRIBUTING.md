@@ -1,4 +1,4 @@
-# Developing ARI together
+# Developing ARMMATE together
 
 Clone `https://github.com/ekn1000/ari-armenia-concept.git`. A GitHub collaborator must accept their repository invitation before pushing. Write access is sufficient for normal code contributions; owner/admin access is not required.
 

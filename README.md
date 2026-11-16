@@ -1,4 +1,4 @@
-# ARI — Explore Armenia. We've got your back.
+# ARMMATE — Your person in Armenia.
 
 A responsive Armenian, Russian and English website for a personal travel assistance service in Armenia. The primary service is a personal local assistant over WhatsApp or Telegram. In-person companionship is optional and agreed separately. Every customer receives an individual offer; there are no fixed packages, public prices or automatic price calculations.
 
@@ -6,12 +6,14 @@ A responsive Armenian, Russian and English website for a personal travel assista
 
 **Business specification:** [docs/BUSINESS_CONCEPT.md](docs/BUSINESS_CONCEPT.md)
 
+**Brand and logo:** [docs/BRAND.md](docs/BRAND.md). Slogan: “Քո մարդը Հայաստանում։ / Твой человек в Армении. / Your person in Armenia.”
+
 ## Run locally
 
 The website serves committed static files and has no runtime dependencies. To preview it with Python 3:
 
 ```sh
-python -m http.server 4187 --bind 127.0.0.1
+python scripts/serve.py
 ```
 
 Open http://127.0.0.1:4187. Armenian is at `/`, Russian at `/ru/`, and English at `/en/`. Each URL contains the complete translated HTML, including without JavaScript. Legacy `?lang=hy|ru|en` links still work with JavaScript. The original `#plan` enquiry anchor remains available.
@@ -33,12 +35,12 @@ Open http://127.0.0.1:4187. Armenian is at `/`, Russian at `/ru/`, and English a
 
 ## Contact configuration and current limitation
 
-**Official ARI contact details have not been provided.** Both destinations in `site-config.js` are intentionally empty. The published preview says so, never invents a destination and never claims that a request was sent.
+**Official ARMMATE contact details have not been provided.** Both destinations in `site-config.js` are intentionally empty. The published preview says so, never invents a destination and never claims that a request was sent.
 
 Once verified business contacts are available, edit:
 
 ```js
-window.ARI_CONTACT = Object.freeze({
+window.ARMMATE_CONTACT = Object.freeze({
   whatsapp: "", // International number, digits only, without + or spaces.
   telegram: "", // Business username, without @ or https://t.me/.
 });
@@ -48,7 +50,7 @@ Only valid destination formats produce contact buttons. WhatsApp opens `https://
 
 The form prepares a message containing the visitor's name, travel dates, group size, desired support, optional companion hours and needs. It does not send a network request with these details. Nothing is submitted automatically. Visitors review the text, choose a configured messenger and confirm sending there. Without a configured contact, they can only copy or download the draft.
 
-Enquiries are not bookings or payments. ARI discusses requirements and pricing manually before confirmation. No backend, payment processor, automatic assistant assignment or pricing engine is implemented.
+Enquiries are not bookings or payments. ARMMATE discusses requirements and pricing manually before confirmation. No backend, payment processor, automatic assistant assignment or pricing engine is implemented.
 
 The site stores only the language preference in local storage. Form details are not persisted. Opening a messenger transfers the draft to that external service; public contact information must never contain secrets or personal credentials.
 

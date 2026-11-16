@@ -2,7 +2,7 @@
 
 ## What is implemented
 
-ARI has three complete, crawlable HTML pages:
+ARMMATE has three complete, crawlable HTML pages:
 
 | Language | Canonical URL                                     |
 | -------- | ------------------------------------------------- |
@@ -18,7 +18,7 @@ The public root always opens in Armenian; explicit `/ru/` and `/en/` paths take 
 
 `seo.js` is shared by the static generator and the browser. It keeps metadata and JSON-LD consistent when switching languages without losing an in-progress enquiry.
 
-The JSON-LD graph describes the ARI organization, website, localized page, personal assistance service in Armenia and the visible FAQ. It contains no invented prices, reviews, ratings, business addresses, phone numbers or opening hours. The FAQ markup matches the visible questions and answers; it does not imply eligibility for Google's FAQ rich results, which are restricted to particular types of sites.
+The JSON-LD graph describes the ARMMATE organization, website, localized page, personal assistance service in Armenia and the visible FAQ. It contains no invented prices, reviews, ratings, business addresses, phone numbers or opening hours. The FAQ markup matches the visible questions and answers; it does not imply eligibility for Google's FAQ rich results, which are restricted to particular types of sites.
 
 The sitemap lists only the three canonical language pages with reciprocal alternatives. `404.html` carries `noindex, follow` and offers links back to the language homepages. Images have translated alt text, responsive WebP sources and reserved layout dimensions. The hero has matching responsive preload hints. Fonts are local WOFF2 files with `font-display: swap` and language-specific preload hints. Original photo attribution and licences apply to the derivative images too.
 

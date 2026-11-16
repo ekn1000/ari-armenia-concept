@@ -1,18 +1,18 @@
 "use strict";
 
-window.ARI_TRANSLATIONS = {
+window.ARMMATE_TRANSLATIONS = {
   hy: {
-    title: "Անձնական տուրիստական ասիստենտ Հայաստանում | ARI",
+    title: "Անձնական տուրիստական ասիստենտ Հայաստանում | ARMMATE",
     description:
-      "Քո անձնական ասիստենտը Հայաստանում։ Աջակցություն WhatsApp-ով կամ Telegram-ով, ընտրովի անձնական ուղեկցում և անհատական առաջարկ։",
+      "ARMMATE՝ քո անձնական ասիստենտը Հայաստանում։ Աջակցություն WhatsApp-ով կամ Telegram-ով, ընտրովի անձնական ուղեկցում և անհատական առաջարկ։",
     skip: "Անցնել բովանդակությանը",
     navServices: "Ծառայություններ",
     navHow: "Ինչպես է աշխատում",
     navPricing: "Անհատական գին",
     offerCta: "Ստանալ իմ առաջարկը",
-    contactCta: "Կապվել ARI-ի հետ",
+    contactCta: "Կապվել ARMMATE-ի հետ",
     heroLabel: "Քո անձնական ասիստենտը Հայաստանում",
-    heroTitle: "Բացահայտիր<br>Հայաստանը։<br><span>Մենք քո կողքին ենք։</span>",
+    heroTitle: "Քո մարդը<br><span>Հայաստանում։</span>",
     heroDescription:
       "Ճանապարհորդիր ինքնուրույն՝ իմանալով, որ ունես քո վստահելի տեղացի մարդուն։ Խորհուրդներ, գործնական աջակցություն և օգնություն, երբ դրա կարիքն ունես։",
     heroExplore: "Ինչով կարող ենք օգնել",
@@ -24,12 +24,12 @@ window.ARI_TRANSLATIONS = {
     strip1: "Առցանց անձնական աջակցություն",
     strip2: "Ընտրովի անձնական ուղեկցում",
     strip3: "Քո կարիքներով որոշվող գին",
-    introLabel: "ԲԱՐԵՎ, ՄԵՆՔ ARI-Ն ԵՆՔ",
+    introLabel: "ԲԱՐԵՎ, ՄԵՆՔ ARMMATE-Ն ԵՆՔ",
     introTitle: "Քո ազատությունը։<br>Մեր տեղական փորձը։",
     introText:
       "Հայաստանը վայելելու համար պարտադիր չէ ամեն ինչ իմանալ Հայաստանի մասին։ Բավական է ունենալ վստահելի տեղացի ասիստենտ, որին կարող ես դիմել քո այցի ընթացքում։",
     introSub:
-      "ARI-ն անձնական աջակցության ծառայություն է, ոչ թե ավանդական տուրիստական գործակալություն կամ միայն էքսկուրսիաների ամրագրման հարթակ։ Դու ես որոշում՝ ուր գնալ և երբ օգնություն ստանալ։",
+      "ARMMATE-ն անձնական աջակցության ծառայություն է, ոչ թե ավանդական տուրիստական գործակալություն կամ միայն էքսկուրսիաների ամրագրման հարթակ։ Դու ես որոշում՝ ուր գնալ և երբ օգնություն ստանալ։",
     value1Title: "Մեկ վստահելի կապ",
     value1Text:
       "Տարբեր կոնտակտների փոխարեն՝ քո ասիստենտը, ով արդեն գիտի քո ծրագրերն ու նախասիրությունները։",
@@ -90,14 +90,14 @@ window.ARI_TRANSLATIONS = {
     partnersText:
       "Օդանավակայանի տրանսֆեր, մասնավոր վարորդ, էքսկուրսիա, հյուրանոց, ռեստորան կամ միջոցառման տոմս․ օգնում ենք գտնել և կազմակերպել տեղական գործընկերների միջոցով։",
     partnersCost:
-      "Գործընկերների ծառայությունները կարող են ունենալ առանձին վճար։ Դրանք առանձնացվում են ARI-ի աջակցության վճարից և նախապես համաձայնեցվում են։",
+      "Գործընկերների ծառայությունները կարող են ունենալ առանձին վճար։ Դրանք առանձնացվում են ARMMATE-ի աջակցության վճարից և նախապես համաձայնեցվում են։",
     howLabel: "ԵՐԵՔ ՊԱՐԶ ՔԱՅԼ",
-    howTitle: "Բացահայտիր ազատ։<br>Մենք քո կողքին ենք։",
+    howTitle: "Քո այցը։<br>Աջակցությունը՝ քո ձևով։",
     howIntro:
       "Առաջին զրույցից մինչև այցիդ վերջին օրը՝ ամեն ինչ պարզ և նախապես համաձայնեցված։",
     step1Title: "Պատմիր քո այցի մասին",
     step1Text:
-      "Կապվիր ARI-ի հետ, նշիր ամսաթվերը և պատմիր՝ ինչ աջակցություն է քեզ պետք։ Միասին կհստակեցնենք կարիքներդ։",
+      "Կապվիր ARMMATE-ի հետ, նշիր ամսաթվերը և պատմիր՝ ինչ աջակցություն է քեզ պետք։ Միասին կհստակեցնենք կարիքներդ։",
     step2Title: "Համաձայնեցրու քո անհատական առաջարկը",
     step2Text:
       "Կստանաս անհատական գին՝ աջակցության ծավալով, ժամերով և առանձին ծախսերով։ Հաստատումից և համաձայնեցված վճարումից հետո կստանաս ասիստենտիդ կոնտակտը։",
@@ -118,7 +118,7 @@ window.ARI_TRANSLATIONS = {
       "Լրացուցիչ ծառայությունները և անհատական պահանջները։",
     ],
     pricingAgreement:
-      "Արժեքը քննարկվում է անձամբ և համաձայնեցվում մինչև ծառայության հաստատումը։ ARI-ի վճարը և երրորդ կողմերի ծախսերը ներկայացվում են առանձին։",
+      "Արժեքը քննարկվում է անձամբ և համաձայնեցվում մինչև ծառայության հաստատումը։ ARMMATE-ի վճարը և երրորդ կողմերի ծախսերը ներկայացվում են առանձին։",
     experiencesLabel: "ՈՒՐ ԷԼ ԳՆԱՍ՝ ՄԻ ԿԱՊԻ ՀԵՌԱՎՈՐՈՒԹՅԱՄԲ",
     experiencesTitle: "Քո Հայաստանը։ Քո ձևով։",
     experiencesIntro:
@@ -158,7 +158,7 @@ window.ARI_TRANSLATIONS = {
         title: "Անշտապ՝ կանաչի մեջ",
         text: "Անտառային տեսարաններ ու հանգիստ օր․ գործնական հարցերում՝ տեղական աջակցություն։",
         detail:
-          "Դիլիջանի շուրջ օրդ պլանավորելիս կարող ես խորհուրդ հարցնել տեղանքի, եղանակի կամ ճանապարհների մասին և օգնություն ստանալ փոխադրում գտնելու հարցում։ Երթուղին ու ծառայությունները կախված են հասանելիությունից։ ARI-ն փրկարար կամ շտապ օգնության ծառայություն չէ։",
+          "Դիլիջանի շուրջ օրդ պլանավորելիս կարող ես խորհուրդ հարցնել տեղանքի, եղանակի կամ ճանապարհների մասին և օգնություն ստանալ փոխադրում գտնելու հարցում։ Երթուղին ու ծառայությունները կախված են հասանելիությունից։ ARMMATE-ն փրկարար կամ շտապ օգնության ծառայություն չէ։",
         alt: "Հաղարծնի վանքը՝ Դիլիջանի կանաչ անտառներում",
       },
     ],
@@ -176,11 +176,11 @@ window.ARI_TRANSLATIONS = {
       "Ծառայության մեկնարկի և ավարտի օրերը։",
       "Կապի ժամերը և պատասխանելու ակնկալվող ժամանակը։",
       "Աջակցության ծավալն ու ուղեկցման կոնկրետ ժամերը։",
-      "ARI-ի վճարը և գործընկերների առանձին ծախսերը։",
+      "ARMMATE-ի վճարը և գործընկերների առանձին ծախսերը։",
       "Շուրջօրյա հասանելիություն՝ միայն առանձին համաձայնությամբ։",
     ],
     expectationsNote:
-      "Երրորդ կողմերի ծառայությունների հասանելիությունը երաշխավորված չէ։ Տրանսպորտն ու կացությունը անվճար չեն, իսկ ֆիզիկական ուղեկցումն անսահմանափակ չէ։ ARI-ն շտապ բժշկական կամ փրկարար ծառայություն չէ։",
+      "Երրորդ կողմերի ծառայությունների հասանելիությունը երաշխավորված չէ։ Տրանսպորտն ու կացությունը անվճար չեն, իսկ ֆիզիկական ուղեկցումն անսահմանափակ չէ։ ARMMATE-ն շտապ բժշկական կամ փրկարար ծառայություն չէ։",
     planLabel: "ՍԿՍԵՆՔ ՔՈ ԱՅՑԻՑ",
     planTitle: "Քո կարիքները։<br>Քո առաջարկը։",
     planIntro:
@@ -205,15 +205,15 @@ window.ARI_TRANSLATIONS = {
     formNote:
       "Սկզբում կտեսնես հարցման տեքստը։ Ուղարկումը կատարում ես ինքդ՝ ընտրված մեսենջերում։ Այստեղ ամրագրում կամ վճարում չի կատարվում։",
     contactUnavailable:
-      "Սա ցուցադրական տարբերակ է․ ARI-ի պաշտոնական WhatsApp/Telegram կոնտակտները դեռ ավելացված չեն։ Կարող ես պատրաստել, պատճենել կամ ներբեռնել հարցումը, բայց այն չի ուղարկվի։",
+      "Սա ցուցադրական տարբերակ է․ ARMMATE-ի պաշտոնական WhatsApp/Telegram կոնտակտները դեռ ավելացված չեն։ Կարող ես պատրաստել, պատճենել կամ ներբեռնել հարցումը, բայց այն չի ուղարկվի։",
     contactAvailable:
       "Ընտրիր պաշտոնական կապի միջոցը կամ նախ պատրաստիր մանրամասն հարցումը։ Առաջարկն ու պայմանները կքննարկվեն անձամբ։",
     faqLabel: "ՄԻ ՔԱՆԻ ՊԱՏԱՍԽԱՆ",
     faqTitle: "Հարցե՞ր ունես։<br>Մենք կպատասխանենք։",
     faq: [
       [
-        "Ի՞նչ է ARI-ն։",
-        "ARI-ն անձնական տեղական աջակցության ծառայություն է Հայաստանի հյուրերի համար։ Քո հիմնական կապը անձնական ասիստենտն է, ով օգնում է առցանց՝ համաձայնեցված ժամանակահատվածում։ Սա ավանդական տուրիստական գործակալություն չէ։",
+        "Ի՞նչ է ARMMATE-ն։",
+        "ARMMATE-ն անձնական տեղական աջակցության ծառայություն է Հայաստանի հյուրերի համար։ Քո հիմնական կապը անձնական ասիստենտն է, ով օգնում է առցանց՝ համաձայնեցված ժամանակահատվածում։ Սա ավանդական տուրիստական գործակալություն չէ։",
       ],
       [
         "Արդյո՞ք ինձ պարտադիր գիդ է պետք։",
@@ -225,11 +225,11 @@ window.ARI_TRANSLATIONS = {
       ],
       [
         "Ինչպե՞ս է որոշվում գինը։",
-        "Հաստատուն փաթեթներ չկան։ Քննարկում ենք քո այցի տևողությունը, աջակցության տեսակը, ծավալը և ուղեկցման կարիքը, հետո ներկայացնում անհատական առաջարկ։ ARI-ի վճարն ու երրորդ կողմերի ծախսերն առանձնացվում են։",
+        "Հաստատուն փաթեթներ չկան։ Քննարկում ենք քո այցի տևողությունը, աջակցության տեսակը, ծավալը և ուղեկցման կարիքը, հետո ներկայացնում անհատական առաջարկ։ ARMMATE-ի վճարն ու երրորդ կողմերի ծախսերն առանձնացվում են։",
       ],
       [
         "Տրանսպորտը, կացությունն ու տոմսերը ներառվա՞ծ են։",
-        "Դրանք ավտոմատ ներառված չեն ARI-ի աջակցության վճարում։ Կարող ենք օգնել գտնել և կազմակերպել այդ ծառայությունները, իսկ դրանց արժեքն ու հասանելիությունը համաձայնեցվում են առանձին։",
+        "Դրանք ավտոմատ ներառված չեն ARMMATE-ի աջակցության վճարում։ Կարող ենք օգնել գտնել և կազմակերպել այդ ծառայությունները, իսկ դրանց արժեքն ու հասանելիությունը համաձայնեցվում են առանձին։",
       ],
       [
         "Ասիստենտը հասանելի՞ է շուրջօրյա։",
@@ -237,14 +237,14 @@ window.ARI_TRANSLATIONS = {
       ],
       [
         "Ի՞նչ կլինի անսպասելի խնդրի դեպքում։",
-        "Կօգնենք հաղորդակցվել, կողմնորոշվել և համապատասխան տեղական ծառայություն գտնել։ ARI-ն չի փոխարինում բժշկական օգնությանը, փրկարար ծառայություններին կամ շտապ արձագանքման մարմիններին։",
+        "Կօգնենք հաղորդակցվել, կողմնորոշվել և համապատասխան տեղական ծառայություն գտնել։ ARMMATE-ն չի փոխարինում բժշկական օգնությանը, փրկարար ծառայություններին կամ շտապ արձագանքման մարմիններին։",
       ],
       [
         "Ինչպե՞ս սկսել։",
         "Կիսվիր ամսաթվերով ու կարիքներով, քննարկիր առաջարկը, հետո հաստատիր պայմաններն ու վճարումը։ Այնուհետև կստանաս քո ասիստենտի կոնտակտը։ Այս ցուցադրական կայքը դեռ չի ընդունում վճարումներ կամ ամրագրումներ։",
       ],
     ],
-    footerTag: "Բացահայտիր Հայաստանը։ Մենք քո կողքին ենք։",
+    footerTag: "Քո մարդը Հայաստանում։",
     demoLabel: "Ծառայության ցուցադրական կայք",
     madeWith: "Սիրով՝ Հայաստանից",
     credits: "Լուսանկարներ",
@@ -272,7 +272,7 @@ window.ARI_TRANSLATIONS = {
     invalidTravellers: "Նշիր ճանապարհորդների թիվը՝ 1-ից 100։",
     choose: "Քննարկել իմ այցը",
     ideaNote: "Ոգեշնչման գաղափար, ոչ թե ամրագրվող փաթեթ։",
-    messageGreeting: "Բարև ARI։ Կցանկանայի անհատական առաջարկ ստանալ։",
+    messageGreeting: "Բարև ARMMATE։ Կցանկանայի անհատական առաջարկ ստանալ։",
     messageName: "Անուն",
     messageArrival: "Ժամանում",
     messageDeparture: "Մեկնում",
@@ -283,7 +283,7 @@ window.ARI_TRANSLATIONS = {
     messageLanguage: "Հաղորդակցման նախընտրելի լեզուն",
     messageLanguageValue: "Հայերեն",
     messageClosing:
-      "Խնդրում եմ քննարկել աջակցության ծավալը, ժամերն ու անհատական գինը՝ ARI-ի վճարն առանձնացնելով երրորդ կողմերի ծախսերից։",
+      "Խնդրում եմ քննարկել աջակցության ծավալը, ժամերն ու անհատական գինը՝ ARMMATE-ի վճարն առանձնացնելով երրորդ կողմերի ծախսերից։",
     creditsTitle: "Լուսանկարների հեղինակները",
     creditsNote:
       "Լուսանկարները Wikimedia Commons-ից են։ Դրանք փոքրացվել են, փոխարկվել WebP ձևաչափի և ցուցադրվում են կադրված։",
@@ -294,17 +294,17 @@ window.ARI_TRANSLATIONS = {
       "Լուսանկարների աղբյուրները հասանելի են assets/credits.json ֆայլում։",
   },
   ru: {
-    title: "Личный помощник туриста в Армении | ARI",
+    title: "Личный помощник туриста в Армении | ARMMATE",
     description:
-      "Твой персональный ассистент в Армении. Поддержка в WhatsApp или Telegram, сопровождение по желанию и индивидуальное предложение.",
+      "ARMMATE — твой персональный ассистент в Армении. Поддержка в WhatsApp или Telegram, сопровождение по желанию и индивидуальное предложение.",
     skip: "Перейти к содержимому",
     navServices: "Услуги",
     navHow: "Как это работает",
     navPricing: "Индивидуальная цена",
     offerCta: "Получить предложение",
-    contactCta: "Связаться с ARI",
+    contactCta: "Связаться с ARMMATE",
     heroLabel: "Твой персональный ассистент в Армении",
-    heroTitle: "Открывай<br>Армению.<br><span>Мы рядом.</span>",
+    heroTitle: "Твой человек<br><span>в Армении.</span>",
     heroDescription:
       "Путешествуй самостоятельно, зная, что у тебя есть надёжный местный помощник. Советы, практическая поддержка и помощь, когда она нужна.",
     heroExplore: "Чем мы можем помочь",
@@ -316,12 +316,12 @@ window.ARI_TRANSLATIONS = {
     strip1: "Персональная онлайн-поддержка",
     strip2: "Личное сопровождение по желанию",
     strip3: "Цена под твои потребности",
-    introLabel: "БАРЕВ, МЫ — ARI",
+    introLabel: "БАРЕВ, МЫ — ARMMATE",
     introTitle: "Твоя свобода.<br>Наш местный опыт.",
     introText:
       "Чтобы наслаждаться Арменией, необязательно всё о ней знать. Достаточно иметь надёжного местного ассистента, к которому можно обратиться во время поездки.",
     introSub:
-      "ARI — сервис персональной помощи, а не традиционное турагентство или просто платформа бронирования экскурсий. Ты решаешь, куда идти и когда нужна поддержка.",
+      "ARMMATE — сервис персональной помощи, а не традиционное турагентство или просто платформа бронирования экскурсий. Ты решаешь, куда идти и когда нужна поддержка.",
     value1Title: "Один надёжный контакт",
     value1Text:
       "Вместо множества контактов — твой ассистент, который уже знает твои планы и предпочтения.",
@@ -382,14 +382,14 @@ window.ARI_TRANSLATIONS = {
     partnersText:
       "Трансфер из аэропорта, частный водитель, экскурсия, отель, ресторан или билет на событие — поможем найти и организовать через местных партнёров.",
     partnersCost:
-      "Услуги партнёров могут оплачиваться отдельно. Их стоимость отделяется от платы за помощь ARI и согласовывается заранее.",
+      "Услуги партнёров могут оплачиваться отдельно. Их стоимость отделяется от платы за помощь ARMMATE и согласовывается заранее.",
     howLabel: "ТРИ ПРОСТЫХ ШАГА",
-    howTitle: "Открывай свободно.<br>Мы рядом.",
+    howTitle: "Твоя поездка.<br>Помощь под твои планы.",
     howIntro:
       "От первого разговора до последнего дня поездки — всё понятно и заранее согласовано.",
     step1Title: "Расскажи о своей поездке",
     step1Text:
-      "Свяжись с ARI, назови даты и расскажи, какая помощь нужна. Вместе уточним твои потребности.",
+      "Свяжись с ARMMATE, назови даты и расскажи, какая помощь нужна. Вместе уточним твои потребности.",
     step2Title: "Согласуй личное предложение",
     step2Text:
       "Получи индивидуальную цену с объёмом помощи, часами связи и отдельными расходами. После подтверждения и согласованной оплаты получишь контакт ассистента.",
@@ -410,7 +410,7 @@ window.ARI_TRANSLATIONS = {
       "Дополнительные услуги и индивидуальные пожелания.",
     ],
     pricingAgreement:
-      "Стоимость обсуждается лично и согласовывается до подтверждения услуги. Плата ARI и расходы на сторонние услуги указываются отдельно.",
+      "Стоимость обсуждается лично и согласовывается до подтверждения услуги. Плата ARMMATE и расходы на сторонние услуги указываются отдельно.",
     experiencesLabel: "КУДА БЫ ТЫ НИ ОТПРАВИЛСЯ — МЫ НА СВЯЗИ",
     experiencesTitle: "Твоя Армения. Твои правила.",
     experiencesIntro: "Несколько идей, с которыми может помочь твой ассистент.",
@@ -449,7 +449,7 @@ window.ARI_TRANSLATIONS = {
         title: "Не спеша, среди зелени",
         text: "Лесные виды и спокойный день, с местной поддержкой в практических вопросах.",
         detail:
-          "Планируя день в Дилижане, можно спросить о местах, погоде и дорогах, получить помощь с поиском транспорта. Маршрут и услуги зависят от доступности. ARI не является спасательной или экстренной службой.",
+          "Планируя день в Дилижане, можно спросить о местах, погоде и дорогах, получить помощь с поиском транспорта. Маршрут и услуги зависят от доступности. ARMMATE не является спасательной или экстренной службой.",
         alt: "Монастырь Агарцин в зелёных лесах Дилижана",
       },
     ],
@@ -467,11 +467,11 @@ window.ARI_TRANSLATIONS = {
       "Даты начала и окончания услуги.",
       "Часы связи и ожидаемое время ответа.",
       "Объём помощи и конкретные часы сопровождения.",
-      "Плату ARI и отдельные расходы партнёров.",
+      "Плату ARMMATE и отдельные расходы партнёров.",
       "Круглосуточную доступность — только по отдельной договорённости.",
     ],
     expectationsNote:
-      "Доступность сторонних услуг не гарантируется. Транспорт и жильё не бесплатны, физическое сопровождение не безлимитно. ARI не оказывает экстренную медицинскую или спасательную помощь.",
+      "Доступность сторонних услуг не гарантируется. Транспорт и жильё не бесплатны, физическое сопровождение не безлимитно. ARMMATE не оказывает экстренную медицинскую или спасательную помощь.",
     planLabel: "НАЧНЁМ С ТВОЕЙ ПОЕЗДКИ",
     planTitle: "Твои потребности.<br>Твоё предложение.",
     planIntro:
@@ -495,15 +495,15 @@ window.ARI_TRANSLATIONS = {
     formNote:
       "Сначала увидишь текст запроса. Ты сам отправишь его в выбранном мессенджере. Здесь нет бронирования или оплаты.",
     contactUnavailable:
-      "Это демонстрационная версия. Официальные контакты ARI в WhatsApp/Telegram ещё не добавлены. Запрос можно подготовить, скопировать или скачать, но он не будет отправлен.",
+      "Это демонстрационная версия. Официальные контакты ARMMATE в WhatsApp/Telegram ещё не добавлены. Запрос можно подготовить, скопировать или скачать, но он не будет отправлен.",
     contactAvailable:
       "Выбери официальный способ связи или сначала подготовь подробный запрос. Предложение и условия обсудим лично.",
     faqLabel: "НЕСКОЛЬКО ОТВЕТОВ",
     faqTitle: "Есть вопросы?<br>Мы ответим.",
     faq: [
       [
-        "Что такое ARI?",
-        "ARI — сервис персональной местной помощи для гостей Армении. Основной контакт — твой ассистент, который помогает онлайн в согласованный период. Это не традиционное турагентство.",
+        "Что такое ARMMATE?",
+        "ARMMATE — сервис персональной местной помощи для гостей Армении. Основной контакт — твой ассистент, который помогает онлайн в согласованный период. Это не традиционное турагентство.",
       ],
       [
         "Мне обязательно нужен гид?",
@@ -515,11 +515,11 @@ window.ARI_TRANSLATIONS = {
       ],
       [
         "Как определяется стоимость?",
-        "Фиксированных пакетов нет. Обсудим длительность поездки, тип и объём помощи, необходимость сопровождения, затем подготовим индивидуальное предложение. Плата ARI и расходы на сторонние услуги указываются отдельно.",
+        "Фиксированных пакетов нет. Обсудим длительность поездки, тип и объём помощи, необходимость сопровождения, затем подготовим индивидуальное предложение. Плата ARMMATE и расходы на сторонние услуги указываются отдельно.",
       ],
       [
         "Включены ли транспорт, жильё и билеты?",
-        "Они не включены автоматически в плату за помощь ARI. Мы можем помочь найти и организовать эти услуги; их стоимость и доступность согласовываются отдельно.",
+        "Они не включены автоматически в плату за помощь ARMMATE. Мы можем помочь найти и организовать эти услуги; их стоимость и доступность согласовываются отдельно.",
       ],
       [
         "Ассистент доступен круглосуточно?",
@@ -527,14 +527,14 @@ window.ARI_TRANSLATIONS = {
       ],
       [
         "Что произойдёт в неожиданной ситуации?",
-        "Поможем с общением, ориентированием и поиском подходящей местной службы. ARI не заменяет медицинскую помощь, спасательные или экстренные службы.",
+        "Поможем с общением, ориентированием и поиском подходящей местной службы. ARMMATE не заменяет медицинскую помощь, спасательные или экстренные службы.",
       ],
       [
         "Как начать?",
         "Расскажи о датах и потребностях, обсуди предложение, подтверди условия и оплату. Затем получишь контакт ассистента. Этот демонстрационный сайт пока не принимает платежи и бронирования.",
       ],
     ],
-    footerTag: "Открывай Армению. Мы рядом.",
+    footerTag: "Твой человек в Армении.",
     demoLabel: "Демонстрационный сайт сервиса",
     madeWith: "С любовью из Армении",
     credits: "Фотографии",
@@ -563,7 +563,8 @@ window.ARI_TRANSLATIONS = {
     invalidTravellers: "Укажи число путешественников от 1 до 100.",
     choose: "Обсудить мою поездку",
     ideaNote: "Идея для вдохновения, а не пакет для бронирования.",
-    messageGreeting: "Привет, ARI! Хочу получить индивидуальное предложение.",
+    messageGreeting:
+      "Привет, ARMMATE! Хочу получить индивидуальное предложение.",
     messageName: "Имя",
     messageArrival: "Приезд",
     messageDeparture: "Отъезд",
@@ -574,7 +575,7 @@ window.ARI_TRANSLATIONS = {
     messageLanguage: "Предпочитаемый язык общения",
     messageLanguageValue: "Русский",
     messageClosing:
-      "Прошу обсудить объём помощи, часы связи и индивидуальную цену, указав плату ARI отдельно от расходов на сторонние услуги.",
+      "Прошу обсудить объём помощи, часы связи и индивидуальную цену, указав плату ARMMATE отдельно от расходов на сторонние услуги.",
     creditsTitle: "Авторы фотографий",
     creditsNote:
       "Фотографии с Wikimedia Commons: уменьшены, преобразованы в WebP и отображаются с кадрированием.",
@@ -584,17 +585,17 @@ window.ARI_TRANSLATIONS = {
     creditsError: "Источники фотографий доступны в файле assets/credits.json.",
   },
   en: {
-    title: "Personal Travel Assistant in Armenia | ARI",
+    title: "Personal Travel Assistant in Armenia | ARMMATE",
     description:
-      "Your personal assistant in Armenia. Local support on WhatsApp or Telegram, optional personal companionship and an offer tailored to your needs.",
+      "ARMMATE, your personal travel assistant in Armenia. Local support on WhatsApp or Telegram, optional personal companionship and an offer tailored to your needs.",
     skip: "Skip to content",
     navServices: "Our assistance",
     navHow: "How it works",
     navPricing: "Individual pricing",
     offerCta: "Get your personal offer",
-    contactCta: "Contact ARI",
+    contactCta: "Contact ARMMATE",
     heroLabel: "Your personal assistant in Armenia",
-    heroTitle: "Explore Armenia.<br><span>We've got<br>your back.</span>",
+    heroTitle: "Your person<br><span>in Armenia.</span>",
     heroDescription:
       "Explore independently, with a reliable local in your corner. Useful recommendations, practical support and a helping hand whenever you need it.",
     heroExplore: "See how we can help",
@@ -607,12 +608,12 @@ window.ARI_TRANSLATIONS = {
     strip1: "Personal online assistance",
     strip2: "Optional personal companion",
     strip3: "Pricing around your needs",
-    introLabel: "BAREV. WE’RE ARI.",
+    introLabel: "BAREV. WE’RE ARMMATE.",
     introTitle: "Your independence.<br>Our local know-how.",
     introText:
       "You don’t need to know Armenia to enjoy Armenia. You just need a reliable local assistant you can turn to throughout your stay.",
     introSub:
-      "ARI is a personal assistance service, rather than a traditional tour agency or simply an excursion booking platform. You choose where to go and when you’d like a helping hand.",
+      "ARMMATE is a personal assistance service, rather than a traditional tour agency or simply an excursion booking platform. You choose where to go and when you’d like a helping hand.",
     value1Title: "One reliable local contact",
     value1Text:
       "Instead of a list of different contacts, your assistant already knows your plans and preferences.",
@@ -673,14 +674,14 @@ window.ARI_TRANSLATIONS = {
     partnersText:
       "Airport transfers, private drivers, excursions, hotels, restaurant reservations and event tickets. We help find and arrange them through local partners.",
     partnersCost:
-      "Partner services may have separate costs. These are clearly separated from ARI’s assistance fee and agreed in advance.",
+      "Partner services may have separate costs. These are clearly separated from ARMMATE’s assistance fee and agreed in advance.",
     howLabel: "THREE SIMPLE STEPS",
-    howTitle: "Explore freely.<br>We’re in your corner.",
+    howTitle: "Your trip.<br>Support that fits.",
     howIntro:
       "From our first conversation to your last day in Armenia, clear and agreed together.",
     step1Title: "Tell us about your trip",
     step1Text:
-      "Contact ARI with your travel dates and the help you have in mind. We’ll talk through your needs together.",
+      "Contact ARMMATE with your travel dates and the help you have in mind. We’ll talk through your needs together.",
     step2Title: "Agree your personal offer",
     step2Text:
       "Receive an individual price with the scope, contact hours and separate costs. Once you confirm and make the agreed payment, you’ll receive your assistant’s contact details.",
@@ -701,7 +702,7 @@ window.ARI_TRANSLATIONS = {
       "Additional services and individual requirements.",
     ],
     pricingAgreement:
-      "We discuss pricing personally and agree it before confirming the service. ARI’s fee and third-party service costs are presented separately.",
+      "We discuss pricing personally and agree it before confirming the service. ARMMATE’s fee and third-party service costs are presented separately.",
     experiencesLabel: "WHEREVER YOU GO, SOMEONE TO TURN TO",
     experiencesTitle: "Your Armenia. Your way.",
     experiencesIntro:
@@ -741,7 +742,7 @@ window.ARI_TRANSLATIONS = {
         title: "Take the slower, greener way",
         text: "Forest views and a gentle day, with local help for the practical questions.",
         detail:
-          "When planning a day around Dilijan, ask about places, weather and roads, or get help finding transport. Routes and services depend on availability. ARI is not a rescue or emergency assistance service.",
+          "When planning a day around Dilijan, ask about places, weather and roads, or get help finding transport. Routes and services depend on availability. ARMMATE is not a rescue or emergency assistance service.",
         alt: "Haghartsin Monastery nestled in the green forests of Dilijan",
       },
     ],
@@ -759,11 +760,11 @@ window.ARI_TRANSLATIONS = {
       "The start and end of your service period.",
       "Contact hours and response expectations.",
       "The scope of assistance and specific companion hours.",
-      "ARI’s assistance fee and separate partner costs.",
+      "ARMMATE’s assistance fee and separate partner costs.",
       "24/7 availability only if separately agreed.",
     ],
     expectationsNote:
-      "Third-party availability is not guaranteed. Transport and accommodation are not free, and physical companionship is not unlimited. ARI does not provide emergency medical or rescue services.",
+      "Third-party availability is not guaranteed. Transport and accommodation are not free, and physical companionship is not unlimited. ARMMATE does not provide emergency medical or rescue services.",
     planLabel: "LET’S START WITH YOUR TRIP",
     planTitle: "Your needs.<br>Your personal offer.",
     planIntro:
@@ -788,15 +789,15 @@ window.ARI_TRANSLATIONS = {
     formNote:
       "Review your message first. You send it yourself in your chosen messenger. No booking or payment is made here.",
     contactUnavailable:
-      "This is a preview. ARI’s official WhatsApp/Telegram contacts have not been added yet. You can prepare, copy or download your enquiry, but it will not be sent.",
+      "This is a preview. ARMMATE’s official WhatsApp/Telegram contacts have not been added yet. You can prepare, copy or download your enquiry, but it will not be sent.",
     contactAvailable:
       "Choose an official contact channel or prepare a detailed enquiry first. We’ll discuss your offer and service terms personally.",
     faqLabel: "A FEW THINGS TO KNOW",
     faqTitle: "You might<br>be wondering.",
     faq: [
       [
-        "What is ARI?",
-        "ARI is a personal local assistance service for visitors to Armenia. Your main contact is a personal assistant who helps you online during an agreed service period. It is not a traditional tour agency.",
+        "What is ARMMATE?",
+        "ARMMATE is a personal local assistance service for visitors to Armenia. Your main contact is a personal assistant who helps you online during an agreed service period. It is not a traditional tour agency.",
       ],
       [
         "Do I need to hire a tour guide?",
@@ -808,11 +809,11 @@ window.ARI_TRANSLATIONS = {
       ],
       [
         "How is pricing determined?",
-        "There are no fixed packages. We discuss your stay, the type and amount of assistance and any companion time, then prepare an individual offer. ARI’s fee and third-party costs are separated.",
+        "There are no fixed packages. We discuss your stay, the type and amount of assistance and any companion time, then prepare an individual offer. ARMMATE’s fee and third-party costs are separated.",
       ],
       [
         "Are transport, accommodation and tickets included?",
-        "They are not automatically included in ARI’s assistance fee. We can help find and arrange these services; their costs and availability are agreed separately.",
+        "They are not automatically included in ARMMATE’s assistance fee. We can help find and arrange these services; their costs and availability are agreed separately.",
       ],
       [
         "Is my assistant available 24/7?",
@@ -820,14 +821,14 @@ window.ARI_TRANSLATIONS = {
       ],
       [
         "What happens if something unexpected goes wrong?",
-        "We can help with communication, finding your way and locating an appropriate local service. ARI does not replace medical care, rescue teams or emergency services.",
+        "We can help with communication, finding your way and locating an appropriate local service. ARMMATE does not replace medical care, rescue teams or emergency services.",
       ],
       [
         "How do I get started?",
         "Share your dates and needs, discuss your offer, then confirm the terms and payment. You’ll receive your assistant’s contact details. This preview website does not yet accept bookings or payments.",
       ],
     ],
-    footerTag: "Explore Armenia. We've got your back.",
+    footerTag: "Your person in Armenia.",
     demoLabel: "Service website / preview",
     madeWith: "With love, from Armenia",
     credits: "Photo credits",
@@ -855,7 +856,7 @@ window.ARI_TRANSLATIONS = {
     invalidTravellers: "Please enter a number of travellers from 1 to 100.",
     choose: "Discuss my trip",
     ideaNote: "An idea for inspiration, not a package to book.",
-    messageGreeting: "Hi ARI! I’d like a personalized offer.",
+    messageGreeting: "Hi ARMMATE! I’d like a personalized offer.",
     messageName: "Name",
     messageArrival: "Arrival",
     messageDeparture: "Departure",
@@ -866,7 +867,7 @@ window.ARI_TRANSLATIONS = {
     messageLanguage: "Preferred communication language",
     messageLanguageValue: "English",
     messageClosing:
-      "Please discuss the scope of assistance, contact hours and individual pricing, with ARI’s fee separated from third-party service costs.",
+      "Please discuss the scope of assistance, contact hours and individual pricing, with ARMMATE’s fee separated from third-party service costs.",
     creditsTitle: "Behind the photographs",
     creditsNote:
       "Images from Wikimedia Commons. Resized, converted to WebP and displayed with cropping.",

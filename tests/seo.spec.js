@@ -16,6 +16,27 @@ for (const lang of seo.languages) {
     await expect(page.locator("html")).toHaveAttribute("lang", lang);
     await expect(page.locator("h1")).toHaveCount(1);
     await expect(page.locator("h1")).not.toBeEmpty();
+    await expect(page).toHaveTitle(/ARMMATE/);
+    await expect(page.locator(".brand")).toHaveCount(2);
+    for (const brand of await page.locator(".brand").all()) {
+      await expect(brand).toHaveAttribute("aria-label", "ARMMATE");
+      await expect(brand).toContainText("armmate.");
+      await expect(brand.locator('use[href="#i-brand"]')).toHaveCount(1);
+    }
+    const slogans = {
+      hy: "Քո մարդը Հայաստանում։",
+      ru: "Твой человек в Армении.",
+      en: "Your person in Armenia.",
+    };
+    expect(
+      (await page.locator("h1").innerText()).replace(/\s+/g, " ").trim(),
+    ).toBe(slogans[lang]);
+    await expect(page.locator('[data-t="footerTag"]')).toHaveText(
+      slogans[lang],
+    );
+    expect(await page.locator("body").innerText()).not.toMatch(
+      /\bARI\b|We've got your back|Мы рядом/,
+    );
     await expect(page.locator("#support-categories>div")).toHaveCount(5);
     await expect(page.locator(".experience-card")).toHaveCount(3);
     await expect(page.locator("#pricing-factors li")).toHaveCount(5);
@@ -43,7 +64,7 @@ for (const lang of seo.languages) {
     );
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
       "content",
-      seo.baseUrl + `assets/social-${lang}.png`,
+      seo.baseUrl + `assets/social-armmate-${lang}.png`,
     );
     const description = await page
       .locator('meta[name="description"]')
@@ -69,6 +90,11 @@ for (const lang of seo.languages) {
     const schema = JSON.parse(
       await page.locator("#structured-data").textContent(),
     );
+    for (const type of ["Organization", "WebSite"]) {
+      expect(schema["@graph"].find((item) => item["@type"] === type).name).toBe(
+        "ARMMATE",
+      );
+    }
     const faq = schema["@graph"].find((item) => item["@type"] === "FAQPage");
     const visibleFaq = await page
       .locator("#faq-list details")

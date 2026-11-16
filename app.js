@@ -1,7 +1,7 @@
 "use strict";
 
-const translations = window.ARI_TRANSLATIONS;
-const seo = window.ARI_SEO;
+const translations = window.ARMMATE_TRANSLATIONS;
+const seo = window.ARMMATE_SEO;
 // Resolve shared resources before a language switch changes the visible URL.
 const siteRoot = new URL(
   ".",
@@ -51,7 +51,7 @@ const localDate = (date) =>
 const locale = () => ({ hy: "hy-AM", ru: "ru-RU", en: "en-GB" })[language];
 
 function getContacts(message = "") {
-  const config = window.ARI_CONTACT || {};
+  const config = window.ARMMATE_CONTACT || {};
   const contacts = [];
   const whatsapp =
     typeof config.whatsapp === "string" ? config.whatsapp.trim() : "";
@@ -128,7 +128,7 @@ function setLanguage(next, updateUrl = true) {
   renderExperiences();
   renderFaq();
   renderContactChannels();
-  storage.set("ari-language", language);
+  storage.set("armmate-language", language);
   if (updateUrl || supportedLanguages.includes(queryLanguage)) {
     updateLanguageUrl();
   }
@@ -366,7 +366,7 @@ dialog.addEventListener("click", async (event) => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `ARI-enquiry-${lastRequest.arrival}-${language}.txt`;
+    link.download = `ARMMATE-enquiry-${lastRequest.arrival}-${language}.txt`;
     document.body.append(link);
     link.click();
     link.remove();
@@ -415,7 +415,7 @@ $("#credits-button").addEventListener("click", async () => {
       creditsData = await response.json();
     }
     openDialog(
-      `<span class="eyebrow">ARI / CREDITS</span><h2>${t.creditsTitle}</h2><p>${t.creditsNote}</p><div class="credits-list">${creditsData.map((item) => `<div><strong>${escapeHtml(item.image.replace("assets/", ""))}</strong><p>${escapeHtml(item.author)} · <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.license)}</a></p><a href="${escapeHtml(item.source)}" target="_blank" rel="noopener noreferrer">${t.source} ↗</a></div>`).join("")}<p>${t.fontCredits}</p></div>`,
+      `<span class="eyebrow">ARMMATE / CREDITS</span><h2>${t.creditsTitle}</h2><p>${t.creditsNote}</p><div class="credits-list">${creditsData.map((item) => `<div><strong>${escapeHtml(item.image.replace("assets/", ""))}</strong><p>${escapeHtml(item.author)} · <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.license)}</a></p><a href="${escapeHtml(item.source)}" target="_blank" rel="noopener noreferrer">${t.source} ↗</a></div>`).join("")}<p>${t.fontCredits}</p></div>`,
     );
   } catch {
     toast(t.creditsError);
@@ -432,7 +432,7 @@ hero.srcset = [480, 800, 1200]
 // query-string link requests a different language, or the visitor switches it.
 if (language === document.documentElement.lang) {
   renderContactChannels();
-  storage.set("ari-language", language);
+  storage.set("armmate-language", language);
   if (supportedLanguages.includes(queryLanguage)) updateLanguageUrl();
 } else setLanguage(language, false);
 // The static fallback remains inert if scripts fail; it cannot submit personal
