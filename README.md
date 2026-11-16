@@ -1,4 +1,4 @@
-# ARMMATE — Your person in Armenia.
+# ARMMATE — Your friend in Armenia.
 
 A responsive Armenian, Russian and English website for a personal travel assistance service in Armenia. The primary service is a personal local assistant over WhatsApp or Telegram. In-person companionship is optional and agreed separately. Every customer receives an individual offer; there are no fixed packages, public prices or automatic price calculations.
 
@@ -6,7 +6,7 @@ A responsive Armenian, Russian and English website for a personal travel assista
 
 **Business specification:** [docs/BUSINESS_CONCEPT.md](docs/BUSINESS_CONCEPT.md)
 
-**Brand and logo:** [docs/BRAND.md](docs/BRAND.md). Slogan: “Քո մարդը Հայաստանում։ / Твой человек в Армении. / Your person in Armenia.”
+**Brand and logo:** [docs/BRAND.md](docs/BRAND.md). Slogan: “Քո ընկերը Հայաստանում։ / Твой друг в Армении. / Your friend in Armenia.”
 
 ## Run locally
 

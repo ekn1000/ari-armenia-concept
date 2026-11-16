@@ -45,7 +45,7 @@
           about: { "@id": service },
           primaryImageOfPage: {
             "@type": "ImageObject",
-            url: baseUrl + `assets/social-armmate-${language}.png`,
+            url: baseUrl + `assets/social-armmate-friends-${language}.png`,
             width: 1200,
             height: 630,
           },
@@ -118,7 +118,7 @@
     meta(
       "property",
       "og:image",
-      baseUrl + `assets/social-armmate-${language}.png`,
+      baseUrl + `assets/social-armmate-friends-${language}.png`,
     );
     meta("property", "og:image:type", "image/png");
     meta("property", "og:image:width", "1200");
@@ -139,7 +139,7 @@
     meta(
       "name",
       "twitter:image",
-      baseUrl + `assets/social-armmate-${language}.png`,
+      baseUrl + `assets/social-armmate-friends-${language}.png`,
     );
     meta("name", "twitter:image:alt", copy.footerTag);
     link("canonical", pageUrl(language));

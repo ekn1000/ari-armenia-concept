@@ -2,7 +2,7 @@
 
 ## Positioning
 
-**Your person in Armenia.**
+**Your friend in Armenia.**
 
 ARMMATE is a personal travel assistance service for tourists visiting Armenia. A visitor can explore independently while having a reliable local assistant to turn to throughout their agreed service period.
 

@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
-const { parseHTML } = require("linkedom");
+const { parseHTML, DOMParser } = require("linkedom");
 const prettier = require("prettier");
 const seo = require("../seo.js");
 
@@ -18,6 +18,11 @@ vm.runInNewContext(
 const translations = sandbox.window.ARMMATE_TRANSLATIONS;
 const contacts = sandbox.window.ARMMATE_CONTACT || {};
 const source = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const brand = new DOMParser().parseFromString(
+  fs.readFileSync(path.join(root, "assets/brand-mark.svg"), "utf8"),
+  "image/svg+xml",
+).documentElement;
+brand.querySelector("title").remove();
 const check = process.argv.includes("--check");
 const escape = (value) =>
   String(value).replace(
@@ -51,6 +56,10 @@ async function build() {
     const t = translations[language];
     const prefix = language === "hy" ? "" : "../";
     const $ = (selector) => document.querySelector(selector);
+    $("#i-brand").setAttribute("viewBox", brand.getAttribute("viewBox"));
+    $("#i-brand").replaceChildren(
+      ...[...brand.children].map((node) => document.importNode(node, true)),
+    );
     document.head.childNodes.forEach((node) => {
       if (node.nodeType === 3 && !node.textContent.trim()) node.remove();
     });
@@ -149,8 +158,17 @@ async function build() {
     preload.setAttribute("type", "image/webp");
     $('link[rel="icon"]').setAttribute(
       "href",
-      prefix + "assets/favicon.svg?v=armmate",
+      prefix + "assets/favicon.svg?v=friends-1",
     );
+    $('link[rel="icon"][type="image/svg+xml"]').setAttribute("sizes", "any");
+    let legacyIcon = $('link[rel="shortcut icon"]');
+    if (!legacyIcon) {
+      legacyIcon = document.createElement("link");
+      document.head.append(legacyIcon);
+    }
+    legacyIcon.setAttribute("rel", "shortcut icon");
+    legacyIcon.setAttribute("type", "image/x-icon");
+    legacyIcon.setAttribute("href", prefix + "assets/favicon.ico?v=friends-1");
     for (const [rel, filename, size] of [
       ["icon", "icon-48.png", "48x48"],
       ["apple-touch-icon", "icon-180.png", "180x180"],
@@ -165,7 +183,7 @@ async function build() {
       element.setAttribute("rel", rel);
       element.setAttribute(
         "href",
-        prefix + "assets/" + filename + "?v=armmate",
+        prefix + "assets/" + filename + "?v=friends-1",
       );
       element.setAttribute("sizes", size);
       element.setAttribute("type", "image/png");

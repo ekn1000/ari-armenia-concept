@@ -10,44 +10,64 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / 'assets'
 INK = '#243f35'
 ORANGE = '#be4e2d'
+BRAND_GREEN = '#3d6d4e'
+BRAND_ORANGE = '#c77944'
 PAPER = '#f7f6f0'
-MARK = (
-    'M9 114V61C9 2 82 2 82 61V114',
-    'M82 114V61C82 2 155 2 155 61V114',
+MARK_WIDTH, MARK_HEIGHT = 480, 306
+# A symmetric, clean redraw of the supplied two-person / letter-m reference.
+PEOPLE_PATH = (
+    'M7 263 L111 159 Q118 152 112 144 '
+    'C101 133 94 118 94 103 C94 70 120 44 153 44 '
+    'C186 44 212 70 212 103 C212 119 206 133 195 144 '
+    'Q189 152 196 159 L231 194 Q240 203 249 194 L284 159 '
+    'Q291 152 285 144 C274 133 268 119 268 103 '
+    'C268 70 294 44 327 44 C360 44 386 70 386 103 '
+    'C386 118 379 133 368 144 Q362 152 369 159 L473 263 '
+    'C482 273 482 287 473 297 C463 307 448 307 439 297 '
+    'L337 195 Q327 185 317 195 L257 255 Q240 272 223 255 '
+    'L163 195 Q153 185 143 195 L41 297 '
+    'C32 307 17 307 7 297 C-2 287 -2 273 7 263 Z'
 )
 
 
-def mark_svg(primary=INK, accent=ORANGE):
-    return ''.join(
-        f'<path d="{path}" stroke="{color}" stroke-width="17" '
-        'stroke-linecap="round" fill="none"/>'
-        for path, color in zip(MARK, [primary, accent])
+def mark_svg(primary=BRAND_GREEN, accent=BRAND_ORANGE):
+    return (
+        f'<path class="brand-people" d="{PEOPLE_PATH}" fill="{primary}" stroke="none"></path>'
+        f'<circle class="brand-sun" cx="240" cy="26" r="26" fill="{accent}" stroke="none"></circle>'
     )
 
 
-def draw_mark(canvas, x, y, width, primary=INK, accent=ORANGE):
+def draw_mark(canvas, x, y, width, primary=BRAND_GREEN, accent=BRAND_ORANGE):
     # Supersample the curves so social cards stay as smooth as the SVG logo.
     resolution = 4
     mark_width = round(width)
-    mark_height = round(width * 124 / 164)
+    mark_height = round(width * MARK_HEIGHT / MARK_WIDTH)
     layer = Image.new('RGBA', (mark_width * resolution, mark_height * resolution))
-    scale = mark_width * resolution / 164
+    scale = mark_width * resolution / MARK_WIDTH
     draw = ImageDraw.Draw(layer)
-    line_width = max(1, round(17 * scale))
-    for offset, color in [(0, primary), (73, accent)]:
-        points = [(9 + offset, 114), (9 + offset, 61)]
-        for step in range(1, 61):
-            t = step / 60
-            points.append((
-                (1-t)**3 * 9 + 3*(1-t)**2*t*9 + 3*(1-t)*t*t*82 + t**3*82 + offset,
-                (1-t)**3 * 61 + 3*(1-t)**2*t*2 + 3*(1-t)*t*t*2 + t**3*61,
-            ))
-        points.append((82 + offset, 114))
-        scaled = [(round(px * scale), round(py * scale)) for px, py in points]
-        draw.line(scaled, fill=color, width=line_width, joint='curve')
-        radius = line_width / 2
-        for px, py in [scaled[0], scaled[-1]]:
-            draw.ellipse((px-radius, py-radius, px+radius, py+radius), fill=color)
+    import re
+    tokens = iter(re.findall(r'[MLCQZ]|-?\d+(?:\.\d+)?', PEOPLE_PATH))
+    points = []
+    for command in tokens:
+        if command == 'Z':
+            continue
+        count = {'M': 2, 'L': 2, 'Q': 4, 'C': 6}[command]
+        values = [float(next(tokens)) for _ in range(count)]
+        if command in ['M', 'L']:
+            point = tuple(values)
+            points.append(point)
+        else:
+            start = points[-1]
+            controls = [tuple(values[i:i+2]) for i in range(0, count, 2)]
+            for step in range(1, 41):
+                t = step / 40
+                if command == 'Q':
+                    point = tuple((1-t)**2*start[i]+2*(1-t)*t*controls[0][i]+t*t*controls[1][i] for i in [0,1])
+                else:
+                    point = tuple((1-t)**3*start[i]+3*(1-t)**2*t*controls[0][i]+3*(1-t)*t*t*controls[1][i]+t**3*controls[2][i] for i in [0,1])
+                points.append(point)
+    draw.polygon([(round(px*scale), round(py*scale)) for px,py in points], fill=primary)
+    draw.ellipse(tuple(round(v*scale) for v in (214,0,266,52)), fill=accent)
     layer = layer.resize((mark_width, mark_height), Image.Resampling.LANCZOS)
     canvas.paste(layer, (round(x), round(y)), layer)
 
@@ -57,30 +77,30 @@ font = TTFont(ASSETS / 'manrope-bold.ttf', recalcTimestamp=False)
 glyphs = font.getGlyphSet()
 cmap = font.getBestCmap()
 scale = 98 / font['head'].unitsPerEm
-cursor = 206
+cursor = 200
 word_paths = []
-for character in 'armmate.':
+for character in 'armmate':
     glyph = cmap[ord(character)]
     pen = SVGPathPen(glyphs)
     glyphs[glyph].draw(TransformPen(pen, (scale, 0, 0, -scale, cursor, 111)))
-    word_paths.append(f'<path d="{pen.getCommands()}" fill="{ORANGE if character == "." else INK}"/>')
-    cursor += font['hmtx'][glyph][0] * scale - 3
+    word_paths.append(f'<path d="{pen.getCommands()}" fill="{BRAND_GREEN}"/>')
+    cursor += font['hmtx'][glyph][0] * scale
 logo_width = round(cursor + 20)
 (ASSETS / 'logo.svg').write_text(
     f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {logo_width} 144" '
     'role="img" aria-labelledby="title"><title id="title">ARMMATE</title>'
-    f'<g transform="translate(8 8)">{mark_svg()}</g>{"".join(word_paths)}</svg>\n',
+    f'<g transform="translate(8 22) scale(.333333)">{mark_svg()}</g>{"".join(word_paths)}</svg>\n',
     encoding='utf-8',
 )
 (ASSETS / 'brand-mark.svg').write_text(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 124" '
+    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {MARK_WIDTH} {MARK_HEIGHT}" '
     'role="img" aria-labelledby="title"><title id="title">ARMMATE</title>'
     f'{mark_svg()}</svg>\n', encoding='utf-8',
 )
 (ASSETS / 'favicon.svg').write_text(
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-    f'<rect width="64" height="64" rx="16" fill="{INK}"/>'
-    f'<g transform="translate(9 14) scale(.28)">{mark_svg(PAPER, "#e19a73")}</g></svg>\n',
+    f'<rect width="64" height="64" rx="14" fill="{PAPER}"/>'
+    f'<g transform="translate(4 14) scale(.116667)">{mark_svg()}</g></svg>\n',
     encoding='utf-8',
 )
 for name in ['manrope-regular', 'manrope-bold', 'armenian-regular', 'armenian-bold']:
@@ -100,18 +120,17 @@ for name in ['ararat', 'yerevan', 'garni', 'dilijan']:
         resized.save(ASSETS / f'{name}-{width}.webp', quality=82, method=6)
 
 copy = {
-    'en':(['Your person', 'in Armenia.'], 'Your personal assistant in Armenia'),
-    'ru':(['Твой человек', 'в Армении.'], 'Твой персональный ассистент в Армении'),
-    'hy':(['Քո մարդը', 'Հայաստանում։'], 'Քո անձնական ասիստենտը Հայաստանում'),
+    'en':(['Your friend', 'in Armenia.'], 'Your personal assistant in Armenia'),
+    'ru':(['Твой друг', 'в Армении.'], 'Твой персональный ассистент в Армении'),
+    'hy':(['Քո ընկերը', 'Հայաստանում։'], 'Քո անձնական ասիստենտը Հայաստանում'),
 }
 for language, (lines, subtitle) in copy.items():
     canvas = Image.new('RGB', (1200, 630), PAPER)
     draw = ImageDraw.Draw(canvas)
     family = 'armenian' if language == 'hy' else 'manrope'
-    draw_mark(canvas, 80, 65, 112)
+    draw_mark(canvas, 80, 72, 118)
     brand_font = ImageFont.truetype(str(ASSETS/'manrope-bold.ttf'), 100)
-    draw.text((225, 55), 'armmate', font=brand_font, fill=INK)
-    draw.text((225 + draw.textlength('armmate', font=brand_font), 55), '.', font=brand_font, fill=ORANGE)
+    draw.text((225, 55), 'armmate', font=brand_font, fill=BRAND_GREEN)
     for index, line in enumerate(lines):
         size = 64
         while True:
@@ -121,12 +140,46 @@ for language, (lines, subtitle) in copy.items():
         draw.text((80, 225 + index*104), line, font=font, fill=INK if index == 0 else ORANGE)
     draw.text((82, 491), subtitle, font=ImageFont.truetype(str(ASSETS/f'{family}-regular.ttf'), 29), fill='#52624f')
     draw.rectangle((0, 597, 1200, 630), fill='#244a3b')
-    canvas.save(ASSETS/f'social-armmate-{language}.png', optimize=True)
+    canvas.save(ASSETS/f'social-armmate-friends-{language}.png', optimize=True)
 
-for size in [48, 180]:
-    icon = Image.new('RGB', (size*4, size*4), INK)
-    draw_mark(icon, size*4*.14, size*4*.22, size*4*.72, PAPER, '#e19a73')
+for size in [16, 32, 48, 180, 192, 512]:
+    icon = Image.new('RGB', (size*4, size*4), PAPER)
+    draw_mark(icon, size*4*.0625, size*4*.221, size*4*.875)
     icon.resize((size,size),Image.Resampling.LANCZOS).save(ASSETS/f'icon-{size}.png',optimize=True)
+
+Image.open(ASSETS/'icon-512.png').save(ASSETS/'favicon.ico', sizes=[(16,16),(32,32),(48,48)])
+avatar = Image.new('RGBA', (1024,1024))
+draw_mark(avatar, 92, 244, 840)
+avatar.save(ASSETS/'brand-mark.png', optimize=True)
+
+# Transparent horizontal PNG for documents and social profiles.
+wordmark = Image.new('RGBA', (logo_width*3, 144*3))
+draw_mark(wordmark, 24, 66, 480)
+ImageDraw.Draw(wordmark).text((600,333), 'armmate', font=ImageFont.truetype(str(ASSETS/'manrope-bold.ttf'),294), fill=BRAND_GREEN, anchor='ls')
+wordmark.save(ASSETS/'logo.png', optimize=True)
+
+# A compact stacked lockup follows the supplied reference, with outlined type.
+stack_width, stack_height = 720, 600
+stacked_paths = []
+for text, family, size, baseline, tracking, color in [
+    ('armmate', 'manrope-bold', 108, 445, 1.5, BRAND_GREEN),
+    ('your friend in armenia', 'manrope-regular', 28, 511, 3.5, BRAND_ORANGE),
+]:
+    face = TTFont(ASSETS/f'{family}.ttf', recalcTimestamp=False)
+    face_glyphs, face_cmap = face.getGlyphSet(), face.getBestCmap()
+    factor = size / face['head'].unitsPerEm
+    width = sum(face['hmtx'][face_cmap[ord(c)]][0]*factor for c in text) + tracking*(len(text)-1)
+    position = (stack_width-width)/2
+    for char in text:
+        glyph = face_cmap[ord(char)]
+        pen = SVGPathPen(face_glyphs)
+        face_glyphs[glyph].draw(TransformPen(pen,(factor,0,0,-factor,position,baseline)))
+        stacked_paths.append(f'<path d="{pen.getCommands()}" fill="{color}"/>')
+        position += face['hmtx'][glyph][0]*factor + tracking
+(ASSETS/'logo-stacked.svg').write_text(
+    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {stack_width} {stack_height}" '
+    'role="img" aria-labelledby="title"><title id="title">ARMMATE — your friend in Armenia</title>'
+    f'<g transform="translate(120 28)">{mark_svg()}</g>{"".join(stacked_paths)}</svg>\n',encoding='utf-8')
 
 credits = json.loads((ASSETS/'credits.json').read_text(encoding='utf-8'))
 for credit in credits:

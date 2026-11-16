@@ -30,6 +30,8 @@
   --orange-hover: #b84928;
   --line: #ddded3;
   --green: #244a3b;
+  --brand-green: #3d6d4e;
+  --brand-orange: #c77944;
   --cream: #efeee4;
   --font: Manrope, Armenian, Arial, sans-serif;
 }
@@ -143,7 +145,7 @@ p {
 .tiny-sun {
   width: 28px;
   height: 24px;
-  color: var(--orange);
+  color: var(--brand-green);
 }
 .skip {
   position: fixed;
@@ -224,20 +226,23 @@ p {
   gap: 10px;
   font-family: Manrope, Arial, sans-serif;
   font-size: 36px;
-  font-weight: 800;
+  font-weight: 700;
+  color: var(--brand-green);
   line-height: 1;
-  letter-spacing: -1.8px;
+  letter-spacing: -1px;
   flex-shrink: 0;
 }
 .brand-mark {
-  width: 42px;
-  height: 33px;
+  width: 46px;
+  height: 32px;
 }
-.brand-accent {
-  stroke: var(--mark-accent, var(--orange));
+.brand-people {
+  fill: currentColor;
+  stroke: none;
 }
-.brand-dot {
-  color: var(--orange);
+.brand-sun {
+  fill: var(--mark-accent, var(--brand-orange));
+  stroke: none;
 }
 .nav {
   display: flex;
@@ -723,7 +728,7 @@ p {
   font-size: 11px;
 }
 .small-spark {
-  color: var(--orange);
+  color: var(--brand-green);
   width: 25px;
   height: 21px;
 }
@@ -1480,10 +1485,10 @@ textarea:focus {
   .brand {
     font-size: 28px;
     gap: 6px;
-    letter-spacing: -1.4px;
+    letter-spacing: -0.5px;
   }
   .brand-mark {
-    width: 31px;
+    width: 34px;
     height: 25px;
   }
   .header-actions {
@@ -2527,10 +2532,10 @@ html[lang="hy"] .hero h1 {
   }
   .brand {
     font-size: 23px;
-    letter-spacing: -1px;
+    letter-spacing: -0.3px;
   }
   .brand-mark {
-    width: 26px;
+    width: 29px;
     height: 21px;
   }
   .footer-top {

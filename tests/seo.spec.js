@@ -20,13 +20,13 @@ for (const lang of seo.languages) {
     await expect(page.locator(".brand")).toHaveCount(2);
     for (const brand of await page.locator(".brand").all()) {
       await expect(brand).toHaveAttribute("aria-label", "ARMMATE");
-      await expect(brand).toContainText("armmate.");
+      await expect(brand).toContainText("armmate");
       await expect(brand.locator('use[href="#i-brand"]')).toHaveCount(1);
     }
     const slogans = {
-      hy: "Քո մարդը Հայաստանում։",
-      ru: "Твой человек в Армении.",
-      en: "Your person in Armenia.",
+      hy: "Քո ընկերը Հայաստանում։",
+      ru: "Твой друг в Армении.",
+      en: "Your friend in Armenia.",
     };
     expect(
       (await page.locator("h1").innerText()).replace(/\s+/g, " ").trim(),
@@ -64,7 +64,7 @@ for (const lang of seo.languages) {
     );
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
       "content",
-      seo.baseUrl + `assets/social-armmate-${lang}.png`,
+      seo.baseUrl + `assets/social-armmate-friends-${lang}.png`,
     );
     const description = await page
       .locator('meta[name="description"]')
