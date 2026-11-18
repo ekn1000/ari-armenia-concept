@@ -39,6 +39,8 @@ The owner-supplied business number is **+374 91 110799**. `site-config.js` gener
 
 The contact section contains `https://wa.me/37491110799`, `https://t.me/+37491110799` and `viber://chat?number=%2B37491110799`. These are ordinary links in the initial HTML and work without JavaScript. Viber needs its app; Telegram phone links depend on the recipient's phone-number discovery settings. If Telegram does not resolve the account, enable discovery for this number or replace that destination with the verified public username.
 
+A compact button stays in the bottom-right corner and expands to the same three messenger links. The native disclosure works without JavaScript; JavaScript adds Escape, outside-click and focus-leaving dismissal. Both contact locations use `site-config.js`.
+
 There is no enquiry form, generated draft, clipboard/download workflow, booking or online payment. Visitors choose a messenger and write their own message. Requirements, prices and terms are discussed personally. No message is sent automatically. Automated checks inspect the destinations without contacting recipients.
 
 The website stores only the language preference in local storage. Public contact configuration must never contain passwords or credentials.

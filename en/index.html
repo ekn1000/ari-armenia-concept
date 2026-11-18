@@ -20,11 +20,11 @@
       as="image"
       fetchpriority="high"
     />
-    <link rel="stylesheet" href="../styles.css?v=messenger-only-1" />
+    <link rel="stylesheet" href="../styles.css?v=contact-widget-1" />
     <script src="../site-config.js?v=messenger-only-1" defer></script>
     <script src="../translations.js?v=messenger-only-1" defer></script>
     <script src="../seo.js?v=messenger-only-1" defer></script>
-    <script src="../app.js?v=messenger-only-1" defer></script>
+    <script src="../app.js?v=contact-widget-1" defer></script>
     <link
       type="image/png"
       sizes="48x48"
@@ -1151,6 +1151,63 @@
         </div>
       </div>
     </footer>
+    <details id="contact-widget" class="contact-widget">
+      <summary
+        class="contact-toggle"
+        aria-label="Contact ARMMATE"
+        data-label="contactCta"
+        aria-controls="quick-contact-panel"
+      >
+        <svg class="contact-toggle-chat" aria-hidden="true">
+          <use href="#i-chat" />
+        </svg>
+        <svg
+          class="contact-toggle-close"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </summary>
+      <div id="quick-contact-panel" class="quick-contact-panel">
+        <p class="quick-contact-title" data-t="contactHint">
+          Choose your favourite messenger.
+        </p>
+        <div id="quick-channel-links" class="contact-channels">
+          <a
+            class="contact-channel"
+            data-quick-channel="whatsapp"
+            href="https://wa.me/37491110799"
+            target="_blank"
+            rel="noopener noreferrer"
+            referrerpolicy="no-referrer"
+            ><span class="channel-icon channel-whatsapp"
+              ><svg aria-hidden="true"><use href="#i-chat" /></svg></span
+            ><span>WhatsApp</span
+            ><svg aria-hidden="true"><use href="#i-diagonal" /></svg></a
+          ><a
+            class="contact-channel"
+            data-quick-channel="telegram"
+            href="https://t.me/+37491110799"
+            target="_blank"
+            rel="noopener noreferrer"
+            referrerpolicy="no-referrer"
+            ><span class="channel-icon channel-telegram"
+              ><svg aria-hidden="true"><use href="#i-send" /></svg></span
+            ><span>Telegram</span
+            ><svg aria-hidden="true"><use href="#i-diagonal" /></svg></a
+          ><a
+            class="contact-channel"
+            data-quick-channel="viber"
+            href="viber://chat?number=%2B37491110799"
+            ><span class="channel-icon channel-viber"
+              ><svg aria-hidden="true"><use href="#i-phone" /></svg></span
+            ><span>Viber</span
+            ><svg aria-hidden="true"><use href="#i-diagonal" /></svg
+          ></a>
+        </div>
+      </div>
+    </details>
     <dialog id="detail-dialog" class="dialog">
       <div class="dialog-content">
         <button

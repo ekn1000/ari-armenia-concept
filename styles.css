@@ -2415,6 +2415,96 @@ html[lang="hy"] .hero h1 {
     font-size: 37px;
   }
 }
+.contact-widget {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  width: 56px;
+  z-index: 60;
+}
+.contact-toggle {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  color: var(--paper);
+  background: var(--green);
+  box-shadow: 0 5px 22px #10231d30;
+  cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.contact-toggle::-webkit-details-marker {
+  display: none;
+}
+.contact-toggle::marker {
+  content: "";
+}
+.contact-toggle:hover {
+  background: var(--ink);
+  box-shadow: 0 7px 25px #10231d40;
+}
+.contact-toggle svg {
+  width: 27px;
+  height: 27px;
+  stroke-width: 1.7;
+}
+.contact-toggle .contact-toggle-close,
+.contact-widget[open] .contact-toggle-chat {
+  display: none;
+}
+.contact-widget[open] .contact-toggle-close {
+  display: block;
+}
+.quick-contact-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 12px);
+  width: min(260px, calc(100vw - 32px));
+  max-height: calc(100dvh - 112px);
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--paper);
+  box-shadow: 0 10px 40px #10231d26;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.quick-contact-title {
+  margin-bottom: 13px;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.quick-contact-panel .contact-channels {
+  gap: 8px;
+}
+.quick-contact-panel .contact-channel {
+  gap: 11px;
+  padding: 9px;
+  background: #fffefa;
+  font-size: 14px;
+}
+.quick-contact-panel .contact-channel:hover {
+  background: var(--cream);
+}
+.quick-contact-panel .channel-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+}
+@media (max-width: 650px) {
+  .contact-widget {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

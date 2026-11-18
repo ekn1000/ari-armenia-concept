@@ -125,12 +125,18 @@ async function build() {
     $("#faq-list").innerHTML = t.faq
       .map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`)
       .join("");
-    $("#channel-links").innerHTML = contacts.channels
-      .map(
-        (contact) =>
-          `<a class="contact-channel" data-channel="${contact.id}" href="${escape(contact.href)}"${contact.id !== "viber" ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${icon(contact.icon)}</span><span>${contact.label}</span>${icon("diagonal")}</a>`,
-      )
-      .join("");
+    for (const [selector, attribute] of [
+      ["#channel-links", "data-channel"],
+      ["#quick-channel-links", "data-quick-channel"],
+    ]) {
+      $(selector).innerHTML = contacts.channels
+        .map(
+          (contact) =>
+            `<a class="contact-channel" ${attribute}="${contact.id}" href="${escape(contact.href)}"${contact.id !== "viber" ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${icon(contact.icon)}</span><span>${contact.label}</span>${icon("diagonal")}</a>`,
+        )
+        .join("");
+    }
+    $("#contact-widget").removeAttribute("open");
     const sizes =
       "(max-width: 650px) calc(100vw - 40px), (max-width: 1150px) 50vw, 640px";
     const heroSrcset = [480, 800, 1200]
@@ -180,7 +186,7 @@ async function build() {
     }
     $('link[rel="stylesheet"]').setAttribute(
       "href",
-      prefix + "styles.css?v=messenger-only-1",
+      prefix + "styles.css?v=contact-widget-1",
     );
     if (!$('script[src*="seo.js"]')) {
       const script = document.createElement("script");
@@ -198,7 +204,7 @@ async function build() {
       );
     $('script[src*="app.js"]').setAttribute(
       "src",
-      prefix + "app.js?v=messenger-only-1",
+      prefix + "app.js?v=contact-widget-1",
     );
     for (const file of ["translations.js", "site-config.js", "seo.js"]) {
       $(`script[src*="${file}"]`).setAttribute(

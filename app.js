@@ -44,6 +44,14 @@ let lastDialogTrigger;
 let toastTimeout;
 let creditsData;
 const dialog = $("#detail-dialog");
+const contactWidget = $("#contact-widget");
+
+function closeContactWidget(restoreFocus = false) {
+  if (!contactWidget.open) return;
+  contactWidget.open = false;
+  if (restoreFocus)
+    contactWidget.querySelector("summary").focus({ preventScroll: true });
+}
 
 function closeMenu() {
   $(".menu-toggle").setAttribute("aria-expanded", "false");
@@ -144,6 +152,7 @@ function renderFaq() {
 
 function openDialog(html, { experience = false } = {}) {
   lastDialogTrigger = document.activeElement;
+  closeContactWidget();
   dialog.classList.toggle("dialog-experience", experience);
   $("#dialog-body").innerHTML = html;
   $("#dialog-body h2").id = "dialog-title";
@@ -199,10 +208,20 @@ $$("#navigation a").forEach((link) =>
   link.addEventListener("click", closeMenu),
 );
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeMenu();
+  if (event.key === "Escape") {
+    closeMenu();
+    closeContactWidget(true);
+  }
 });
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".header")) closeMenu();
+  if (!event.target.closest("#contact-widget")) closeContactWidget();
+});
+document.addEventListener("focusin", (event) => {
+  if (!contactWidget.contains(event.target)) closeContactWidget();
+});
+contactWidget.addEventListener("click", (event) => {
+  if (event.target.closest("[data-quick-channel]")) closeContactWidget(true);
 });
 $(".filters").addEventListener("click", (event) => {
   const button = event.target.closest("[data-filter]");
