@@ -4,6 +4,7 @@ const vm = require("node:vm");
 const { parseHTML, DOMParser } = require("linkedom");
 const prettier = require("prettier");
 const seo = require("../seo.js");
+const contacts = require("../site-config.js");
 
 const root = path.resolve(__dirname, "..");
 const sandbox = { window: {} };
@@ -11,12 +12,7 @@ vm.runInNewContext(
   fs.readFileSync(path.join(root, "translations.js"), "utf8"),
   sandbox,
 );
-vm.runInNewContext(
-  fs.readFileSync(path.join(root, "site-config.js"), "utf8"),
-  sandbox,
-);
 const translations = sandbox.window.ARMMATE_TRANSLATIONS;
-const contacts = sandbox.window.ARMMATE_CONTACT || {};
 const source = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const brand = new DOMParser().parseFromString(
   fs.readFileSync(path.join(root, "assets/brand-mark.svg"), "utf8"),
@@ -129,18 +125,14 @@ async function build() {
     $("#faq-list").innerHTML = t.faq
       .map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`)
       .join("");
-    $("#contact-availability").textContent =
-      /^[1-9]\d{6,14}$/.test(contacts.whatsapp) ||
-      /^[A-Za-z][A-Za-z0-9_]{4,31}$/.test(contacts.telegram)
-        ? t.contactAvailable
-        : t.contactUnavailable;
-    // Interactivity stays unavailable until app.js initializes successfully.
-    $("#offer-form").setAttribute("inert", "");
-    $("#offer-form [type=submit]").setAttribute("disabled", "");
-    $("#companion-field").setAttribute("hidden", "");
-    $("#companion-time").setAttribute("disabled", "");
-    $("#channel-links").setAttribute("hidden", "");
-    $("#channel-links").innerHTML = "";
+    $("#contact-phone").setAttribute("href", "tel:" + contacts.phone);
+    $("#contact-phone .phone-number").textContent = contacts.displayPhone;
+    $("#channel-links").innerHTML = contacts.channels
+      .map(
+        (contact) =>
+          `<a class="contact-channel" data-channel="${contact.id}" href="${escape(contact.href)}"${contact.id !== "viber" ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${icon(contact.icon)}</span><span>${contact.label}</span>${icon("diagonal")}</a>`,
+      )
+      .join("");
     const sizes =
       "(max-width: 650px) calc(100vw - 40px), (max-width: 1150px) 50vw, 640px";
     const heroSrcset = [480, 800, 1200]
@@ -190,9 +182,9 @@ async function build() {
     }
     $('link[rel="stylesheet"]').setAttribute(
       "href",
-      prefix + "styles.css?v=experience-modal-1",
+      prefix + "styles.css?v=direct-contact-1",
     );
-    if (!$('script[src$="seo.js"]')) {
+    if (!$('script[src*="seo.js"]')) {
       const script = document.createElement("script");
       script.setAttribute("defer", "");
       script.setAttribute("src", prefix + "seo.js");
@@ -208,8 +200,14 @@ async function build() {
       );
     $('script[src*="app.js"]').setAttribute(
       "src",
-      prefix + "app.js?v=experience-modal-1",
+      prefix + "app.js?v=direct-contact-1",
     );
+    for (const file of ["translations.js", "site-config.js", "seo.js"]) {
+      $(`script[src*="${file}"]`).setAttribute(
+        "src",
+        prefix + file + "?v=direct-contact-1",
+      );
+    }
     document
       .querySelectorAll('link[rel="preload"][as="font"]')
       .forEach((el) => el.remove());
@@ -233,9 +231,9 @@ async function build() {
     wordmarkFont.setAttribute("href", `${prefix}assets/outfit-wordmark.woff2`);
     document.head.append(wordmarkFont);
     $(".noscript").textContent = {
-      hy: "Բովանդակությունը կարող ես կարդալ առանց JavaScript-ի։ Հարցում պատրաստելու և ֆիլտրերն օգտագործելու համար միացրու JavaScript-ը։",
-      ru: "Содержание доступно без JavaScript. Включите JavaScript, чтобы подготовить запрос и пользоваться фильтрами.",
-      en: "You can read all content without JavaScript. Enable it to prepare an enquiry and use the filters.",
+      hy: "Բովանդակությունն ու կապի հղումները հասանելի են առանց JavaScript-ի։ Ֆիլտրերն օգտագործելու համար միացրու JavaScript-ը։",
+      ru: "Содержание и ссылки для связи доступны без JavaScript. Включите его для использования фильтров.",
+      en: "Content and contact links work without JavaScript. Enable it to use the filters.",
     }[language];
     seo.updateDocument(document, language, t);
     const filename = (language === "hy" ? "" : language + "/") + "index.html";
@@ -255,7 +253,7 @@ async function build() {
   output("sitemap.xml", sitemap);
   output(
     "robots.txt",
-    `# For a GitHub project site, only robots.txt at the host root governs crawling.\n# This file is ready for a domain-root deployment; see docs/SEO.md.\nUser-agent: *\nAllow: /\n\nSitemap: ${seo.baseUrl}sitemap.xml\n`,
+    `User-agent: *\nAllow: /\n\nSitemap: ${seo.baseUrl}sitemap.xml\n`,
   );
   console.log(
     check

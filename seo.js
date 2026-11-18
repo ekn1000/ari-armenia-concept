@@ -1,11 +1,15 @@
 "use strict";
 
 (function (global) {
-  const baseUrl = "https://ekn1000.github.io/armmate/";
+  const baseUrl = "https://armmate.am/";
+  const contact =
+    typeof module !== "undefined" && module.exports
+      ? require("./site-config.js")
+      : global.ARMMATE_CONTACT;
   const locales = { hy: "hy_AM", ru: "ru_RU", en: "en_GB" };
   const paths = { hy: "", ru: "ru/", en: "en/" };
   const languages = Object.keys(paths);
-  const updated = "2026-11-16";
+  const updated = "2026-11-18";
 
   function pageUrl(language) {
     return new URL(paths[language], baseUrl).href;
@@ -25,6 +29,14 @@
           name: "ARMMATE",
           url: baseUrl,
           logo: { "@type": "ImageObject", url: baseUrl + "assets/logo.svg" },
+          telephone: contact.phone,
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: contact.phone,
+            contactType: "customer service",
+            availableLanguage: ["Armenian", "Russian", "English"],
+            url: baseUrl + "#plan",
+          },
         },
         {
           "@type": "WebSite",

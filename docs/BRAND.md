@@ -38,6 +38,6 @@ In the navigation use the horizontal symbol + name without the tiny subtitle. Sm
 
 ## Publishing address
 
-The repository is **https://github.com/ekn1000/armmate** and the active site is **https://ekn1000.github.io/armmate/**, with `/ru/` and `/en/` language pages. Canonical links, the sitemap, social URLs and error-page links use this publishing address. The brand name does not establish ownership of `armmate.am`.
+The repository is **https://github.com/ekn1000/armmate** and the active site is **https://armmate.am/**, with `/ru/` and `/en/` language pages. Canonical links, the sitemap, social URLs and error-page links use this custom domain. GitHub Pages enforces HTTPS; `www.armmate.am` redirects to the apex domain.
 
-If the owner registers and connects `armmate.am`, configure GitHub Pages and DNS, verify HTTPS, update `baseUrl` in `seo.js` and the return links in `404.html`, then regenerate the language pages, canonical/hreflang links, social URLs, sitemap and robots file. Confirm the custom domain works before advertising it as the live address. Search Console verification and sitemap submission belong to the verified domain owner.
+The public contact number is **+374 91 110799**, with direct phone, WhatsApp, Telegram and Viber links. Contact links are generated from `site-config.js`.

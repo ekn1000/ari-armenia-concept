@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ekn1000.github.io/armmate/</loc>
-    <lastmod>2026-11-16</lastmod>
-    <xhtml:link rel="alternate" hreflang="hy" href="https://ekn1000.github.io/armmate/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://ekn1000.github.io/armmate/ru/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ekn1000.github.io/armmate/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ekn1000.github.io/armmate/" />
+    <loc>https://armmate.am/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/" />
   </url>
   <url>
-    <loc>https://ekn1000.github.io/armmate/ru/</loc>
-    <lastmod>2026-11-16</lastmod>
-    <xhtml:link rel="alternate" hreflang="hy" href="https://ekn1000.github.io/armmate/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://ekn1000.github.io/armmate/ru/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ekn1000.github.io/armmate/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ekn1000.github.io/armmate/" />
+    <loc>https://armmate.am/ru/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/" />
   </url>
   <url>
-    <loc>https://ekn1000.github.io/armmate/en/</loc>
-    <lastmod>2026-11-16</lastmod>
-    <xhtml:link rel="alternate" hreflang="hy" href="https://ekn1000.github.io/armmate/" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://ekn1000.github.io/armmate/ru/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ekn1000.github.io/armmate/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ekn1000.github.io/armmate/" />
+    <loc>https://armmate.am/en/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/" />
   </url>
 </urlset>

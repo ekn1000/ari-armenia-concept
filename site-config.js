@@ -1,11 +1,33 @@
 "use strict";
 
-// Public business contacts only. This file is delivered to every visitor.
-// WhatsApp: international number, digits only, without +, spaces or punctuation.
-// Telegram: business username only, without @ or https://t.me/.
-// Leave empty until ARMMATE's verified business contacts are available.
-// Empty or invalid contacts never produce an outgoing messenger link.
-window.ARMMATE_CONTACT = Object.freeze({
-  whatsapp: "",
-  telegram: "",
-});
+// Public business contacts supplied by the owner. Never put secrets here.
+(function (global) {
+  const phone = "+37491110799";
+  const digits = phone.slice(1);
+  const contact = Object.freeze({
+    phone,
+    displayPhone: "+374 91 110799",
+    channels: Object.freeze([
+      Object.freeze({
+        id: "whatsapp",
+        label: "WhatsApp",
+        href: `https://wa.me/${digits}`,
+        icon: "chat",
+      }),
+      Object.freeze({
+        id: "telegram",
+        label: "Telegram",
+        href: `https://t.me/${phone}`,
+        icon: "send",
+      }),
+      Object.freeze({
+        id: "viber",
+        label: "Viber",
+        href: `viber://chat?number=${encodeURIComponent(phone)}`,
+        icon: "phone",
+      }),
+    ]),
+  });
+  if (typeof module !== "undefined" && module.exports) module.exports = contact;
+  else global.ARMMATE_CONTACT = contact;
+})(typeof window !== "undefined" ? window : globalThis);

@@ -40,35 +40,10 @@ let language = supportedLanguages.includes(queryLanguage)
   ? queryLanguage
   : document.documentElement.lang;
 let activeFilter = "all";
-let lastRequest;
 let lastDialogTrigger;
 let toastTimeout;
 let creditsData;
 const dialog = $("#detail-dialog");
-const form = $("#offer-form");
-const localDate = (date) =>
-  `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-const locale = () => ({ hy: "hy-AM", ru: "ru-RU", en: "en-GB" })[language];
-
-function getContacts(message = "") {
-  const config = window.ARMMATE_CONTACT || {};
-  const contacts = [];
-  const whatsapp =
-    typeof config.whatsapp === "string" ? config.whatsapp.trim() : "";
-  const telegram =
-    typeof config.telegram === "string" ? config.telegram.trim() : "";
-  if (/^[1-9]\d{6,14}$/.test(whatsapp)) {
-    const url = new URL(`https://wa.me/${whatsapp}`);
-    if (message) url.searchParams.set("text", message);
-    contacts.push({ id: "whatsapp", label: "WhatsApp", url: url.href });
-  }
-  if (/^[A-Za-z][A-Za-z0-9_]{4,31}$/.test(telegram)) {
-    const url = new URL(`https://t.me/${telegram}`);
-    if (message) url.searchParams.set("text", message);
-    contacts.push({ id: "telegram", label: "Telegram", url: url.href });
-  }
-  return contacts;
-}
 
 function closeMenu() {
   $(".menu-toggle").setAttribute("aria-expanded", "false");
@@ -127,28 +102,11 @@ function setLanguage(next, updateUrl = true) {
   renderList("#agreed-list", t.agreedItems);
   renderExperiences();
   renderFaq();
-  renderContactChannels();
   storage.set("armmate-language", language);
   if (updateUrl || supportedLanguages.includes(queryLanguage)) {
     updateLanguageUrl();
   }
-  $$("input").forEach((el) => el.setCustomValidity(""));
   closeMenu();
-}
-
-function renderContactChannels() {
-  const t = translations[language];
-  const contacts = getContacts();
-  $("#channel-links").hidden = contacts.length === 0;
-  $("#channel-links").innerHTML = contacts
-    .map(
-      (contact) =>
-        `<a class="button button-secondary" href="${escapeHtml(contact.url)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${contact.label}${icon("diagonal")}</a>`,
-    )
-    .join("");
-  $("#contact-availability").textContent = contacts.length
-    ? t.contactAvailable
-    : t.contactUnavailable;
 }
 
 function renderExperiences() {
@@ -208,54 +166,6 @@ function showExperience(id) {
   );
 }
 
-function formatDate(date) {
-  return new Intl.DateTimeFormat(locale(), {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(date + "T12:00:00"));
-}
-
-function requestText() {
-  const t = translations[language];
-  const support = {
-    online: t.supportOnline,
-    companion: t.supportCompanion,
-    discuss: t.supportDiscuss,
-  };
-  const lines = [
-    t.messageGreeting,
-    "",
-    `${t.messageName}: ${lastRequest.name}`,
-    `${t.messageArrival}: ${formatDate(lastRequest.arrival)}`,
-    `${t.messageDeparture}: ${formatDate(lastRequest.departure)}`,
-    `${t.messageTravellers}: ${lastRequest.travellers}`,
-    `${t.messageSupport}: ${support[lastRequest.support]}`,
-  ];
-  if (lastRequest.support === "companion" && lastRequest.companionTime)
-    lines.push(`${t.messageCompanion}: ${lastRequest.companionTime}`);
-  if (lastRequest.needs)
-    lines.push("", `${t.messageNeeds}: ${lastRequest.needs}`);
-  lines.push(
-    "",
-    `${t.messageLanguage}: ${t.messageLanguageValue}`,
-    "",
-    t.messageClosing,
-  );
-  return lines.join("\n");
-}
-
-function showRequest() {
-  const t = translations[language];
-  const message = requestText();
-  const contacts = getContacts(message);
-  openDialog(
-    `<span class="eyebrow">${t.requestLabel}</span><h2>${t.requestTitle}</h2><p>${t.requestIntro}</p><label class="request-preview-label" for="request-preview">${t.requestPreviewLabel}</label><textarea id="request-preview" class="request-preview" readonly rows="10"></textarea><p class="demo-notice">${contacts.length ? t.sendNotice : t.contactUnavailable}</p><div class="messenger-actions">${contacts.map((contact) => `<a class="button messenger-link" data-channel="${contact.id}" href="${escapeHtml(contact.url)}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${contact.id === "whatsapp" ? t.sendWhatsapp : t.sendTelegram}${icon("diagonal")}</a>`).join("")}</div><div class="dialog-actions"><button type="button" class="button button-secondary" data-copy>${t.copy}</button><button type="button" class="button button-secondary" data-download>${t.download}${icon("arrow")}</button></div>`,
-  );
-  // User-entered text is assigned as a value, never parsed as HTML.
-  $("#request-preview").value = message;
-}
-
 function toast(message) {
   $("#toast").textContent = message;
   $("#toast").classList.add("visible");
@@ -264,33 +174,6 @@ function toast(message) {
     () => $("#toast").classList.remove("visible"),
     3500,
   );
-}
-
-function updateCompanionField() {
-  $("#companion-field").hidden = $("#support-type").value !== "companion";
-  $("#companion-time").disabled = $("#support-type").value !== "companion";
-}
-
-function syncDates() {
-  $("#arrival").min = localDate(new Date());
-  $("#departure").min = $("#arrival").value || $("#arrival").min;
-  $("#arrival").setCustomValidity("");
-  $("#departure").setCustomValidity("");
-}
-
-function validateRequest() {
-  const t = translations[language];
-  $$("input").forEach((el) => el.setCustomValidity(""));
-  if (!$("#request-name").value.trim())
-    $("#request-name").setCustomValidity(t.invalidName);
-  if ($("#arrival").value && $("#arrival").value < localDate(new Date()))
-    $("#arrival").setCustomValidity(t.invalidArrival);
-  if ($("#departure").value && $("#departure").value < $("#arrival").value)
-    $("#departure").setCustomValidity(t.invalidDates);
-  const count = Number($("#travellers").value);
-  if (!Number.isInteger(count) || count < 1 || count > 100)
-    $("#travellers").setCustomValidity(t.invalidTravellers);
-  return form.reportValidity();
 }
 
 $$("[data-lang]").forEach((link) =>
@@ -319,11 +202,6 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMenu();
 });
 document.addEventListener("click", (event) => {
-  const choice = event.target.closest("[data-support-choice]");
-  if (choice) {
-    $("#support-type").value = choice.dataset.supportChoice;
-    updateCompanionField();
-  }
   if (!event.target.closest(".header")) closeMenu();
 });
 $(".filters").addEventListener("click", (event) => {
@@ -354,63 +232,17 @@ dialog.addEventListener("close", () => {
   if (lastDialogTrigger?.isConnected)
     lastDialogTrigger.focus({ preventScroll: true });
 });
-dialog.addEventListener("click", async (event) => {
+dialog.addEventListener("click", (event) => {
   if (event.target.closest("[data-discuss]")) {
-    lastDialogTrigger = $("#request-name");
+    lastDialogTrigger = $("#contact-phone");
     dialog.close();
     $("#plan").scrollIntoView({
       behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
         ? "instant"
         : "smooth",
     });
-    $("#request-name").focus({ preventScroll: true });
+    $("#contact-phone").focus({ preventScroll: true });
   }
-  if (event.target.closest("[data-download]")) {
-    const blob = new Blob(["\uFEFF" + requestText()], {
-      type: "text/plain;charset=utf-8",
-    });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `ARMMATE-enquiry-${lastRequest.arrival}-${language}.txt`;
-    document.body.append(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
-  if (event.target.closest("[data-copy]")) {
-    try {
-      await navigator.clipboard.writeText(requestText());
-      toast(translations[language].copied);
-    } catch {
-      toast(translations[language].copyError);
-    }
-  }
-});
-$("#support-type").addEventListener("change", updateCompanionField);
-$("#arrival").addEventListener("input", syncDates);
-$("#departure").addEventListener("input", () =>
-  $("#departure").setCustomValidity(""),
-);
-$("#request-name").addEventListener("input", () =>
-  $("#request-name").setCustomValidity(""),
-);
-$("#travellers").addEventListener("input", () =>
-  $("#travellers").setCustomValidity(""),
-);
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!validateRequest()) return;
-  lastRequest = {
-    name: $("#request-name").value.trim(),
-    arrival: $("#arrival").value,
-    departure: $("#departure").value,
-    travellers: $("#travellers").value,
-    support: $("#support-type").value,
-    companionTime: $("#companion-time").value.trim(),
-    needs: $("#request-needs").value.trim(),
-  };
-  showRequest();
 });
 $("#credits-button").addEventListener("click", async () => {
   const t = translations[language];
@@ -427,8 +259,6 @@ $("#credits-button").addEventListener("click", async () => {
     toast(t.creditsError);
   }
 });
-syncDates();
-updateCompanionField();
 const hero = $(".hero-image");
 hero.src = assetUrl("ararat-800.webp");
 hero.srcset = [480, 800, 1200]
@@ -437,11 +267,6 @@ hero.srcset = [480, 800, 1200]
 // Keep the complete static HTML on a normal load. Re-render only when an old
 // query-string link requests a different language, or the visitor switches it.
 if (language === document.documentElement.lang) {
-  renderContactChannels();
   storage.set("armmate-language", language);
   if (supportedLanguages.includes(queryLanguage)) updateLanguageUrl();
 } else setLanguage(language, false);
-// The static fallback remains inert if scripts fail; it cannot submit personal
-// details through the browser's default GET form behaviour.
-form.inert = false;
-form.querySelector('[type="submit"]').disabled = false;

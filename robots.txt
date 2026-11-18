@@ -1,6 +1,4 @@
-# For a GitHub project site, only robots.txt at the host root governs crawling.
-# This file is ready for a domain-root deployment; see docs/SEO.md.
 User-agent: *
 Allow: /
 
-Sitemap: https://ekn1000.github.io/armmate/sitemap.xml
+Sitemap: https://armmate.am/sitemap.xml

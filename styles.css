@@ -869,43 +869,7 @@ p {
   transform: rotate(12deg);
   stroke-width: 1.1;
 }
-.plan-form {
-  background: #f0eee4;
-  border: 1px solid #e3e1d6;
-  border-radius: 10px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.form-heading {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-.plan-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  min-width: 0;
-}
-.plan-form label > span {
-  font-size: 10px;
-  font-weight: 600;
-}
-.plan-form small {
-  font-size: 9px;
-  font-weight: 400;
-  color: var(--muted);
-}
+
 input,
 select,
 textarea {
@@ -934,24 +898,134 @@ textarea:focus {
 ::placeholder {
   color: #596552;
 }
-.form-submit {
-  width: 100%;
-  justify-content: space-between;
-  font-size: 12px;
-  padding: 16px 18px;
+
+.contact-card {
+  min-width: 0;
+  background: #f0eee4;
+  border: 1px solid #e3e1d6;
+  border-radius: 14px;
+  padding: 36px;
 }
-.form-note {
+.contact-card > .eyebrow {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.contact-card h3 {
+  font-size: clamp(24px, 2.4vw, 31px);
+  letter-spacing: -0.7px;
+  line-height: 1.4;
+  margin-top: 12px;
+}
+.contact-phone {
   display: flex;
-  align-items: flex-start;
-  gap: 7px;
-  font-size: 8px;
-  line-height: 1.8;
-  margin-top: -8px;
+  align-items: center;
+  gap: 15px;
+  padding-block: 24px;
+  margin-top: 10px;
+  border-bottom: 1px solid #d9dccf;
 }
-.form-note svg {
-  width: 13px;
-  height: 13px;
-  margin-top: 1px;
+.contact-phone > svg:first-child {
+  width: 30px;
+  height: 30px;
+  color: var(--orange);
+}
+.phone-number {
+  display: block;
+  font-family: Manrope, Arial, sans-serif;
+  font-size: clamp(21px, 2.3vw, 29px);
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+.phone-caption {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.contact-phone > svg:last-child,
+.contact-channel > svg {
+  width: 19px;
+  height: 19px;
+  margin-left: auto;
+}
+.contact-hint {
+  font-size: 12px;
+  margin-block: 23px 14px;
+}
+.contact-channels {
+  display: grid;
+  gap: 10px;
+}
+.contact-channel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 17px 13px 13px;
+  background: var(--paper);
+  border: 1px solid #dcdfd2;
+  border-radius: 9px;
+  font-family: Manrope, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.contact-channel:hover {
+  background: #fffefa;
+  border-color: var(--brand-green);
+}
+.channel-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+.channel-icon svg {
+  width: 21px;
+  height: 21px;
+}
+.channel-whatsapp {
+  background: #e4ecdf;
+  color: #335f3e;
+}
+.channel-telegram {
+  background: #e2edf2;
+  color: #24617c;
+}
+.channel-viber {
+  background: #ebe5f2;
+  color: #65468b;
+}
+.contact-note {
+  font-size: 11px;
+  line-height: 1.9;
+  margin-top: 20px;
+}
+@media (max-width: 650px) {
+  .contact-card {
+    padding: 25px 22px;
+  }
+  .contact-phone {
+    gap: 11px;
+  }
+  .contact-phone > svg:first-child {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media (max-width: 360px) {
+  .contact-card {
+    padding: 23px 17px;
+  }
+  .phone-number {
+    font-size: 20px;
+  }
+  .contact-phone > svg:last-child {
+    display: none;
+  }
 }
 .faq-section {
   padding-top: 0;
@@ -1143,32 +1217,7 @@ textarea:focus {
   background: var(--cream);
   border-radius: 6px;
 }
-.plan-summary {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  color: var(--muted);
-  font-size: 10px;
-}
-.plan-summary span {
-  padding: 5px 9px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-}
-.dialog .wishes {
-  margin-top: 18px;
-  overflow-wrap: anywhere;
-}
-.dialog-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.dialog-actions .button {
-  font-size: 10px;
-  gap: 10px;
-  padding: 12px 16px;
-}
+
 .button-secondary {
   background: transparent;
   color: var(--ink);
@@ -1463,13 +1512,7 @@ textarea:focus {
   .plan-copy > p {
     font-size: 11px;
   }
-  .plan-form {
-    padding: 23px;
-    gap: 17px;
-  }
-  .form-submit {
-    font-size: 10px;
-  }
+
   .faq-section {
     padding-top: 0;
     gap: 45px;
@@ -1794,22 +1837,7 @@ textarea:focus {
   .plan-mark {
     display: none;
   }
-  .plan-form {
-    padding: 23px 20px;
-    gap: 19px;
-  }
-  .form-heading {
-    font-size: 11px;
-  }
-  .form-submit {
-    font-size: 11px;
-  }
-  .form-note {
-    font-size: 8px;
-  }
-  .form-row {
-    gap: 12px;
-  }
+
   input,
   select,
   textarea {
@@ -1892,12 +1920,7 @@ textarea:focus {
   .dialog .button {
     width: 100%;
   }
-  .dialog-actions {
-    gap: 0;
-  }
-  .dialog .dialog-actions .button {
-    margin-top: 12px;
-  }
+
   .image-spark {
     width: 48px;
     height: 36px;
@@ -2139,91 +2162,15 @@ html[lang="hy"] .hero h1 {
   padding-top: 10px;
   align-items: start;
 }
-.plan-form {
-  gap: 21px;
-}
-.plan-form label > span {
-  font-size: 12px;
-}
-.plan-form small {
-  font-size: 10px;
-}
-.plan-form input,
-.plan-form select,
-.plan-form textarea {
-  font-size: 13px;
-  min-height: 49px;
-  line-height: 1.6;
-}
-.plan-form textarea {
-  min-height: 106px;
-}
-.plan-form .form-note {
-  font-size: 10px;
-  line-height: 1.8;
-}
-.form-heading {
-  font-size: 14px;
-}
-.form-heading .tiny-sun {
-  width: 25px;
-  height: 21px;
-}
-.plan-form .form-submit {
-  font-size: 13px;
-}
+
 .plan-copy > p {
   font-size: 14px;
 }
-.channel-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 27px;
-}
-.channel-links .button {
-  font-size: 12px;
-  padding: 12px 17px;
-  gap: 12px;
-}
-.contact-availability {
-  border-left: 2px solid #c3c9b7;
-  padding-left: 15px;
-  margin-top: 25px;
-  font-size: 11px !important;
-  line-height: 1.9;
-}
-.request-preview-label {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  margin: 22px 0 8px;
-}
-.dialog .request-preview {
-  min-height: 260px;
-  max-height: 40dvh;
-  resize: vertical;
-  font-size: 12px;
-  line-height: 1.8;
-  padding: 16px;
-  color: var(--ink);
-}
+
 .dialog .demo-notice {
   margin-top: 20px;
 }
-.messenger-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.messenger-actions .button {
-  font-size: 12px;
-  gap: 12px;
-  padding: 13px 17px;
-}
-.dialog-actions .button {
-  margin-top: 12px;
-}
+
 .dialog p {
   font-size: 13px;
 }
@@ -2332,20 +2279,7 @@ html[lang="hy"] .hero h1 {
   .expectations-grid {
     gap: 30px;
   }
-  .plan-form .form-row {
-    grid-template-columns: 1fr;
-  }
-  .plan-form .form-row:has(#arrival) {
-    grid-template-columns: 1fr 1fr;
-  }
-  .plan-form label > span {
-    font-size: 11px;
-  }
-  .plan-form input,
-  .plan-form select,
-  .plan-form textarea {
-    font-size: 12px;
-  }
+
   .faq-list summary {
     font-size: 12px;
   }
@@ -2456,33 +2390,7 @@ html[lang="hy"] .hero h1 {
   .plan-copy > p {
     font-size: 13px;
   }
-  .plan-form .form-row {
-    grid-template-columns: 1fr 1fr;
-  }
-  .plan-form label > span {
-    font-size: 11px;
-  }
-  .plan-form input,
-  .plan-form select,
-  .plan-form textarea {
-    font-size: 14px;
-  }
-  .plan-form small {
-    font-size: 10px;
-  }
-  .plan-form .form-submit {
-    font-size: 12px;
-  }
-  .form-heading {
-    font-size: 12px;
-  }
-  .form-heading .tiny-sun {
-    width: 22px;
-    height: 19px;
-  }
-  .plan-form .form-note {
-    font-size: 10px;
-  }
+
   .faq-section h2 {
     font-size: 31px;
   }
@@ -2496,25 +2404,7 @@ html[lang="hy"] .hero h1 {
   .nav {
     font-size: 14px;
   }
-  .dialog .request-preview {
-    font-size: 12px;
-  }
-  .messenger-actions {
-    gap: 0;
-  }
-  .messenger-actions .button {
-    width: 100%;
-    margin-top: 12px;
-  }
-  .dialog-actions .button {
-    width: auto;
-    flex: 1;
-    min-width: 140px;
-    white-space: normal;
-  }
-  .dialog-actions {
-    gap: 10px;
-  }
+
   .dialog .demo-notice {
     font-size: 11px;
   }
@@ -2536,9 +2426,7 @@ html[lang="hy"] .hero h1 {
   .card-content h3 {
     font-size: 18px;
   }
-  .plan-form .form-row {
-    grid-template-columns: 1fr !important;
-  }
+
   .hero-buttons {
     flex-direction: column;
     align-items: flex-start;

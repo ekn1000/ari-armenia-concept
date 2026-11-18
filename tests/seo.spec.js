@@ -41,7 +41,25 @@ for (const lang of seo.languages) {
     await expect(page.locator(".experience-card")).toHaveCount(3);
     await expect(page.locator("#pricing-factors li")).toHaveCount(5);
     await expect(page.locator("#faq-list details")).toHaveCount(8);
-    await expect(page.locator("#offer-form")).toHaveAttribute("inert", "");
+    await expect(page.locator("form, input, textarea, select")).toHaveCount(0);
+    await expect(page.locator("#contact-phone")).toHaveAttribute(
+      "href",
+      "tel:+37491110799",
+    );
+    await expect(page.locator("#contact-phone")).toContainText(
+      "+374 91 110799",
+    );
+    const destinations = {
+      whatsapp: "https://wa.me/37491110799",
+      telegram: "https://t.me/+37491110799",
+      viber: "viber://chat?number=%2B37491110799",
+    };
+    for (const [channel, href] of Object.entries(destinations)) {
+      await expect(page.locator(`[data-channel="${channel}"]`)).toHaveAttribute(
+        "href",
+        href,
+      );
+    }
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
       seo.pageUrl(lang),
@@ -117,8 +135,13 @@ for (const lang of seo.languages) {
       (item) => item["@type"] === "Service",
     );
     expect(service.areaServed.name).toBe("Armenia");
+    const organization = schema["@graph"].find(
+      (item) => item["@type"] === "Organization",
+    );
+    expect(organization.telephone).toBe("+37491110799");
+    expect(organization.contactPoint.telephone).toBe(organization.telephone);
     expect(JSON.stringify(schema)).not.toMatch(
-      /"(price|aggregateRating|review|telephone|streetAddress|openingHours)"/,
+      /"(price|aggregateRating|review|streetAddress|openingHours)"/,
     );
     const preload = page.locator('link[rel="preload"][as="image"]');
     expect(

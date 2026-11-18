@@ -12,6 +12,6 @@ Clone `https://github.com/ekn1000/armmate.git`. A GitHub collaborator must accep
 
 Preserve the `#plan` link and compatibility with `?lang=hy|ru|en`. The canonical language paths are `/` (Armenian), `/ru/` and `/en/`. Static files are committed and served directly; use the generator when changing their source content. Do not introduce fixed price packages, automatic pricing, guaranteed response times or 24/7 promises without an explicit business decision.
 
-Browser tests use test-only messenger destinations and inspect links without opening them. Keep real messages, booking requests and payments out of automated tests.
+Browser tests inspect the public messenger destinations without opening them. Keep real messages, booking requests and payments out of automated tests.
 
 Photo attributions and font licences in `assets/` must stay with the relevant assets. See `docs/BUSINESS_CONCEPT.md` for product requirements and `docs/LAUNCH_CHECKLIST.md` for outstanding operational setup.

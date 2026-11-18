@@ -2,14 +2,14 @@
 
 The public preview is deployed. Before presenting it as an operating service:
 
-- Add ARMMATE's verified WhatsApp number and/or Telegram username in `site-config.js`. Check the recipient manually in each messenger.
-- Verify that the message draft opens on desktop and on the mobile apps used by customers. Copy/download is the fallback if a messenger does not prefill the draft.
+- Confirm that the published +374 91 110799 number resolves to the intended ARMMATE account in WhatsApp, Telegram and Viber. Telegram phone discovery must allow visitors to find this number; otherwise configure the verified public username link.
+- Verify direct messenger links on desktop and mobile. Viber requires the app. The visible phone link remains available for calls.
 - Set the actual service period, contact hours, response expectations and scope for each offer. Do not advertise unconditional 24/7 support.
 - Define how the manual offer is confirmed and paid, including any cancellation or refund arrangements, and communicate these before payment.
 - Separate ARMMATE's assistance fee, companion services and third-party costs in each offer.
 - Confirm companion staffing and partner availability before committing to it. Prefer continuity with the same assistant where possible.
 - Decide any required business/legal contact and privacy information before collecting enquiries through a backend or analytics service. Do not add made-up contact or registration details.
 - Review the Armenian, Russian and English copy together whenever business terms change.
-- Keep the preview notices until the actual enquiry channels and operating process are ready.
+- Keep service scope and availability honest as the operating process develops.
 
 No automated pricing, online payment, booking engine or customer database is part of this implementation.

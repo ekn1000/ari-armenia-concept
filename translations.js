@@ -1,5 +1,3 @@
-"use strict";
-
 window.ARMMATE_TRANSLATIONS = {
   hy: {
     title: "Անձնական տուրիստական ասիստենտ Հայաստանում | ARMMATE",
@@ -184,30 +182,7 @@ window.ARMMATE_TRANSLATIONS = {
     planLabel: "ՍԿՍԵՆՔ ՔՈ ԱՅՑԻՑ",
     planTitle: "Քո կարիքները։<br>Քո առաջարկը։",
     planIntro:
-      "Նշիր քո այցի մանրամասները։ Գինը կքննարկենք անձամբ՝ հասկանալով աջակցության կարիքն ու ծավալը։",
-    formLabel: "Պատրաստենք անհատական հարցումը",
-    nameLabel: "Քո անունը",
-    namePlaceholder: "Ինչպե՞ս դիմենք քեզ",
-    arrivalLabel: "Ժամանման օրը",
-    departureLabel: "Մեկնելու օրը",
-    guestsLabel: "Ճանապարհորդների թիվը",
-    supportLabel: "Աջակցության տեսակը",
-    supportOnline: "Առցանց աջակցություն",
-    supportCompanion: "Առցանց + անձնական ուղեկից",
-    supportDiscuss: "Եկեք միասին որոշենք",
-    companionTimeLabel: "Ուղեկցման օրերն ու ժամերը",
-    companionTimePlaceholder: "Օրինակ՝ 2 օր, օրական 3 ժամ",
-    optional: "(ըստ ցանկության)",
-    needsLabel: "Ինչո՞վ կարող ենք օգնել",
-    needsPlaceholder:
-      "Նախասիրություններ, բյուջե, տրանսպորտ, լեզու կամ հատուկ պահանջներ…",
-    formCta: "Պատրաստել իմ հարցումը",
-    formNote:
-      "Սկզբում կտեսնես հարցման տեքստը։ Ուղարկումը կատարում ես ինքդ՝ ընտրված մեսենջերում։ Այստեղ ամրագրում կամ վճարում չի կատարվում։",
-    contactUnavailable:
-      "Սա ցուցադրական տարբերակ է․ ARMMATE-ի պաշտոնական WhatsApp/Telegram կոնտակտները դեռ ավելացված չեն։ Կարող ես պատրաստել, պատճենել կամ ներբեռնել հարցումը, բայց այն չի ուղարկվի։",
-    contactAvailable:
-      "Ընտրիր պաշտոնական կապի միջոցը կամ նախ պատրաստիր մանրամասն հարցումը։ Առաջարկն ու պայմանները կքննարկվեն անձամբ։",
+      "Գրիր մեզ WhatsApp-ով, Telegram-ով կամ Viber-ով, կամ պարզապես զանգահարիր։ Քո այցի մանրամասներն ու անհատական գինը կքննարկենք միասին։",
     faqLabel: "ՄԻ ՔԱՆԻ ՊԱՏԱՍԽԱՆ",
     faqTitle: "Հարցե՞ր ունես։<br>Մենք կպատասխանենք։",
     faq: [
@@ -241,7 +216,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
       [
         "Ինչպե՞ս սկսել։",
-        "Կիսվիր ամսաթվերով ու կարիքներով, քննարկիր առաջարկը, հետո հաստատիր պայմաններն ու վճարումը։ Այնուհետև կստանաս քո ասիստենտի կոնտակտը։ Այս ցուցադրական կայքը դեռ չի ընդունում վճարումներ կամ ամրագրումներ։",
+        "Գրիր մեզ WhatsApp-ով, Telegram-ով կամ Viber-ով՝ +374 91 110799 համարով։ Պատմիր այցիդ օրերի ու կարիքների մասին, հետո միասին կքննարկենք առաջարկը, պայմաններն ու վճարումը։ Կայքում ամրագրում կամ վճարում չի կատարվում։",
       ],
     ],
     footerTag: "Քո ընկերը Հայաստանում։",
@@ -253,37 +228,8 @@ window.ARMMATE_TRANSLATIONS = {
     mainNav: "Հիմնական ընտրացանկ",
     languageLabel: "Լեզու",
     categoriesLabel: "Տպավորությունների տեսակները",
-    requestLabel: "ՔՈ ԱՆՀԱՏԱԿԱՆ ՀԱՐՑՈՒՄԸ",
-    requestTitle: "Սկսենք այս զրույցից։",
-    requestPreviewLabel: "Պատրաստված հաղորդագրությունը",
-    requestIntro:
-      "Ստուգիր տեքստը։ Այն չի ուղարկվել։ Կարող ես պատճենել կամ ներբեռնել այն։",
-    sendWhatsapp: "Բացել WhatsApp-ը",
-    sendTelegram: "Բացել Telegram-ը",
-    sendNotice:
-      "Սեղմելով՝ կբացես ընտրված մեսենջերը՝ հարցման տեքստով։ Հաղորդագրությունը ուղարկելու համար հաստատիր այնտեղ։",
-    copy: "Պատճենել հարցումը",
-    download: "Ներբեռնել հարցումը",
-    copied: "Հարցումը պատճենված է",
-    copyError: "Պատճենել չհաջողվեց։ Կարող ես ներբեռնել տեքստը։",
-    invalidDates: "Մեկնելու օրը պետք է լինի ժամանման օրը կամ դրանից հետո։",
-    invalidArrival: "Ընտրիր այսօրվա կամ ավելի ուշ ամսաթիվ։",
-    invalidName: "Խնդրում ենք նշել քո անունը։",
-    invalidTravellers: "Նշիր ճանապարհորդների թիվը՝ 1-ից 100։",
     choose: "Քննարկել իմ այցը",
     ideaNote: "Ոգեշնչման գաղափար, ոչ թե ամրագրվող փաթեթ։",
-    messageGreeting: "Բարև ARMMATE։ Կցանկանայի անհատական առաջարկ ստանալ։",
-    messageName: "Անուն",
-    messageArrival: "Ժամանում",
-    messageDeparture: "Մեկնում",
-    messageTravellers: "Ճանապարհորդների թիվը",
-    messageSupport: "Աջակցություն",
-    messageCompanion: "Ուղեկցման ցանկալի օրեր և ժամեր",
-    messageNeeds: "Իմ կարիքներն ու նախասիրությունները",
-    messageLanguage: "Հաղորդակցման նախընտրելի լեզուն",
-    messageLanguageValue: "Հայերեն",
-    messageClosing:
-      "Խնդրում եմ քննարկել աջակցության ծավալը, ժամերն ու անհատական գինը՝ ARMMATE-ի վճարն առանձնացնելով երրորդ կողմերի ծախսերից։",
     creditsTitle: "Լուսանկարների հեղինակները",
     creditsNote:
       "Լուսանկարները Wikimedia Commons-ից են։ Դրանք փոքրացվել են, փոխարկվել WebP ձևաչափի և ցուցադրվում են կադրված։",
@@ -292,6 +238,12 @@ window.ARMMATE_TRANSLATIONS = {
       "Տառատեսակներ՝ Manrope, Noto Sans Armenian և Outfit, SIL Open Font License 1.1։",
     creditsError:
       "Լուսանկարների աղբյուրները հասանելի են assets/credits.json ֆայլում։",
+    contactLabel: "ԿԱՊ ARMMATE-Ի ՀԵՏ",
+    contactTitle: "Սկսենք զրույցից։",
+    callUs: "Զանգահարել մեզ",
+    contactHint: "Կամ գրիր քեզ հարմար մեսենջերով։",
+    contactNote:
+      "Ուղարկիր այցիդ օրերն ու ցանկություններդ․ անհատական առաջարկը կքննարկենք զրույցում։",
   },
   ru: {
     title: "Личный помощник туриста в Армении | ARMMATE",
@@ -475,29 +427,7 @@ window.ARMMATE_TRANSLATIONS = {
     planLabel: "НАЧНЁМ С ТВОЕЙ ПОЕЗДКИ",
     planTitle: "Твои потребности.<br>Твоё предложение.",
     planIntro:
-      "Поделись деталями поездки. Стоимость обсудим лично, когда поймём, какая помощь и в каком объёме нужна.",
-    formLabel: "Подготовим личный запрос",
-    nameLabel: "Твоё имя",
-    namePlaceholder: "Как к тебе обращаться?",
-    arrivalLabel: "Дата приезда",
-    departureLabel: "Дата отъезда",
-    guestsLabel: "Число путешественников",
-    supportLabel: "Вид поддержки",
-    supportOnline: "Онлайн-поддержка",
-    supportCompanion: "Онлайн + личное сопровождение",
-    supportDiscuss: "Давайте обсудим вместе",
-    companionTimeLabel: "Дни и часы сопровождения",
-    companionTimePlaceholder: "Например: 2 дня, по 3 часа",
-    optional: "(необязательно)",
-    needsLabel: "Чем мы можем помочь?",
-    needsPlaceholder: "Интересы, бюджет, транспорт, язык или особые пожелания…",
-    formCta: "Подготовить мой запрос",
-    formNote:
-      "Сначала увидишь текст запроса. Ты сам отправишь его в выбранном мессенджере. Здесь нет бронирования или оплаты.",
-    contactUnavailable:
-      "Это демонстрационная версия. Официальные контакты ARMMATE в WhatsApp/Telegram ещё не добавлены. Запрос можно подготовить, скопировать или скачать, но он не будет отправлен.",
-    contactAvailable:
-      "Выбери официальный способ связи или сначала подготовь подробный запрос. Предложение и условия обсудим лично.",
+      "Напиши нам в WhatsApp, Telegram или Viber или просто позвони. Обсудим детали поездки и подготовим индивидуальное предложение.",
     faqLabel: "НЕСКОЛЬКО ОТВЕТОВ",
     faqTitle: "Есть вопросы?<br>Мы ответим.",
     faq: [
@@ -531,7 +461,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
       [
         "Как начать?",
-        "Расскажи о датах и потребностях, обсуди предложение, подтверди условия и оплату. Затем получишь контакт ассистента. Этот демонстрационный сайт пока не принимает платежи и бронирования.",
+        "Напиши нам в WhatsApp, Telegram или Viber по номеру +374 91 110799. Расскажи о датах поездки и необходимой помощи, затем обсудим предложение, условия и оплату. На сайте нет бронирования и оплаты.",
       ],
     ],
     footerTag: "Твой друг в Армении.",
@@ -543,39 +473,8 @@ window.ARMMATE_TRANSLATIONS = {
     mainNav: "Главная навигация",
     languageLabel: "Язык",
     categoriesLabel: "Категории впечатлений",
-    requestLabel: "ТВОЙ ПЕРСОНАЛЬНЫЙ ЗАПРОС",
-    requestTitle: "Начнём с этого разговора.",
-    requestPreviewLabel: "Подготовленное сообщение",
-    requestIntro:
-      "Проверь текст. Он не отправлен. Его можно скопировать или скачать.",
-    sendWhatsapp: "Открыть WhatsApp",
-    sendTelegram: "Открыть Telegram",
-    sendNotice:
-      "Кнопка откроет выбранный мессенджер с текстом запроса. Чтобы отправить сообщение, подтверди отправку там.",
-    copy: "Скопировать запрос",
-    download: "Скачать запрос",
-    copied: "Запрос скопирован",
-    copyError: "Не удалось скопировать. Можно скачать текст.",
-    invalidDates:
-      "Дата отъезда должна совпадать с датой приезда или быть позже.",
-    invalidArrival: "Выбери сегодняшнюю или более позднюю дату.",
-    invalidName: "Пожалуйста, укажи своё имя.",
-    invalidTravellers: "Укажи число путешественников от 1 до 100.",
     choose: "Обсудить мою поездку",
     ideaNote: "Идея для вдохновения, а не пакет для бронирования.",
-    messageGreeting:
-      "Привет, ARMMATE! Хочу получить индивидуальное предложение.",
-    messageName: "Имя",
-    messageArrival: "Приезд",
-    messageDeparture: "Отъезд",
-    messageTravellers: "Число путешественников",
-    messageSupport: "Поддержка",
-    messageCompanion: "Желаемые дни и часы сопровождения",
-    messageNeeds: "Мои потребности и интересы",
-    messageLanguage: "Предпочитаемый язык общения",
-    messageLanguageValue: "Русский",
-    messageClosing:
-      "Прошу обсудить объём помощи, часы связи и индивидуальную цену, указав плату ARMMATE отдельно от расходов на сторонние услуги.",
     creditsTitle: "Авторы фотографий",
     creditsNote:
       "Фотографии с Wikimedia Commons: уменьшены, преобразованы в WebP и отображаются с кадрированием.",
@@ -583,6 +482,12 @@ window.ARMMATE_TRANSLATIONS = {
     fontCredits:
       "Шрифты: Manrope, Noto Sans Armenian и Outfit, SIL Open Font License 1.1.",
     creditsError: "Источники фотографий доступны в файле assets/credits.json.",
+    contactLabel: "СВЯЗАТЬСЯ С ARMMATE",
+    contactTitle: "Начнём с разговора.",
+    callUs: "Позвонить нам",
+    contactHint: "Или напиши в удобном мессенджере.",
+    contactNote:
+      "Расскажи о датах поездки и своих пожеланиях. Стоимость и условия обсудим лично.",
   },
   en: {
     title: "Personal Travel Assistant in Armenia | ARMMATE",
@@ -768,30 +673,7 @@ window.ARMMATE_TRANSLATIONS = {
     planLabel: "LET’S START WITH YOUR TRIP",
     planTitle: "Your needs.<br>Your personal offer.",
     planIntro:
-      "Share a few details about your visit. We’ll discuss the price personally once we understand the support and scope you need.",
-    formLabel: "Prepare your personal enquiry",
-    nameLabel: "Your name",
-    namePlaceholder: "What should we call you?",
-    arrivalLabel: "Arrival date",
-    departureLabel: "Departure date",
-    guestsLabel: "Number of travellers",
-    supportLabel: "Kind of support",
-    supportOnline: "Online assistance",
-    supportCompanion: "Online + personal companion",
-    supportDiscuss: "Let’s work it out together",
-    companionTimeLabel: "Companion days and hours",
-    companionTimePlaceholder: "For example: 2 days, 3 hours each",
-    optional: "(optional)",
-    needsLabel: "How can we help?",
-    needsPlaceholder:
-      "Your interests, budget, transport, language or any special requests…",
-    formCta: "Prepare my enquiry",
-    formNote:
-      "Review your message first. You send it yourself in your chosen messenger. No booking or payment is made here.",
-    contactUnavailable:
-      "This is a preview. ARMMATE’s official WhatsApp/Telegram contacts have not been added yet. You can prepare, copy or download your enquiry, but it will not be sent.",
-    contactAvailable:
-      "Choose an official contact channel or prepare a detailed enquiry first. We’ll discuss your offer and service terms personally.",
+      "Message us on WhatsApp, Telegram or Viber, or give us a call. We’ll talk through your trip and prepare a personal offer together.",
     faqLabel: "A FEW THINGS TO KNOW",
     faqTitle: "You might<br>be wondering.",
     faq: [
@@ -825,7 +707,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
       [
         "How do I get started?",
-        "Share your dates and needs, discuss your offer, then confirm the terms and payment. You’ll receive your assistant’s contact details. This preview website does not yet accept bookings or payments.",
+        "Message us on WhatsApp, Telegram or Viber at +374 91 110799. Share your dates and needs, then we’ll discuss your offer, terms and payment. The website does not take bookings or payments.",
       ],
     ],
     footerTag: "Your friend in Armenia.",
@@ -837,37 +719,8 @@ window.ARMMATE_TRANSLATIONS = {
     mainNav: "Main navigation",
     languageLabel: "Language",
     categoriesLabel: "Experience categories",
-    requestLabel: "YOUR PERSONAL ENQUIRY",
-    requestTitle: "Let’s start this conversation.",
-    requestPreviewLabel: "Your prepared message",
-    requestIntro:
-      "Review your message. It has not been sent. You can copy or download it.",
-    sendWhatsapp: "Open WhatsApp",
-    sendTelegram: "Open Telegram",
-    sendNotice:
-      "These buttons open your chosen messenger with your enquiry text. Confirm sending there to send the message.",
-    copy: "Copy enquiry",
-    download: "Download enquiry",
-    copied: "Enquiry copied",
-    copyError: "Could not copy. You can download the text instead.",
-    invalidDates: "Departure must be on or after your arrival date.",
-    invalidArrival: "Please choose today or a later date.",
-    invalidName: "Please enter your name.",
-    invalidTravellers: "Please enter a number of travellers from 1 to 100.",
     choose: "Discuss my trip",
     ideaNote: "An idea for inspiration, not a package to book.",
-    messageGreeting: "Hi ARMMATE! I’d like a personalized offer.",
-    messageName: "Name",
-    messageArrival: "Arrival",
-    messageDeparture: "Departure",
-    messageTravellers: "Number of travellers",
-    messageSupport: "Assistance",
-    messageCompanion: "Preferred companion days and hours",
-    messageNeeds: "My needs and interests",
-    messageLanguage: "Preferred communication language",
-    messageLanguageValue: "English",
-    messageClosing:
-      "Please discuss the scope of assistance, contact hours and individual pricing, with ARMMATE’s fee separated from third-party service costs.",
     creditsTitle: "Behind the photographs",
     creditsNote:
       "Images from Wikimedia Commons. Resized, converted to WebP and displayed with cropping.",
@@ -875,5 +728,11 @@ window.ARMMATE_TRANSLATIONS = {
     fontCredits:
       "Fonts: Manrope, Noto Sans Armenian and Outfit, SIL Open Font License 1.1.",
     creditsError: "Photo sources are available in assets/credits.json.",
+    contactLabel: "CONTACT ARMMATE",
+    contactTitle: "Let’s start a conversation.",
+    callUs: "Call us",
+    contactHint: "Or choose your favourite messenger.",
+    contactNote:
+      "Share your travel dates and what you need. We’ll discuss your personal offer and service terms in our conversation.",
   },
 };
