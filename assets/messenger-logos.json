@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Telegram",
+    "hex": "26A5E4",
+    "source": "https://telegram.org/tour/screenshots",
+    "asset": "telegram-logo.svg",
+    "vectorSource": "https://github.com/simple-icons/simple-icons/blob/17cd4ee07612198a1d8777a060d4100423762a8b/icons/telegram.svg",
+    "revision": "17cd4ee07612198a1d8777a060d4100423762a8b",
+    "license": "CC0-1.0"
+  },
+  {
+    "title": "Viber",
+    "hex": "7360F2",
+    "source": "https://www.viber.com/brand-center",
+    "guidelines": "https://www.viber.com/brand-center",
+    "asset": "viber-logo.svg",
+    "vectorSource": "https://github.com/simple-icons/simple-icons/blob/17cd4ee07612198a1d8777a060d4100423762a8b/icons/viber.svg",
+    "revision": "17cd4ee07612198a1d8777a060d4100423762a8b",
+    "license": "CC0-1.0"
+  },
+  {
+    "title": "WhatsApp",
+    "hex": "25D366",
+    "source": "https://about.meta.com/brand/resources/whatsapp/whatsapp-brand",
+    "guidelines": "https://about.meta.com/brand/resources/whatsapp/whatsapp-brand",
+    "asset": "whatsapp-logo.svg",
+    "vectorSource": "https://github.com/simple-icons/simple-icons/blob/17cd4ee07612198a1d8777a060d4100423762a8b/icons/whatsapp.svg",
+    "revision": "17cd4ee07612198a1d8777a060d4100423762a8b",
+    "license": "CC0-1.0"
+  }
+]

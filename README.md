@@ -71,4 +71,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow and [docs/LA
 
 Photo authors, source links, licences and modification details are in [assets/credits.json](assets/credits.json) and the footer dialog. Photos were resized, converted to WebP and are displayed with cropping. Their original licences continue to apply.
 
+Messenger vector logos are bundled from Simple Icons in the platforms' brand colours. Provenance is in [assets/messenger-logos.json](assets/messenger-logos.json), with the included CC0 licence.
+
 Manrope, Noto Sans Armenian and Outfit use SIL Open Font License 1.1; licence files are included in `assets/`. The logo wordmark uses a locally hosted Outfit subset; page headings retain the original sans-serif fonts.

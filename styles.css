@@ -957,20 +957,19 @@ textarea:focus {
   border-radius: 10px;
 }
 .channel-icon svg {
-  width: 21px;
-  height: 21px;
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+  stroke: none;
 }
 .channel-whatsapp {
-  background: #e4ecdf;
-  color: #335f3e;
+  color: #25d366;
 }
 .channel-telegram {
-  background: #e2edf2;
-  color: #24617c;
+  color: #26a5e4;
 }
 .channel-viber {
-  background: #ebe5f2;
-  color: #65468b;
+  color: #7360f2;
 }
 .contact-note {
   font-size: 11px;

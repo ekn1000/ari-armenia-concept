@@ -99,6 +99,7 @@ function setLanguage(next, updateUrl = true) {
   });
   $("#navigation").setAttribute("aria-label", t.mainNav);
   $("#languages").setAttribute("aria-label", t.languageLabel);
+  $$("a.brand").forEach((link) => link.setAttribute("aria-label", t.brandName));
   $(".menu-toggle").setAttribute("aria-label", t.menu);
   $(".filters").setAttribute("aria-label", t.categoriesLabel);
   $("#support-categories").innerHTML = t.categories
@@ -272,7 +273,7 @@ $("#credits-button").addEventListener("click", async () => {
       creditsData = await response.json();
     }
     openDialog(
-      `<span class="eyebrow">ARMMATE / CREDITS</span><h2>${t.creditsTitle}</h2><p>${t.creditsNote}</p><div class="credits-list">${creditsData.map((item) => `<div><strong>${escapeHtml(item.image.replace("assets/", ""))}</strong><p>${escapeHtml(item.author)} · <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.license)}</a></p><a href="${escapeHtml(item.source)}" target="_blank" rel="noopener noreferrer">${t.source} ↗</a></div>`).join("")}<p>${t.fontCredits}</p></div>`,
+      `<span class="eyebrow">${t.brandName} / ${t.credits}</span><h2>${t.creditsTitle}</h2><p>${t.creditsNote}</p><div class="credits-list">${creditsData.map((item) => `<div><strong>${escapeHtml(item.image.replace("assets/", ""))}</strong><p>${escapeHtml(item.author)} · <a href="${escapeHtml(item.licenseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.license)}</a></p><a href="${escapeHtml(item.source)}" target="_blank" rel="noopener noreferrer">${t.source} ↗</a></div>`).join("")}<p>${t.fontCredits}</p></div>`,
     );
   } catch {
     toast(t.creditsError);

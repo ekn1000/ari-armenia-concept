@@ -10,19 +10,16 @@
         id: "whatsapp",
         label: "WhatsApp",
         href: `https://wa.me/${digits}`,
-        icon: "chat",
       }),
       Object.freeze({
         id: "telegram",
         label: "Telegram",
         href: `https://t.me/${phone}`,
-        icon: "send",
       }),
       Object.freeze({
         id: "viber",
         label: "Viber",
         href: `viber://chat?number=${encodeURIComponent(phone)}`,
-        icon: "phone",
       }),
     ]),
   });

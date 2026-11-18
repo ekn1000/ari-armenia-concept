@@ -1,6 +1,6 @@
 # ARMMATE identity
 
-ARMMATE combines **ARM** (Armenia) and **MATE** (friend or companion). Keep both letters **m** in the name. Use `ARMMATE` in prose and metadata, and the lowercase `armmate` wordmark in the logo.
+ARMMATE combines **ARM** (Armenia) and **MATE** (friend or companion). Keep both letters **m** in the name. Armenian prose uses **արմմեյթը**, inflected naturally as **արմմեյթի**, with **արմմեյթ** as the brand name in metadata. Russian and English use `ARMMATE`; the logo uses the lowercase `armmate` wordmark.
 
 ## Slogan
 
@@ -41,3 +41,5 @@ In the navigation use the horizontal symbol + name without the tiny subtitle. Sm
 The repository is **https://github.com/ekn1000/armmate** and the active site is **https://armmate.am/**, with `/ru/` and `/en/` language pages. Canonical links, the sitemap, social URLs and error-page links use this custom domain. GitHub Pages enforces HTTPS; `www.armmate.am` redirects to the apex domain.
 
 The WhatsApp, Telegram and Viber accounts use **+374 91 110799**. The contact section contains only the three messenger links, generated from `site-config.js`.
+
+Both the contact card and floating contact menu use the recognizable WhatsApp, Telegram and Viber vector logos in their brand colours (`#25D366`, `#26A5E4`, `#7360F2`). The locally stored vectors come from Simple Icons, which references the platforms' brand resources. Source URLs, the pinned revision and colours are recorded in `assets/messenger-logos.json`; its CC0 licence is included in `assets/simple-icons-LICENSE.md`.

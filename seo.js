@@ -22,7 +22,7 @@
         {
           "@type": "Organization",
           "@id": organization,
-          name: "ARMMATE",
+          name: copy.brandName,
           url: baseUrl,
           logo: { "@type": "ImageObject", url: baseUrl + "assets/logo.svg" },
           contactPoint: {
@@ -35,7 +35,7 @@
         {
           "@type": "WebSite",
           "@id": website,
-          name: "ARMMATE",
+          name: copy.brandName,
           url: baseUrl,
           publisher: { "@id": organization },
           inLanguage: languages,
@@ -116,7 +116,7 @@
     meta("name", "description", copy.description);
     meta("name", "robots", "index, follow, max-image-preview:large");
     meta("property", "og:type", "website");
-    meta("property", "og:site_name", "ARMMATE");
+    meta("property", "og:site_name", copy.brandName);
     meta("property", "og:title", copy.title);
     meta("property", "og:description", copy.description);
     meta("property", "og:url", pageUrl(language));
