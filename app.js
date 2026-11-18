@@ -234,14 +234,14 @@ dialog.addEventListener("close", () => {
 });
 dialog.addEventListener("click", (event) => {
   if (event.target.closest("[data-discuss]")) {
-    lastDialogTrigger = $("#contact-phone");
+    lastDialogTrigger = $("#channel-links a");
     dialog.close();
     $("#plan").scrollIntoView({
       behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
         ? "instant"
         : "smooth",
     });
-    $("#contact-phone").focus({ preventScroll: true });
+    $("#channel-links a").focus({ preventScroll: true });
   }
 });
 $("#credits-button").addEventListener("click", async () => {

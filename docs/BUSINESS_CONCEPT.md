@@ -111,15 +111,15 @@ The website remains in Armenian, Russian and English, with equivalent meaning an
 5. Individual pricing without fixed amounts.
 6. Armenia inspiration framed as examples of support, not bookable packages.
 7. Clear service expectations.
-8. Direct phone, WhatsApp, Telegram and Viber contact links.
+8. Direct WhatsApp, Telegram and Viber contact links.
 9. FAQ and photo credits.
 
 The design keeps the established warm colours, Armenian landscapes, readable spacing, responsive layout and direct calls to action. Avoid invented testimonials, response-time promises, availability claims or fabricated contact details.
 
 ## Current implementation boundary
 
-The website is static and hosted on GitHub Pages at https://armmate.am/. It publishes the owner's business number, +374 91 110799, with direct phone, WhatsApp, Telegram and Viber links. The initial HTML contains the links, so they remain available without JavaScript.
+The website is static and hosted on GitHub Pages at https://armmate.am/. It provides three contact options: WhatsApp, Telegram and Viber, using the owner's business number +374 91 110799. The initial HTML contains the links, so they remain available without JavaScript.
 
-There is no enquiry form or generated message. Visitors contact ARMMATE through their chosen messenger or by phone. ARMMATE handles the conversation, pricing and confirmation manually. The website does not send messages, accept payments or create bookings.
+There is no enquiry form or generated message. Visitors contact ARMMATE through their chosen messenger. ARMMATE handles the conversation, pricing and confirmation manually. The website does not send messages, accept payments or create bookings.
 
 Operational terms, cancellation arrangements, actual hours, response expectations, partner arrangements and payment methods must be set by ARMMATE before taking paying customers. Do not invent these decisions in the website.

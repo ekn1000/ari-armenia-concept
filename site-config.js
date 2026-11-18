@@ -5,8 +5,6 @@
   const phone = "+37491110799";
   const digits = phone.slice(1);
   const contact = Object.freeze({
-    phone,
-    displayPhone: "+374 91 110799",
     channels: Object.freeze([
       Object.freeze({
         id: "whatsapp",

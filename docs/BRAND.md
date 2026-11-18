@@ -40,4 +40,4 @@ In the navigation use the horizontal symbol + name without the tiny subtitle. Sm
 
 The repository is **https://github.com/ekn1000/armmate** and the active site is **https://armmate.am/**, with `/ru/` and `/en/` language pages. Canonical links, the sitemap, social URLs and error-page links use this custom domain. GitHub Pages enforces HTTPS; `www.armmate.am` redirects to the apex domain.
 
-The public contact number is **+374 91 110799**, with direct phone, WhatsApp, Telegram and Viber links. Contact links are generated from `site-config.js`.
+The WhatsApp, Telegram and Viber accounts use **+374 91 110799**. The contact section contains only the three messenger links, generated from `site-config.js`.

@@ -42,13 +42,7 @@ for (const lang of seo.languages) {
     await expect(page.locator("#pricing-factors li")).toHaveCount(5);
     await expect(page.locator("#faq-list details")).toHaveCount(8);
     await expect(page.locator("form, input, textarea, select")).toHaveCount(0);
-    await expect(page.locator("#contact-phone")).toHaveAttribute(
-      "href",
-      "tel:+37491110799",
-    );
-    await expect(page.locator("#contact-phone")).toContainText(
-      "+374 91 110799",
-    );
+    await expect(page.locator('a[href^="tel:"]')).toHaveCount(0);
     const destinations = {
       whatsapp: "https://wa.me/37491110799",
       telegram: "https://t.me/+37491110799",
@@ -138,10 +132,9 @@ for (const lang of seo.languages) {
     const organization = schema["@graph"].find(
       (item) => item["@type"] === "Organization",
     );
-    expect(organization.telephone).toBe("+37491110799");
-    expect(organization.contactPoint.telephone).toBe(organization.telephone);
+    expect(organization.contactPoint.url).toBe(seo.baseUrl + "#plan");
     expect(JSON.stringify(schema)).not.toMatch(
-      /"(price|aggregateRating|review|streetAddress|openingHours)"/,
+      /"(price|aggregateRating|review|telephone|streetAddress|openingHours)"/,
     );
     const preload = page.locator('link[rel="preload"][as="image"]');
     expect(

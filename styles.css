@@ -917,33 +917,6 @@ textarea:focus {
   line-height: 1.4;
   margin-top: 12px;
 }
-.contact-phone {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding-block: 24px;
-  margin-top: 10px;
-  border-bottom: 1px solid #d9dccf;
-}
-.contact-phone > svg:first-child {
-  width: 30px;
-  height: 30px;
-  color: var(--orange);
-}
-.phone-number {
-  display: block;
-  font-family: Manrope, Arial, sans-serif;
-  font-size: clamp(21px, 2.3vw, 29px);
-  font-weight: 700;
-  letter-spacing: -0.7px;
-}
-.phone-caption {
-  display: block;
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 3px;
-}
-.contact-phone > svg:last-child,
 .contact-channel > svg {
   width: 19px;
   height: 19px;
@@ -1008,23 +981,10 @@ textarea:focus {
   .contact-card {
     padding: 25px 22px;
   }
-  .contact-phone {
-    gap: 11px;
-  }
-  .contact-phone > svg:first-child {
-    width: 25px;
-    height: 25px;
-  }
 }
 @media (max-width: 360px) {
   .contact-card {
     padding: 23px 17px;
-  }
-  .phone-number {
-    font-size: 20px;
-  }
-  .contact-phone > svg:last-child {
-    display: none;
   }
 }
 .faq-section {

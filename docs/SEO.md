@@ -10,7 +10,7 @@ ARMMATE has three complete, crawlable HTML pages:
 | Russian  | https://armmate.am/ru/ |
 | English  | https://armmate.am/en/ |
 
-Each page contains its translated service descriptions, pricing explanation, inspiration cards and FAQ in the initial HTML. Search engines and visitors do not need JavaScript to read them. Phone, WhatsApp, Telegram and Viber links are present in the initial HTML and work without JavaScript. There is no enquiry form.
+Each page contains its translated service descriptions, pricing explanation, inspiration cards and FAQ in the initial HTML. Search engines and visitors do not need JavaScript to read them. WhatsApp, Telegram and Viber links are present in the initial HTML and work without JavaScript. There is no enquiry form or calling option.
 
 Each language has a descriptive title, meta description, self-referencing canonical URL, reciprocal `hreflang` links, `html[lang]`, Open Graph locale and localized social image, plus Twitter large-image metadata. Language selectors are real links and continue working without JavaScript. The Armenian homepage is the `x-default` destination.
 
@@ -18,7 +18,7 @@ The public root always opens in Armenian; explicit `/ru/` and `/en/` paths take 
 
 `seo.js` is shared by the static generator and the browser. It keeps metadata and JSON-LD consistent when switching languages while preserving the contact section and selected filters.
 
-The JSON-LD graph describes the ARMMATE organization, website, localized page, personal assistance service in Armenia and the visible FAQ. It includes the owner-supplied +37491110799 telephone and contact point, and no invented prices, reviews, ratings, business addresses or opening hours. The FAQ markup matches the visible questions and answers; it does not imply eligibility for Google's FAQ rich results, which are restricted to particular types of sites.
+The JSON-LD graph describes the ARMMATE organization, website, localized page, personal assistance service in Armenia and the visible FAQ. Its contact point leads to the three messenger links. No telephone contact, invented prices, reviews, ratings, business addresses or opening hours are included. The FAQ markup matches the visible questions and answers; it does not imply eligibility for Google's FAQ rich results, which are restricted to particular types of sites.
 
 The sitemap lists only the three canonical language pages with reciprocal alternatives. `404.html` carries `noindex, follow` and offers links back to the language homepages. Images have translated alt text, responsive WebP sources and reserved layout dimensions. The hero has matching responsive preload hints. Fonts are local WOFF2 files with `font-display: swap` and language-specific preload hints. Original photo attribution and licences apply to the derivative images too.
 

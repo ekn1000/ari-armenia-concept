@@ -125,8 +125,6 @@ async function build() {
     $("#faq-list").innerHTML = t.faq
       .map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`)
       .join("");
-    $("#contact-phone").setAttribute("href", "tel:" + contacts.phone);
-    $("#contact-phone .phone-number").textContent = contacts.displayPhone;
     $("#channel-links").innerHTML = contacts.channels
       .map(
         (contact) =>
@@ -182,7 +180,7 @@ async function build() {
     }
     $('link[rel="stylesheet"]').setAttribute(
       "href",
-      prefix + "styles.css?v=direct-contact-1",
+      prefix + "styles.css?v=messenger-only-1",
     );
     if (!$('script[src*="seo.js"]')) {
       const script = document.createElement("script");
@@ -200,12 +198,12 @@ async function build() {
       );
     $('script[src*="app.js"]').setAttribute(
       "src",
-      prefix + "app.js?v=direct-contact-1",
+      prefix + "app.js?v=messenger-only-1",
     );
     for (const file of ["translations.js", "site-config.js", "seo.js"]) {
       $(`script[src*="${file}"]`).setAttribute(
         "src",
-        prefix + file + "?v=direct-contact-1",
+        prefix + file + "?v=messenger-only-1",
       );
     }
     document

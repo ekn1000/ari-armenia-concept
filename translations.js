@@ -182,7 +182,7 @@ window.ARMMATE_TRANSLATIONS = {
     planLabel: "ՍԿՍԵՆՔ ՔՈ ԱՅՑԻՑ",
     planTitle: "Քո կարիքները։<br>Քո առաջարկը։",
     planIntro:
-      "Գրիր մեզ WhatsApp-ով, Telegram-ով կամ Viber-ով, կամ պարզապես զանգահարիր։ Քո այցի մանրամասներն ու անհատական գինը կքննարկենք միասին։",
+      "Գրիր մեզ WhatsApp-ով, Telegram-ով կամ Viber-ով։ Քո այցի մանրամասներն ու անհատական գինը կքննարկենք միասին։",
     faqLabel: "ՄԻ ՔԱՆԻ ՊԱՏԱՍԽԱՆ",
     faqTitle: "Հարցե՞ր ունես։<br>Մենք կպատասխանենք։",
     faq: [
@@ -216,7 +216,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
       [
         "Ինչպե՞ս սկսել։",
-        "Գրիր մեզ WhatsApp-ով, Telegram-ով կամ Viber-ով՝ +374 91 110799 համարով։ Պատմիր այցիդ օրերի ու կարիքների մասին, հետո միասին կքննարկենք առաջարկը, պայմաններն ու վճարումը։ Կայքում ամրագրում կամ վճարում չի կատարվում։",
+        "Գրիր մեզ WhatsApp-ով, Telegram-ով կամ Viber-ով։ Պատմիր այցիդ օրերի ու կարիքների մասին, հետո միասին կքննարկենք առաջարկը, պայմաններն ու վճարումը։ Կայքում ամրագրում կամ վճարում չի կատարվում։",
       ],
     ],
     footerTag: "Քո ընկերը Հայաստանում։",
@@ -240,8 +240,7 @@ window.ARMMATE_TRANSLATIONS = {
       "Լուսանկարների աղբյուրները հասանելի են assets/credits.json ֆայլում։",
     contactLabel: "ԿԱՊ ARMMATE-Ի ՀԵՏ",
     contactTitle: "Սկսենք զրույցից։",
-    callUs: "Զանգահարել մեզ",
-    contactHint: "Կամ գրիր քեզ հարմար մեսենջերով։",
+    contactHint: "Գրիր քեզ հարմար մեսենջերով։",
     contactNote:
       "Ուղարկիր այցիդ օրերն ու ցանկություններդ․ անհատական առաջարկը կքննարկենք զրույցում։",
   },
@@ -427,7 +426,7 @@ window.ARMMATE_TRANSLATIONS = {
     planLabel: "НАЧНЁМ С ТВОЕЙ ПОЕЗДКИ",
     planTitle: "Твои потребности.<br>Твоё предложение.",
     planIntro:
-      "Напиши нам в WhatsApp, Telegram или Viber или просто позвони. Обсудим детали поездки и подготовим индивидуальное предложение.",
+      "Напиши нам в WhatsApp, Telegram или Viber. Обсудим детали поездки и подготовим индивидуальное предложение.",
     faqLabel: "НЕСКОЛЬКО ОТВЕТОВ",
     faqTitle: "Есть вопросы?<br>Мы ответим.",
     faq: [
@@ -461,7 +460,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
       [
         "Как начать?",
-        "Напиши нам в WhatsApp, Telegram или Viber по номеру +374 91 110799. Расскажи о датах поездки и необходимой помощи, затем обсудим предложение, условия и оплату. На сайте нет бронирования и оплаты.",
+        "Напиши нам в WhatsApp, Telegram или Viber. Расскажи о датах поездки и необходимой помощи, затем обсудим предложение, условия и оплату. На сайте нет бронирования и оплаты.",
       ],
     ],
     footerTag: "Твой друг в Армении.",
@@ -484,8 +483,7 @@ window.ARMMATE_TRANSLATIONS = {
     creditsError: "Источники фотографий доступны в файле assets/credits.json.",
     contactLabel: "СВЯЗАТЬСЯ С ARMMATE",
     contactTitle: "Начнём с разговора.",
-    callUs: "Позвонить нам",
-    contactHint: "Или напиши в удобном мессенджере.",
+    contactHint: "Напиши в удобном мессенджере.",
     contactNote:
       "Расскажи о датах поездки и своих пожеланиях. Стоимость и условия обсудим лично.",
   },
@@ -673,7 +671,7 @@ window.ARMMATE_TRANSLATIONS = {
     planLabel: "LET’S START WITH YOUR TRIP",
     planTitle: "Your needs.<br>Your personal offer.",
     planIntro:
-      "Message us on WhatsApp, Telegram or Viber, or give us a call. We’ll talk through your trip and prepare a personal offer together.",
+      "Message us on WhatsApp, Telegram or Viber. We’ll talk through your trip and prepare a personal offer together.",
     faqLabel: "A FEW THINGS TO KNOW",
     faqTitle: "You might<br>be wondering.",
     faq: [
@@ -707,7 +705,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
       [
         "How do I get started?",
-        "Message us on WhatsApp, Telegram or Viber at +374 91 110799. Share your dates and needs, then we’ll discuss your offer, terms and payment. The website does not take bookings or payments.",
+        "Message us on WhatsApp, Telegram or Viber. Share your dates and needs, then we’ll discuss your offer, terms and payment. The website does not take bookings or payments.",
       ],
     ],
     footerTag: "Your friend in Armenia.",
@@ -730,8 +728,7 @@ window.ARMMATE_TRANSLATIONS = {
     creditsError: "Photo sources are available in assets/credits.json.",
     contactLabel: "CONTACT ARMMATE",
     contactTitle: "Let’s start a conversation.",
-    callUs: "Call us",
-    contactHint: "Or choose your favourite messenger.",
+    contactHint: "Choose your favourite messenger.",
     contactNote:
       "Share your travel dates and what you need. We’ll discuss your personal offer and service terms in our conversation.",
   },

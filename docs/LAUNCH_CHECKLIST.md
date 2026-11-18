@@ -3,7 +3,7 @@
 The public preview is deployed. Before presenting it as an operating service:
 
 - Confirm that the published +374 91 110799 number resolves to the intended ARMMATE account in WhatsApp, Telegram and Viber. Telegram phone discovery must allow visitors to find this number; otherwise configure the verified public username link.
-- Verify direct messenger links on desktop and mobile. Viber requires the app. The visible phone link remains available for calls.
+- Verify the three direct messenger links on desktop and mobile. Viber requires the app.
 - Set the actual service period, contact hours, response expectations and scope for each offer. Do not advertise unconditional 24/7 support.
 - Define how the manual offer is confirmed and paid, including any cancellation or refund arrangements, and communicate these before payment.
 - Separate ARMMATE's assistance fee, companion services and third-party costs in each offer.

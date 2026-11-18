@@ -52,7 +52,7 @@ for (const language of ["hy", "ru", "en"]) {
       await card.click();
       await page.locator("[data-discuss]").click();
       await expect(page.locator("dialog")).not.toBeVisible();
-      await expect(page.locator("#contact-phone")).toBeFocused();
+      await expect(page.locator("#channel-links a").first()).toBeFocused();
       expect(errors).toEqual([]);
     },
   );
@@ -76,10 +76,7 @@ test("language switching preserves direct contact destinations and contact ancho
         .locator("#channel-links a")
         .evaluateAll((links) => links.map((link) => link.getAttribute("href"))),
     ).toEqual(destinations);
-    await expect(page.locator("#contact-phone")).toHaveAttribute(
-      "href",
-      "tel:+37491110799",
-    );
+    await expect(page.locator('a[href^="tel:"]')).toHaveCount(0);
     await expect(page.locator("form")).toHaveCount(0);
   }
 });

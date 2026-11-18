@@ -27,7 +27,7 @@ Open http://127.0.0.1:4187. Armenian is at `/`, Russian at `/ru/`, and English a
 | `styles.css`                        | Responsive layout, brand styling and accessibility states        |
 | `translations.js`                   | All Armenian, Russian and English content                        |
 | `app.js`                            | Language switching, filters and experience/credit dialogs        |
-| `site-config.js`                    | Public phone, WhatsApp, Telegram and Viber destinations          |
+| `site-config.js`                    | Public WhatsApp, Telegram and Viber destinations                 |
 | `seo.js`, `scripts/build-pages.cjs` | Shared metadata/schema and static language-page generator        |
 | `sitemap.xml`, `robots.txt`         | Canonical URL discovery on armmate.am                            |
 | `assets/`                           | Local photos, fonts, favicon and attribution                     |
@@ -35,9 +35,9 @@ Open http://127.0.0.1:4187. Armenian is at `/`, Russian at `/ru/`, and English a
 
 ## Direct business contacts
 
-The owner-supplied business number is **+374 91 110799**. `site-config.js` is shared by the page generator and SEO markup and contains the public number and its WhatsApp, Telegram and Viber links. Update it and rebuild to change the destinations.
+The owner-supplied business number is **+374 91 110799**. `site-config.js` generates its WhatsApp, Telegram and Viber destinations. Update it and rebuild to change the messenger links. The contact section offers only these three messengers.
 
-The contact section contains a `tel:` link, `https://wa.me/37491110799`, `https://t.me/+37491110799` and `viber://chat?number=%2B37491110799`. These are ordinary links in the initial HTML and work without JavaScript. Viber needs its app; Telegram phone links depend on the recipient's phone-number discovery settings. If Telegram does not resolve the account, enable discovery for this number or replace that destination with the verified public username.
+The contact section contains `https://wa.me/37491110799`, `https://t.me/+37491110799` and `viber://chat?number=%2B37491110799`. These are ordinary links in the initial HTML and work without JavaScript. Viber needs its app; Telegram phone links depend on the recipient's phone-number discovery settings. If Telegram does not resolve the account, enable discovery for this number or replace that destination with the verified public username.
 
 There is no enquiry form, generated draft, clipboard/download workflow, booking or online payment. Visitors choose a messenger and write their own message. Requirements, prices and terms are discussed personally. No message is sent automatically. Automated checks inspect the destinations without contacting recipients.
 
@@ -55,7 +55,7 @@ npm run check:generated
 npm run check:format
 ```
 
-The browser suite checks all three translations, pricing rules, direct messenger/phone links, experience-to-contact navigation, mobile navigation, responsive layout and photo credits. It does not contact messenger recipients. Use `npm run format` after edits.
+The browser suite checks all three translations, pricing rules, direct messenger links, experience-to-contact navigation, mobile navigation, responsive layout and photo credits. It does not contact messenger recipients. Use `npm run format` after edits.
 
 It also checks the complete HTML without JavaScript, canonical/hreflang consistency, JSON-LD against visible FAQs, legacy language URLs, sitemap destinations, optimized fonts and the noindex error page. After editing layout, translations, contacts or SEO metadata, run `npm run build` and commit the generated pages. See [docs/SEO.md](docs/SEO.md) for details and Search Console setup that remains outside this repository.
 
