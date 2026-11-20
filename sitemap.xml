@@ -24,4 +24,76 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/" />
   </url>
+  <url>
+    <loc>https://armmate.am/tourist-assistance/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/tourist-assistance/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/pomoshch-turistam-v-armenii/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/tourist-assistance-armenia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/tourist-assistance/" />
+  </url>
+  <url>
+    <loc>https://armmate.am/ru/pomoshch-turistam-v-armenii/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/tourist-assistance/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/pomoshch-turistam-v-armenii/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/tourist-assistance-armenia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/tourist-assistance/" />
+  </url>
+  <url>
+    <loc>https://armmate.am/en/tourist-assistance-armenia/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/tourist-assistance/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/pomoshch-turistam-v-armenii/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/tourist-assistance-armenia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/tourist-assistance/" />
+  </url>
+  <url>
+    <loc>https://armmate.am/local-companion/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/local-companion/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/soprovozhdenie-turistov-v-erevane/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/local-companion-yerevan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/local-companion/" />
+  </url>
+  <url>
+    <loc>https://armmate.am/ru/soprovozhdenie-turistov-v-erevane/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/local-companion/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/soprovozhdenie-turistov-v-erevane/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/local-companion-yerevan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/local-companion/" />
+  </url>
+  <url>
+    <loc>https://armmate.am/en/local-companion-yerevan/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/local-companion/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/soprovozhdenie-turistov-v-erevane/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/local-companion-yerevan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/local-companion/" />
+  </url>
+  <url>
+    <loc>https://armmate.am/contact/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/contact/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/kontakty/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/contact/" />
+  </url>
+  <url>
+    <loc>https://armmate.am/ru/kontakty/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/contact/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/kontakty/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/contact/" />
+  </url>
+  <url>
+    <loc>https://armmate.am/en/contact/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://armmate.am/contact/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://armmate.am/ru/kontakty/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://armmate.am/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://armmate.am/contact/" />
+  </url>
 </urlset>

@@ -46,7 +46,7 @@ for (const lang of seo.languages) {
     await expect(page.locator('a[href^="tel:"]')).toHaveCount(0);
     const destinations = {
       whatsapp: "https://wa.me/37491110799",
-      telegram: "https://t.me/+37491110799",
+      telegram: "https://t.me/armmate_support",
       email: "mailto:armmate.support@gmail.com",
     };
     for (const [channel, href] of Object.entries(destinations)) {
@@ -133,7 +133,10 @@ for (const lang of seo.languages) {
     const organization = schema["@graph"].find(
       (item) => item["@type"] === "Organization",
     );
-    expect(organization.contactPoint.url).toBe(seo.baseUrl + "#plan");
+    expect(organization.contactPoint.url).toBe(
+      seo.contentPageUrl("contact", lang),
+    );
+    expect(organization.sameAs).toContain("https://t.me/armmate_support");
     expect(organization.email).toBe("armmate.support@gmail.com");
     expect(organization.contactPoint.email).toBe(organization.email);
     expect(JSON.stringify(schema)).not.toMatch(
@@ -191,7 +194,7 @@ test("language switching and legacy URLs keep metadata and shared assets consist
   expect(failures).toEqual([]);
 });
 
-test("sitemap lists the three canonical pages with reciprocal language alternatives", async ({
+test("sitemap lists home, service and contact pages with reciprocal language alternatives", async ({
   request,
   page,
 }) => {
@@ -212,8 +215,29 @@ test("sitemap lists the three canonical pages with reciprocal language alternati
       })),
     }));
   }, xml);
-  expect(urls.map((url) => url.loc)).toEqual(seo.languages.map(seo.pageUrl));
+  const families = ["home", ...Object.keys(seo.contentPaths)];
+  expect(urls.map((url) => url.loc)).toEqual(
+    families.flatMap((family) =>
+      seo.languages.map((language) => seo.contentPageUrl(family, language)),
+    ),
+  );
   expect(urls.every((url) => url.alternates.length === 4)).toBe(true);
+  for (const family of families) {
+    const alternatives = seo.languages.map((language) => ({
+      lang: language,
+      href: seo.contentPageUrl(family, language),
+    }));
+    alternatives.push({
+      lang: "x-default",
+      href: seo.contentPageUrl(family, "hy"),
+    });
+    for (const language of seo.languages) {
+      expect(
+        urls.find((url) => url.loc === seo.contentPageUrl(family, language))
+          .alternates,
+      ).toEqual(alternatives);
+    }
+  }
   const robots = await request.get("/robots.txt");
   expect(await robots.text()).toContain(
     "Sitemap: " + seo.baseUrl + "sitemap.xml",

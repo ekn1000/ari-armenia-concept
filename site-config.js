@@ -5,8 +5,11 @@
   const phone = "+37491110799";
   const digits = phone.slice(1);
   const email = "armmate.support@gmail.com";
+  const telegramUsername = "armmate_support";
   const contact = Object.freeze({
     email,
+    searchConsoleVerification: "",
+    yandexVerification: "",
     channels: Object.freeze([
       Object.freeze({
         id: "whatsapp",
@@ -16,12 +19,14 @@
       Object.freeze({
         id: "telegram",
         label: "Telegram",
-        href: `https://t.me/${phone}`,
+        href: `https://t.me/${telegramUsername}`,
+        detail: `@${telegramUsername}`,
       }),
       Object.freeze({
         id: "email",
         label: email,
         href: `mailto:${email}`,
+        detail: email,
       }),
     ]),
   });

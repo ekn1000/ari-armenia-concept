@@ -100,7 +100,7 @@ test("messenger destinations contain only the owner's number and do not prefill 
   await page.goto("/en/");
   const expected = {
     whatsapp: "https://wa.me/37491110799",
-    telegram: "https://t.me/+37491110799",
+    telegram: "https://t.me/armmate_support",
     email: "mailto:armmate.support@gmail.com",
   };
   for (const [channel, destination] of Object.entries(expected)) {

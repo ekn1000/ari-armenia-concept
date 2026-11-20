@@ -102,6 +102,12 @@ function setLanguage(next, updateUrl = true) {
   $$("a.brand").forEach((link) => link.setAttribute("aria-label", t.brandName));
   $(".menu-toggle").setAttribute("aria-label", t.menu);
   $(".filters").setAttribute("aria-label", t.categoriesLabel);
+  $$("[data-content-link]").forEach((link) => {
+    link.href = new URL(
+      seo.contentPaths[link.dataset.contentLink][language],
+      siteRoot,
+    ).href;
+  });
   $("#support-categories").innerHTML = t.categories
     .map(([title, text]) => `<div><h4>${title}</h4><p>${text}</p></div>`)
     .join("");

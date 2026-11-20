@@ -5,6 +5,7 @@ const { parseHTML, DOMParser } = require("linkedom");
 const prettier = require("prettier");
 const seo = require("../seo.js");
 const contacts = require("../site-config.js");
+const buildContentPages = require("./build-content-pages.cjs");
 
 const root = path.resolve(__dirname, "..");
 const sandbox = { window: {} };
@@ -62,6 +63,7 @@ function output(filename, value) {
 }
 
 async function build() {
+  const homes = {};
   for (const language of seo.languages) {
     const { document } = parseHTML(source);
     const t = translations[language];
@@ -98,6 +100,13 @@ async function build() {
       .forEach((link) => link.setAttribute("aria-label", t.brandName));
     $(".menu-toggle").setAttribute("aria-label", t.menu);
     $(".filters").setAttribute("aria-label", t.categoriesLabel);
+    document.querySelectorAll("[data-content-link]").forEach((link) => {
+      link.setAttribute(
+        "href",
+        prefix +
+          seo.contentPaths[link.getAttribute("data-content-link")][language],
+      );
+    });
     document.querySelectorAll("[data-lang]").forEach((el) => {
       const lang = el.dataset.lang;
       const anchor = document.createElement("a");
@@ -150,7 +159,7 @@ async function build() {
       $(selector).innerHTML = contacts.channels
         .map(
           (contact) =>
-            `<a class="contact-channel" ${attribute}="${contact.id}" href="${escape(contact.href)}"${contact.href.startsWith("https://") ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${contact.id === "email" ? `<img data-contact-logo="email" src="${prefix}assets/email-logo.png" width="26" height="26" alt="" aria-hidden="true" />` : messengerLogos[contact.id]}</span><span class="channel-copy"><span class="channel-name"${contact.id === "email" ? ' data-t="emailLabel"' : ""}>${contact.id === "email" ? t.emailLabel : contact.label}</span>${contact.id === "email" && selector === "#channel-links" ? `<span class="channel-detail" dir="ltr">${escape(contacts.email)}</span>` : ""}</span>${icon("diagonal")}</a>`,
+            `<a class="contact-channel" ${attribute}="${contact.id}" href="${escape(contact.href)}"${contact.href.startsWith("https://") ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${contact.id === "email" ? `<img data-contact-logo="email" src="${prefix}assets/email-logo.png" width="26" height="26" alt="" aria-hidden="true" />` : messengerLogos[contact.id]}</span><span class="channel-copy"><span class="channel-name"${contact.id === "email" ? ' data-t="emailLabel"' : ""}>${contact.id === "email" ? t.emailLabel : contact.label}</span>${contact.detail && selector === "#channel-links" ? `<span class="channel-detail" dir="ltr">${escape(contact.detail)}</span>` : ""}</span>${icon("diagonal")}</a>`,
         )
         .join("");
     }
@@ -204,7 +213,7 @@ async function build() {
     }
     $('link[rel="stylesheet"]').setAttribute(
       "href",
-      prefix + "styles.css?v=email-contact-1",
+      prefix + "styles.css?v=search-pages-1",
     );
     if (!$('script[src*="seo.js"]')) {
       const script = document.createElement("script");
@@ -222,12 +231,12 @@ async function build() {
       );
     $('script[src*="app.js"]').setAttribute(
       "src",
-      prefix + "app.js?v=email-contact-1",
+      prefix + "app.js?v=search-pages-1",
     );
     for (const file of ["translations.js", "site-config.js", "seo.js"]) {
       $(`script[src*="${file}"]`).setAttribute(
         "src",
-        prefix + file + "?v=russian-brand-1",
+        prefix + file + "?v=search-pages-1",
       );
     }
     document
@@ -259,19 +268,31 @@ async function build() {
     }[language];
     seo.updateDocument(document, language, t);
     const filename = (language === "hy" ? "" : language + "/") + "index.html";
-    output(
-      filename,
-      await prettier.format(document.toString(), {
-        ...(await prettier.resolveConfig(path.join(root, filename))),
-        filepath: path.join(root, filename),
-      }),
-    );
+    homes[language] = await prettier.format(document.toString(), {
+      ...(await prettier.resolveConfig(path.join(root, filename))),
+      filepath: path.join(root, filename),
+    });
+    output(filename, homes[language]);
   }
-  const alternates = [
-    ...seo.languages.map((lang) => ({ lang, url: seo.pageUrl(lang) })),
-    { lang: "x-default", url: seo.baseUrl },
-  ];
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${seo.languages.map((lang) => `  <url>\n    <loc>${seo.pageUrl(lang)}</loc>\n    <lastmod>${seo.updated}</lastmod>\n${alternates.map((a) => `    <xhtml:link rel="alternate" hreflang="${a.lang}" href="${a.url}" />`).join("\n")}\n  </url>`).join("\n")}\n</urlset>\n`;
+  await buildContentPages({ root, homes, translations, output });
+  const families = ["home", ...Object.keys(seo.contentPaths)];
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${families
+    .map((family) => {
+      const alternates = [
+        ...seo.languages.map((lang) => ({
+          lang,
+          url: seo.contentPageUrl(family, lang),
+        })),
+        { lang: "x-default", url: seo.contentPageUrl(family, "hy") },
+      ];
+      return seo.languages
+        .map(
+          (lang) =>
+            `  <url>\n    <loc>${seo.contentPageUrl(family, lang)}</loc>\n    <lastmod>${seo.updated}</lastmod>\n${alternates.map((a) => `    <xhtml:link rel="alternate" hreflang="${a.lang}" href="${a.url}" />`).join("\n")}\n  </url>`,
+        )
+        .join("\n");
+    })
+    .join("\n")}\n</urlset>\n`;
   output("sitemap.xml", sitemap);
   output(
     "robots.txt",

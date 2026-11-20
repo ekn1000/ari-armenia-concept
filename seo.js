@@ -8,6 +8,23 @@
   const baseUrl = "https://armmate.am/";
   const locales = { hy: "hy_AM", ru: "ru_RU", en: "en_GB" };
   const paths = { hy: "", ru: "ru/", en: "en/" };
+  const contentPaths = {
+    assistance: {
+      hy: "tourist-assistance/",
+      ru: "ru/pomoshch-turistam-v-armenii/",
+      en: "en/tourist-assistance-armenia/",
+    },
+    companion: {
+      hy: "local-companion/",
+      ru: "ru/soprovozhdenie-turistov-v-erevane/",
+      en: "en/local-companion-yerevan/",
+    },
+    contact: {
+      hy: "contact/",
+      ru: "ru/kontakty/",
+      en: "en/contact/",
+    },
+  };
   const languages = Object.keys(paths);
   const updated = "2026-11-20";
 
@@ -15,11 +32,18 @@
     return new URL(paths[language], baseUrl).href;
   }
 
-  function structuredData(language, copy) {
-    const url = pageUrl(language);
+  function contentPageUrl(family, language) {
+    return family === "home"
+      ? pageUrl(language)
+      : new URL(contentPaths[family][language], baseUrl).href;
+  }
+
+  function structuredData(language, copy, family = "home") {
+    const url = contentPageUrl(family, language);
     const organization = baseUrl + "#organization";
     const website = baseUrl + "#website";
-    const service = baseUrl + "#service";
+    const service =
+      baseUrl + (family === "companion" ? "#companion-service" : "#service");
     return {
       "@context": "https://schema.org",
       "@graph": [
@@ -30,12 +54,15 @@
           url: baseUrl,
           logo: { "@type": "ImageObject", url: baseUrl + "assets/logo.svg" },
           email: contacts.email,
+          sameAs: contacts.channels
+            .filter((contact) => contact.id === "telegram")
+            .map((contact) => contact.href),
           contactPoint: {
             "@type": "ContactPoint",
             email: contacts.email,
             contactType: "customer service",
             availableLanguage: ["Armenian", "Russian", "English"],
-            url: baseUrl + "#plan",
+            url: contentPageUrl("contact", language),
           },
         },
         {
@@ -47,14 +74,14 @@
           inLanguage: languages,
         },
         {
-          "@type": "WebPage",
+          "@type": family === "contact" ? "ContactPage" : "WebPage",
           "@id": url + "#webpage",
           url,
           name: copy.title,
           description: copy.description,
           inLanguage: language,
           isPartOf: { "@id": website },
-          about: { "@id": service },
+          about: { "@id": family === "contact" ? organization : service },
           primaryImageOfPage: {
             "@type": "ImageObject",
             url: baseUrl + `assets/social-armmate-friends-${language}.png`,
@@ -67,7 +94,10 @@
           "@id": service,
           name: copy.heroLabel,
           description: copy.description,
-          serviceType: "Personal travel assistance",
+          serviceType:
+            family === "companion"
+              ? "Local companion in Yerevan"
+              : "Personal travel assistance",
           areaServed: { "@type": "Country", name: "Armenia" },
           provider: { "@id": organization },
           url,
@@ -84,15 +114,16 @@
             acceptedAnswer: { "@type": "Answer", text: answer },
           })),
         },
-      ],
+      ].filter((item) => family !== "contact" || item["@type"] !== "Service"),
     };
   }
 
-  function updateDocument(document, language, copy) {
+  function updateDocument(document, language, copy, family = "home") {
+    const currentUrl = contentPageUrl(family, language);
     const head = document.head;
     head
       .querySelectorAll(
-        'meta[name="description"], meta[name="robots"], meta[property^="og:"], meta[name^="twitter:"], link[rel="canonical"], link[rel="alternate"][hreflang], link[rel="sitemap"], #structured-data',
+        'meta[name="description"], meta[name="robots"], meta[name="google-site-verification"], meta[name="yandex-verification"], meta[property^="og:"], meta[name^="twitter:"], link[rel="canonical"], link[rel="alternate"][hreflang], link[rel="sitemap"], #structured-data, #breadcrumbs-data',
       )
       .forEach((element) => element.remove());
     function meta(attribute, name, content) {
@@ -121,11 +152,19 @@
     document.title = copy.title;
     meta("name", "description", copy.description);
     meta("name", "robots", "index, follow, max-image-preview:large");
+    if (contacts.searchConsoleVerification)
+      meta(
+        "name",
+        "google-site-verification",
+        contacts.searchConsoleVerification,
+      );
+    if (contacts.yandexVerification)
+      meta("name", "yandex-verification", contacts.yandexVerification);
     meta("property", "og:type", "website");
     meta("property", "og:site_name", copy.brandName);
     meta("property", "og:title", copy.title);
     meta("property", "og:description", copy.description);
-    meta("property", "og:url", pageUrl(language));
+    meta("property", "og:url", currentUrl);
     meta("property", "og:locale", locales[language]);
     meta(
       "property",
@@ -154,10 +193,10 @@
       baseUrl + `assets/social-armmate-friends-${language}.png`,
     );
     meta("name", "twitter:image:alt", copy.footerTag);
-    link("canonical", pageUrl(language));
+    link("canonical", currentUrl);
     for (const other of languages)
-      link("alternate", pageUrl(other), { hreflang: other });
-    link("alternate", baseUrl, { hreflang: "x-default" });
+      link("alternate", contentPageUrl(family, other), { hreflang: other });
+    link("alternate", contentPageUrl(family, "hy"), { hreflang: "x-default" });
     link("sitemap", baseUrl + "sitemap.xml", { type: "application/xml" });
     let schema = head.querySelector("#structured-data");
     if (!schema) {
@@ -166,16 +205,36 @@
       schema.type = "application/ld+json";
       head.append(schema);
     }
-    schema.textContent = JSON.stringify(structuredData(language, copy)).replace(
-      /</g,
-      "\\u003c",
-    );
+    schema.textContent = JSON.stringify(
+      structuredData(language, copy, family),
+    ).replace(/</g, "\\u003c");
+    if (family !== "home") {
+      const breadcrumbs = document.createElement("script");
+      breadcrumbs.id = "breadcrumbs-data";
+      breadcrumbs.type = "application/ld+json";
+      breadcrumbs.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: copy.homeLabel,
+            item: pageUrl(language),
+          },
+          { "@type": "ListItem", position: 2, name: copy.h1, item: currentUrl },
+        ],
+      }).replace(/</g, "\\u003c");
+      head.append(breadcrumbs);
+    }
   }
 
   const api = {
     baseUrl,
     locales,
     paths,
+    contentPaths,
+    contentPageUrl,
     languages,
     updated,
     pageUrl,

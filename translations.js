@@ -1,15 +1,15 @@
 window.ARMMATE_TRANSLATIONS = {
   hy: {
-    title: "Անձնական տուրիստական ասիստենտ Հայաստանում | արմմեյթ",
+    title: "Տուրիստների աջակցություն Հայաստանում․ անձնական ասիստենտ | արմմեյթ",
     description:
-      "արմմեյթը՝ քո անձնական ասիստենտը Հայաստանում։ Աջակցություն WhatsApp-ով կամ Telegram-ով, ընտրովի անձնական ուղեկցում և անհատական առաջարկ։",
+      "Անձնական ասիստենտ Հայաստանում՝ տեղական խորհուրդներ, տրանսպորտի ու ամրագրումների կազմակերպման օգնություն։ Առցանց աջակցություն և ընտրովի ուղեկցում՝ անհատական առաջարկով։",
     skip: "Անցնել բովանդակությանը",
     navServices: "Ծառայություններ",
     navHow: "Ինչպես է աշխատում",
     navPricing: "Անհատական գին",
     offerCta: "Ստանալ իմ առաջարկը",
     contactCta: "Կապվել արմմեյթի հետ",
-    heroLabel: "Քո անձնական ասիստենտը Հայաստանում",
+    heroLabel: "Անձնական ասիստենտ և աջակցություն տուրիստներին Հայաստանում",
     heroTitle: "Քո ընկերը<br><span>Հայաստանում։</span>",
     heroDescription:
       "Ճանապարհորդիր ինքնուրույն՝ իմանալով, որ ունես քո վստահելի տեղացի մարդուն։ Խորհուրդներ, գործնական աջակցություն և օգնություն, երբ դրա կարիքն ունես։",
@@ -220,7 +220,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
     ],
     footerTag: "Քո ընկերը Հայաստանում։",
-    demoLabel: "Ծառայության ցուցադրական կայք",
+    demoLabel: "Անձնական աջակցություն Հայաստանում",
     madeWith: "Սիրով՝ Հայաստանից",
     credits: "Լուսանկարներ",
     close: "Փակել",
@@ -245,18 +245,38 @@ window.ARMMATE_TRANSLATIONS = {
     contactNote:
       "Ուղարկիր այցիդ օրերն ու ցանկություններդ․ անհատական առաջարկը կքննարկենք զրույցում։",
     brandName: "արմմեյթ",
+    guidesLabel: "ԱՋԱԿՑՈՒԹՅՈՒՆ ՀԱՅԱՍՏԱՆՈՒՄ",
+    guidesTitle: "Գտիր քեզ հարմար աջակցությունը։",
+    guidesIntro:
+      "Ծանոթացիր աջակցության տարբերակներին և գրիր մեզ քո այցի մասին։",
+    guideAssistanceTitle: "Անձնական ասիստենտ Հայաստանում",
+    guideAssistanceText:
+      "Տեղական խորհուրդներ և գործնական առցանց օգնություն՝ քո ճանապարհորդության ընթացքում։",
+    guideCompanionTitle: "Տեղացի ուղեկից Երևանում",
+    guideCompanionText:
+      "Զբոսանք, գնումներ և հաղորդակցման օգնություն՝ առանձին համաձայնեցված օրերով ու ժամերով։",
+    guideContactTitle: "Կապ արմմեյթի հետ",
+    guideContactText:
+      "Telegram, WhatsApp և էլ. փոստ․ ընտրիր հարմար տարբերակը և քննարկենք քո այցը։",
+    guideReadMore: "Կարդալ ավելին",
+    homeLabel: "Գլխավոր էջ",
+    breadcrumbLabel: "Էջի ուղին",
+    faqHeading: "Հաճախ տրվող հարցեր",
+    relatedTitle: "Իմացիր ավելին",
+    contactNoScript:
+      "Կապի հղումներն ու այս էջի բովանդակությունը հասանելի են նաև առանց JavaScript-ի։",
   },
   ru: {
-    title: "Личный помощник туриста в Армении | арммейт",
+    title: "Помощь туристам в Армении — личный ассистент | арммейт",
     description:
-      "арммейт — твой персональный ассистент в Армении. Поддержка в WhatsApp или Telegram, сопровождение по желанию и индивидуальное предложение.",
+      "Персональная помощь туристам в Армении: местные советы, транспорт, бронирования и общение. Онлайн-ассистент и сопровождение по желанию с индивидуальной ценой.",
     skip: "Перейти к содержимому",
     navServices: "Услуги",
     navHow: "Как это работает",
     navPricing: "Индивидуальная цена",
     offerCta: "Получить предложение",
     contactCta: "Связаться с арммейтом",
-    heroLabel: "Твой персональный ассистент в Армении",
+    heroLabel: "Личный помощник туриста в Армении",
     heroTitle: "Твой друг<br><span>в Армении.</span>",
     heroDescription:
       "Путешествуй самостоятельно, зная, что у тебя есть надёжный местный помощник. Советы, практическая поддержка и помощь, когда она нужна.",
@@ -466,7 +486,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
     ],
     footerTag: "Твой друг в Армении.",
-    demoLabel: "Демонстрационный сайт сервиса",
+    demoLabel: "Персональная помощь в Армении",
     madeWith: "С любовью из Армении",
     credits: "Фотографии",
     close: "Закрыть",
@@ -490,18 +510,38 @@ window.ARMMATE_TRANSLATIONS = {
     contactNote:
       "Расскажи о датах поездки и своих пожеланиях. Стоимость и условия обсудим лично.",
     brandName: "арммейт",
+    guidesLabel: "МЕСТНАЯ ПОМОЩЬ В АРМЕНИИ",
+    guidesTitle: "Поддержка под твои планы.",
+    guidesIntro:
+      "Узнай больше о форматах помощи и расскажи нам о своей поездке.",
+    guideAssistanceTitle: "Личный помощник туриста в Армении",
+    guideAssistanceText:
+      "Местные рекомендации и практическая онлайн-поддержка во время самостоятельной поездки.",
+    guideCompanionTitle: "Местный сопровождающий в Ереване",
+    guideCompanionText:
+      "Прогулки, покупки и помощь с общением в отдельно согласованные дни и часы.",
+    guideContactTitle: "Контакты арммейта",
+    guideContactText:
+      "Telegram, WhatsApp и электронная почта — выбери удобный способ обсудить поездку.",
+    guideReadMore: "Узнать подробнее",
+    homeLabel: "Главная",
+    breadcrumbLabel: "Путь к странице",
+    faqHeading: "Частые вопросы",
+    relatedTitle: "Узнай больше",
+    contactNoScript:
+      "Содержание этой страницы и ссылки для связи доступны без JavaScript.",
   },
   en: {
-    title: "Personal Travel Assistant in Armenia | ARMMATE",
+    title: "Armenia Travel Assistant & Local Tourist Support | ARMMATE",
     description:
-      "ARMMATE, your personal travel assistant in Armenia. Local support on WhatsApp or Telegram, optional personal companionship and an offer tailored to your needs.",
+      "Explore Armenia independently with a personal local assistant. Get help with transport, reservations and everyday questions, plus optional in-person companionship.",
     skip: "Skip to content",
     navServices: "Our assistance",
     navHow: "How it works",
     navPricing: "Individual pricing",
     offerCta: "Get your personal offer",
     contactCta: "Contact ARMMATE",
-    heroLabel: "Your personal assistant in Armenia",
+    heroLabel: "Personal travel assistant and local support in Armenia",
     heroTitle: "Your friend<br><span>in Armenia.</span>",
     heroDescription:
       "Explore independently, with a reliable local in your corner. Useful recommendations, practical support and a helping hand whenever you need it.",
@@ -713,7 +753,7 @@ window.ARMMATE_TRANSLATIONS = {
       ],
     ],
     footerTag: "Your friend in Armenia.",
-    demoLabel: "Service website / preview",
+    demoLabel: "Personal assistance in Armenia",
     madeWith: "With love, from Armenia",
     credits: "Photo credits",
     close: "Close",
@@ -737,5 +777,23 @@ window.ARMMATE_TRANSLATIONS = {
     contactNote:
       "Share your travel dates and what you need. We’ll discuss your personal offer and service terms in our conversation.",
     brandName: "ARMMATE",
+    guidesLabel: "LOCAL SUPPORT IN ARMENIA",
+    guidesTitle: "Find the support that fits your trip.",
+    guidesIntro: "Explore the ways we can help, then tell us about your visit.",
+    guideAssistanceTitle: "Personal travel assistant in Armenia",
+    guideAssistanceText:
+      "Local recommendations and practical online support for your independent visit.",
+    guideCompanionTitle: "A local companion in Yerevan",
+    guideCompanionText:
+      "Walks, shopping and help with communication, on the days and hours you agree.",
+    guideContactTitle: "Contact ARMMATE",
+    guideContactText:
+      "Telegram, WhatsApp and email: choose how you would like to discuss your trip.",
+    guideReadMore: "Learn more",
+    homeLabel: "Home",
+    breadcrumbLabel: "Breadcrumb",
+    faqHeading: "Frequently asked questions",
+    relatedTitle: "Explore more",
+    contactNoScript: "This page and its contact links work without JavaScript.",
   },
 };

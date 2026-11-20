@@ -2426,6 +2426,192 @@ html[lang="hy"] .hero h1 {
     font-size: 37px;
   }
 }
+.service-guides h2 {
+  margin-block: 16px 18px;
+}
+.guides-intro {
+  max-width: 700px;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffefa;
+}
+.guide-card:hover {
+  border-color: var(--brand-green);
+}
+.guide-card h3 {
+  font-size: 21px;
+}
+.guide-card p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+.guide-card-more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 600;
+}
+.content-hero {
+  padding-block: 34px 48px;
+}
+.content-breadcrumbs {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.content-breadcrumbs a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.content-hero .eyebrow {
+  margin-block: 32px 17px;
+}
+.content-hero h1 {
+  max-width: 1050px;
+  font-size: clamp(34px, 4.5vw, 60px);
+  line-height: 1.25;
+  letter-spacing: -1.5px;
+}
+.content-lead {
+  max-width: 820px;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.95;
+}
+.content-hero .button {
+  margin-top: 27px;
+}
+.content-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding-bottom: 56px;
+}
+.content-section {
+  min-width: 0;
+  padding: 30px;
+  background: #fffefa;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.content-section h2 {
+  font-size: 26px;
+  line-height: 1.45;
+  letter-spacing: -0.6px;
+}
+.content-section p {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.95;
+}
+.content-section ul {
+  padding-left: 20px;
+  margin-block: 18px 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+.content-section li + li {
+  margin-top: 9px;
+}
+.content-faq,
+.content-related {
+  padding-bottom: 56px;
+}
+.content-faq > h2,
+.content-related > h2 {
+  margin-bottom: 24px;
+  font-size: 30px;
+  letter-spacing: -0.8px;
+}
+.content-related > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.content-related-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--cream);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.content-related-link:hover {
+  border-color: var(--brand-green);
+}
+.content-page .plan-section {
+  padding-block: 20px 72px;
+}
+.content-page .contact-page-details {
+  display: block;
+  max-width: 760px;
+  padding-top: 0;
+}
+@media (max-width: 900px) {
+  .guide-grid,
+  .content-sections {
+    grid-template-columns: 1fr;
+  }
+  .content-hero h1 {
+    font-size: 42px;
+  }
+}
+@media (max-width: 650px) {
+  .guide-card,
+  .content-section {
+    padding: 24px;
+  }
+  .content-hero {
+    padding-block: 25px 34px;
+  }
+  .content-hero h1 {
+    font-size: 33px;
+    letter-spacing: -0.7px;
+  }
+  .content-lead {
+    font-size: 14px;
+  }
+  .content-section h2 {
+    font-size: 23px;
+  }
+  .content-related > div {
+    grid-template-columns: 1fr;
+  }
+  .content-faq > h2,
+  .content-related > h2 {
+    font-size: 26px;
+  }
+}
 .contact-widget {
   position: fixed;
   right: max(24px, env(safe-area-inset-right));
