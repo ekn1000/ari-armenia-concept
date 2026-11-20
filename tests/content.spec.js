@@ -38,11 +38,9 @@ for (const language of seo.languages) {
         "href",
         "https://t.me/armmate_support",
       );
-      await expect(page.locator('[data-channel="telegram"]')).toContainText(
-        "@armmate_support",
-      );
-      await expect(page.locator('[data-channel="email"]')).toContainText(
-        "armmate.support@gmail.com",
+      await expect(page.locator('[data-channel="email"]')).toHaveAttribute(
+        "href",
+        "mailto:armmate.support@gmail.com",
       );
       await expect(
         page.locator("form, input, textarea, select, a[href^='tel:']"),

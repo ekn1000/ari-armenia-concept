@@ -973,16 +973,8 @@ textarea:focus {
 .channel-copy {
   min-width: 0;
 }
-.channel-name,
-.channel-detail {
+.channel-name {
   display: block;
-}
-.channel-detail {
-  margin-top: 3px;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--muted);
-  overflow-wrap: anywhere;
 }
 .contact-note {
   font-size: 11px;
@@ -1086,17 +1078,14 @@ textarea:focus {
   margin-inline: 15px;
   color: #acb4a3;
 }
-.footer-right {
-  display: flex;
-  align-items: center;
-  gap: 27px;
-}
-.footer-right button {
+#credits-button {
+  display: block;
+  margin: 16px auto 0;
   border: 0;
   padding: 0;
   background: none;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 11px;
   border-bottom: 1px solid #a3ac9b;
 }
 .dialog {
@@ -1871,14 +1860,6 @@ textarea:focus {
   }
   .footer-separator {
     margin-inline: 9px;
-  }
-  .footer-right {
-    width: 100%;
-    justify-content: space-between;
-    font-size: 8px;
-  }
-  .footer-right button {
-    font-size: 8px;
   }
   .dialog-content {
     padding: 36px 23px 28px;

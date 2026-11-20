@@ -20,13 +20,11 @@
         id: "telegram",
         label: "Telegram",
         href: `https://t.me/${telegramUsername}`,
-        detail: `@${telegramUsername}`,
       }),
       Object.freeze({
         id: "email",
         label: email,
         href: `mailto:${email}`,
-        detail: email,
       }),
     ]),
   });

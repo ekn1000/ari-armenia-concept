@@ -65,7 +65,6 @@ module.exports = async function buildContentPages({
       if (family === "contact") $(".content-hero .eyebrow").remove();
       $("#detail-dialog").remove();
       $("#toast").remove();
-      $("#credits-button").remove();
       $(".noscript").textContent = t.contactNoScript;
       document
         .querySelectorAll('link[rel="preload"][as="image"]')

@@ -76,7 +76,7 @@ Search account setup is in [docs/SEARCH-SETUP.md](docs/SEARCH-SETUP.md). After p
 
 ## Credits
 
-Photo authors, source links, licences and modification details are in [assets/credits.json](assets/credits.json) and the footer dialog. Photos were resized, converted to WebP and are displayed with cropping. Their original licences continue to apply.
+Photo authors, source links, licences and modification details are in [assets/credits.json](assets/credits.json) and the photo credits dialog below the image gallery. Photos were resized, converted to WebP and are displayed with cropping. Their original licences continue to apply.
 
 WhatsApp and Telegram vector logos are bundled from Simple Icons in the platforms' brand colours, with its CC0 licence. The email icon is Google's Gmail asset. Sources and applicable brand guidelines are recorded in [assets/messenger-logos.json](assets/messenger-logos.json).
 

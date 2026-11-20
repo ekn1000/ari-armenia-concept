@@ -40,8 +40,9 @@ for (const language of ["hy", "ru", "en"]) {
       await expect(page.locator("#faq-list details")).toHaveCount(8);
       await expect(page.locator(".steps li")).toHaveCount(3);
       await expect(page.locator("#channel-links a")).toHaveCount(3);
-      await expect(page.locator('[data-channel="email"]')).toContainText(
-        "armmate.support@gmail.com",
+      await expect(page.locator('[data-channel="email"]')).toHaveAttribute(
+        "href",
+        "mailto:armmate.support@gmail.com",
       );
       await expect(
         page.locator(

@@ -159,7 +159,7 @@ async function build() {
       $(selector).innerHTML = contacts.channels
         .map(
           (contact) =>
-            `<a class="contact-channel" ${attribute}="${contact.id}" href="${escape(contact.href)}"${contact.href.startsWith("https://") ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${contact.id === "email" ? `<img data-contact-logo="email" src="${prefix}assets/email-logo.png" width="26" height="26" alt="" aria-hidden="true" />` : messengerLogos[contact.id]}</span><span class="channel-copy"><span class="channel-name"${contact.id === "email" ? ' data-t="emailLabel"' : ""}>${contact.id === "email" ? t.emailLabel : contact.label}</span>${contact.detail && selector === "#channel-links" ? `<span class="channel-detail" dir="ltr">${escape(contact.detail)}</span>` : ""}</span>${icon("diagonal")}</a>`,
+            `<a class="contact-channel" ${attribute}="${contact.id}" href="${escape(contact.href)}"${contact.href.startsWith("https://") ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${contact.id === "email" ? `<img data-contact-logo="email" src="${prefix}assets/email-logo.png" width="26" height="26" alt="" aria-hidden="true" />` : messengerLogos[contact.id]}</span><span class="channel-copy"><span class="channel-name"${contact.id === "email" ? ' data-t="emailLabel"' : ""}>${contact.id === "email" ? t.emailLabel : contact.label}</span></span>${icon("diagonal")}</a>`,
         )
         .join("");
     }
