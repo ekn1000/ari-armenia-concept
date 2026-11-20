@@ -9,16 +9,6 @@
     "license": "CC0-1.0"
   },
   {
-    "title": "Viber",
-    "hex": "7360F2",
-    "source": "https://www.viber.com/brand-center",
-    "guidelines": "https://www.viber.com/brand-center",
-    "asset": "viber-logo.svg",
-    "vectorSource": "https://github.com/simple-icons/simple-icons/blob/17cd4ee07612198a1d8777a060d4100423762a8b/icons/viber.svg",
-    "revision": "17cd4ee07612198a1d8777a060d4100423762a8b",
-    "license": "CC0-1.0"
-  },
-  {
     "title": "WhatsApp",
     "hex": "25D366",
     "source": "https://about.meta.com/brand/resources/whatsapp/whatsapp-brand",
@@ -27,5 +17,12 @@
     "vectorSource": "https://github.com/simple-icons/simple-icons/blob/17cd4ee07612198a1d8777a060d4100423762a8b/icons/whatsapp.svg",
     "revision": "17cd4ee07612198a1d8777a060d4100423762a8b",
     "license": "CC0-1.0"
+  },
+  {
+    "title": "Gmail",
+    "asset": "email-logo.png",
+    "source": "https://www.gstatic.com/images/branding/product/2x/gmail_48dp.png",
+    "guidelines": "https://about.google/brand-resource-center/guidance/products-services/",
+    "usage": "Original Google brand asset identifying the Gmail contact address; not part of the Simple Icons CC0 collection."
   }
 ]

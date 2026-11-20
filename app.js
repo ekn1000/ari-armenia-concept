@@ -280,6 +280,9 @@ $("#credits-button").addEventListener("click", async () => {
   }
 });
 const hero = $(".hero-image");
+$$('[data-contact-logo="email"]').forEach((image) => {
+  image.src = assetUrl("email-logo.png");
+});
 hero.src = assetUrl("ararat-800.webp");
 hero.srcset = [480, 800, 1200]
   .map((size) => `${assetUrl(`ararat-${size}.webp`)} ${size}w`)

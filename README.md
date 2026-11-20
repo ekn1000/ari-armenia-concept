@@ -1,6 +1,6 @@
 # ARMMATE — Your friend in Armenia.
 
-A responsive Armenian, Russian and English website for a personal travel assistance service in Armenia. The primary service is a personal local assistant over WhatsApp, Telegram or Viber. In-person companionship is optional and agreed separately. Every customer receives an individual offer; there are no fixed packages, public prices or automatic price calculations.
+A responsive Armenian, Russian and English website for a personal travel assistance service in Armenia. The primary service is a personal local assistant over WhatsApp or Telegram. In-person companionship is optional and agreed separately. Every customer receives an individual offer; there are no fixed packages, public prices or automatic price calculations.
 
 **Live site:** https://armmate.am/
 
@@ -27,7 +27,7 @@ Open http://127.0.0.1:4187. Armenian is at `/`, Russian at `/ru/`, and English a
 | `styles.css`                        | Responsive layout, brand styling and accessibility states        |
 | `translations.js`                   | All Armenian, Russian and English content                        |
 | `app.js`                            | Language switching, filters and experience/credit dialogs        |
-| `site-config.js`                    | Public WhatsApp, Telegram and Viber destinations                 |
+| `site-config.js`                    | Public WhatsApp, Telegram and email destinations                 |
 | `seo.js`, `scripts/build-pages.cjs` | Shared metadata/schema and static language-page generator        |
 | `sitemap.xml`, `robots.txt`         | Canonical URL discovery on armmate.am                            |
 | `assets/`                           | Local photos, fonts, favicon and attribution                     |
@@ -35,13 +35,13 @@ Open http://127.0.0.1:4187. Armenian is at `/`, Russian at `/ru/`, and English a
 
 ## Direct business contacts
 
-The owner-supplied business number is **+374 91 110799**. `site-config.js` generates its WhatsApp, Telegram and Viber destinations. Update it and rebuild to change the messenger links. The contact section offers only these three messengers.
+The owner-supplied contacts are WhatsApp and Telegram at **+374 91 110799**, and **armmate.support@gmail.com**. `site-config.js` generates the three destinations for both the contact section and floating contact menu.
 
-The contact section contains `https://wa.me/37491110799`, `https://t.me/+37491110799` and `viber://chat?number=%2B37491110799`. These are ordinary links in the initial HTML and work without JavaScript. Viber needs its app; Telegram phone links depend on the recipient's phone-number discovery settings. If Telegram does not resolve the account, enable discovery for this number or replace that destination with the verified public username.
+The contact section contains `https://wa.me/37491110799`, `https://t.me/+37491110799` and `mailto:armmate.support@gmail.com`. These are ordinary links in the initial HTML and work without JavaScript. Email opens the visitor's preferred email app; Telegram phone links depend on the recipient's phone-number discovery settings. If Telegram does not resolve the account, enable discovery for this number or replace that destination with the verified public username.
 
-A compact button stays in the bottom-right corner and expands to the same three messenger links. The native disclosure works without JavaScript; JavaScript adds Escape, outside-click and focus-leaving dismissal. Both contact locations use `site-config.js`.
+A compact button stays in the bottom-right corner and expands to the same three contact links. The native disclosure works without JavaScript; JavaScript adds Escape, outside-click and focus-leaving dismissal. Both contact locations use `site-config.js`.
 
-There is no enquiry form, generated draft, clipboard/download workflow, booking or online payment. Visitors choose a messenger and write their own message. Requirements, prices and terms are discussed personally. No message is sent automatically. Automated checks inspect the destinations without contacting recipients.
+There is no enquiry form, generated draft, clipboard/download workflow, booking or online payment. Visitors choose WhatsApp, Telegram or email and write their own message. Requirements, prices and terms are discussed personally. No message is sent automatically. Automated checks inspect the destinations without contacting recipients.
 
 The website stores only the language preference in local storage. Public contact configuration must never contain passwords or credentials.
 
@@ -57,7 +57,7 @@ npm run check:generated
 npm run check:format
 ```
 
-The browser suite checks all three translations, pricing rules, direct messenger links, experience-to-contact navigation, mobile navigation, responsive layout and photo credits. It does not contact messenger recipients. Use `npm run format` after edits.
+The browser suite checks all three translations, pricing rules, direct contact links, experience-to-contact navigation, mobile navigation, responsive layout and photo credits. It does not contact messenger recipients. Use `npm run format` after edits.
 
 It also checks the complete HTML without JavaScript, canonical/hreflang consistency, JSON-LD against visible FAQs, legacy language URLs, sitemap destinations, optimized fonts and the noindex error page. After editing layout, translations, contacts or SEO metadata, run `npm run build` and commit the generated pages. See [docs/SEO.md](docs/SEO.md) for details and Search Console setup that remains outside this repository.
 
@@ -71,6 +71,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow and [docs/LA
 
 Photo authors, source links, licences and modification details are in [assets/credits.json](assets/credits.json) and the footer dialog. Photos were resized, converted to WebP and are displayed with cropping. Their original licences continue to apply.
 
-Messenger vector logos are bundled from Simple Icons in the platforms' brand colours. Provenance is in [assets/messenger-logos.json](assets/messenger-logos.json), with the included CC0 licence.
+WhatsApp and Telegram vector logos are bundled from Simple Icons in the platforms' brand colours, with its CC0 licence. The email icon is Google's Gmail asset. Sources and applicable brand guidelines are recorded in [assets/messenger-logos.json](assets/messenger-logos.json).
 
 Manrope, Noto Sans Armenian and Outfit use SIL Open Font License 1.1; licence files are included in `assets/`. The logo wordmark uses a locally hosted Outfit subset; page headings retain the original sans-serif fonts.

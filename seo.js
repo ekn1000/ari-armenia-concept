@@ -1,11 +1,15 @@
 "use strict";
 
 (function (global) {
+  const contacts =
+    typeof module !== "undefined" && module.exports
+      ? require("./site-config.js")
+      : global.ARMMATE_CONTACT;
   const baseUrl = "https://armmate.am/";
   const locales = { hy: "hy_AM", ru: "ru_RU", en: "en_GB" };
   const paths = { hy: "", ru: "ru/", en: "en/" };
   const languages = Object.keys(paths);
-  const updated = "2026-11-18";
+  const updated = "2026-11-20";
 
   function pageUrl(language) {
     return new URL(paths[language], baseUrl).href;
@@ -25,8 +29,10 @@
           name: copy.brandName,
           url: baseUrl,
           logo: { "@type": "ImageObject", url: baseUrl + "assets/logo.svg" },
+          email: contacts.email,
           contactPoint: {
             "@type": "ContactPoint",
+            email: contacts.email,
             contactType: "customer service",
             availableLanguage: ["Armenian", "Russian", "English"],
             url: baseUrl + "#plan",

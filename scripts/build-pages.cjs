@@ -30,17 +30,19 @@ const escape = (value) =>
   );
 const icon = (name) => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const messengerLogos = Object.fromEntries(
-  contacts.channels.map(({ id }) => {
-    const logo = new DOMParser().parseFromString(
-      fs.readFileSync(path.join(root, `assets/${id}-logo.svg`), "utf8"),
-      "image/svg+xml",
-    ).documentElement;
-    logo.querySelector("title")?.remove();
-    logo.removeAttribute("role");
-    logo.setAttribute("class", "messenger-logo");
-    logo.setAttribute("aria-hidden", "true");
-    return [id, logo.toString()];
-  }),
+  contacts.channels
+    .filter(({ id }) => id !== "email")
+    .map(({ id }) => {
+      const logo = new DOMParser().parseFromString(
+        fs.readFileSync(path.join(root, `assets/${id}-logo.svg`), "utf8"),
+        "image/svg+xml",
+      ).documentElement;
+      logo.querySelector("title")?.remove();
+      logo.removeAttribute("role");
+      logo.setAttribute("class", "messenger-logo");
+      logo.setAttribute("aria-hidden", "true");
+      return [id, logo.toString()];
+    }),
 );
 
 function output(filename, value) {
@@ -148,7 +150,7 @@ async function build() {
       $(selector).innerHTML = contacts.channels
         .map(
           (contact) =>
-            `<a class="contact-channel" ${attribute}="${contact.id}" href="${escape(contact.href)}"${contact.id !== "viber" ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${messengerLogos[contact.id]}</span><span>${contact.label}</span>${icon("diagonal")}</a>`,
+            `<a class="contact-channel" ${attribute}="${contact.id}" href="${escape(contact.href)}"${contact.href.startsWith("https://") ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""}><span class="channel-icon channel-${contact.id}">${contact.id === "email" ? `<img data-contact-logo="email" src="${prefix}assets/email-logo.png" width="26" height="26" alt="" aria-hidden="true" />` : messengerLogos[contact.id]}</span><span class="channel-copy"><span class="channel-name"${contact.id === "email" ? ' data-t="emailLabel"' : ""}>${contact.id === "email" ? t.emailLabel : contact.label}</span>${contact.id === "email" && selector === "#channel-links" ? `<span class="channel-detail" dir="ltr">${escape(contacts.email)}</span>` : ""}</span>${icon("diagonal")}</a>`,
         )
         .join("");
     }
@@ -202,7 +204,7 @@ async function build() {
     }
     $('link[rel="stylesheet"]').setAttribute(
       "href",
-      prefix + "styles.css?v=messenger-logos-1",
+      prefix + "styles.css?v=email-contact-1",
     );
     if (!$('script[src*="seo.js"]')) {
       const script = document.createElement("script");
@@ -220,12 +222,12 @@ async function build() {
       );
     $('script[src*="app.js"]').setAttribute(
       "src",
-      prefix + "app.js?v=brand-copy-1",
+      prefix + "app.js?v=email-contact-1",
     );
     for (const file of ["translations.js", "site-config.js", "seo.js"]) {
       $(`script[src*="${file}"]`).setAttribute(
         "src",
-        prefix + file + "?v=brand-copy-1",
+        prefix + file + "?v=email-contact-1",
       );
     }
     document

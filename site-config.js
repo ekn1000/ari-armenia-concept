@@ -4,7 +4,9 @@
 (function (global) {
   const phone = "+37491110799";
   const digits = phone.slice(1);
+  const email = "armmate.support@gmail.com";
   const contact = Object.freeze({
+    email,
     channels: Object.freeze([
       Object.freeze({
         id: "whatsapp",
@@ -17,9 +19,9 @@
         href: `https://t.me/${phone}`,
       }),
       Object.freeze({
-        id: "viber",
-        label: "Viber",
-        href: `viber://chat?number=${encodeURIComponent(phone)}`,
+        id: "email",
+        label: email,
+        href: `mailto:${email}`,
       }),
     ]),
   });

@@ -40,6 +40,14 @@ for (const language of ["hy", "ru", "en"]) {
       await expect(page.locator("#faq-list details")).toHaveCount(8);
       await expect(page.locator(".steps li")).toHaveCount(3);
       await expect(page.locator("#channel-links a")).toHaveCount(3);
+      await expect(page.locator('[data-channel="email"]')).toContainText(
+        "armmate.support@gmail.com",
+      );
+      await expect(
+        page.locator(
+          '[data-channel="viber"], [data-quick-channel="viber"], a[href^="viber:"]',
+        ),
+      ).toHaveCount(0);
       await page.locator('[data-filter="culture"]').click();
       await expect(page.locator(".experience-card")).toHaveCount(1);
       const card = page.locator('[data-card="culture"]');
@@ -77,6 +85,11 @@ test("language switching preserves direct contact destinations and contact ancho
         .evaluateAll((links) => links.map((link) => link.getAttribute("href"))),
     ).toEqual(destinations);
     await expect(page.locator('a[href^="tel:"]')).toHaveCount(0);
+    expect(
+      await page
+        .locator('[data-channel="email"] img')
+        .evaluate((image) => image.complete && image.naturalWidth > 0),
+    ).toBe(true);
     await expect(page.locator("form")).toHaveCount(0);
   }
 });
@@ -88,13 +101,13 @@ test("messenger destinations contain only the owner's number and do not prefill 
   const expected = {
     whatsapp: "https://wa.me/37491110799",
     telegram: "https://t.me/+37491110799",
-    viber: "viber://chat?number=%2B37491110799",
+    email: "mailto:armmate.support@gmail.com",
   };
   for (const [channel, destination] of Object.entries(expected)) {
     const link = page.locator('[data-channel="' + channel + '"]');
     await expect(link).toHaveAttribute("href", destination);
     expect(new URL(destination).searchParams.has("text")).toBe(false);
-    if (channel !== "viber") {
+    if (channel !== "email") {
       await expect(link).toHaveAttribute("target", "_blank");
       await expect(link).toHaveAttribute("rel", "noopener noreferrer");
     }
@@ -136,7 +149,7 @@ test("floating contacts stay compact and support keyboard, dismissal and languag
   await page.keyboard.press("Tab");
   await expect(page.locator('[data-quick-channel="telegram"]')).toBeFocused();
   await page.keyboard.press("Tab");
-  await expect(page.locator('[data-quick-channel="viber"]')).toBeFocused();
+  await expect(page.locator('[data-quick-channel="email"]')).toBeFocused();
   await toggle.click();
   await expect(panel).toBeHidden();
   await toggle.click();
@@ -162,7 +175,7 @@ test("floating messenger links remain usable without JavaScript", async ({
   await toggle.click();
   await expect(page.locator("#quick-contact-panel")).toBeVisible();
   await expect(page.locator("#quick-channel-links a")).toHaveCount(3);
-  for (const channel of ["whatsapp", "telegram", "viber"]) {
+  for (const channel of ["whatsapp", "telegram", "email"]) {
     await expect(
       page.locator(`[data-quick-channel="${channel}"]`),
     ).toHaveAttribute(

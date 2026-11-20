@@ -956,7 +956,8 @@ textarea:focus {
   height: 36px;
   border-radius: 10px;
 }
-.channel-icon svg {
+.channel-icon svg,
+.channel-icon img {
   width: 26px;
   height: 26px;
   fill: currentColor;
@@ -968,8 +969,19 @@ textarea:focus {
 .channel-telegram {
   color: #26a5e4;
 }
-.channel-viber {
-  color: #7360f2;
+.channel-copy {
+  min-width: 0;
+}
+.channel-name,
+.channel-detail {
+  display: block;
+}
+.channel-detail {
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  overflow-wrap: anywhere;
 }
 .contact-note {
   font-size: 11px;

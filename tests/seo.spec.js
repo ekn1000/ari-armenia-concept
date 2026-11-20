@@ -47,7 +47,7 @@ for (const lang of seo.languages) {
     const destinations = {
       whatsapp: "https://wa.me/37491110799",
       telegram: "https://t.me/+37491110799",
-      viber: "viber://chat?number=%2B37491110799",
+      email: "mailto:armmate.support@gmail.com",
     };
     for (const [channel, href] of Object.entries(destinations)) {
       await expect(page.locator(`[data-channel="${channel}"]`)).toHaveAttribute(
@@ -134,6 +134,8 @@ for (const lang of seo.languages) {
       (item) => item["@type"] === "Organization",
     );
     expect(organization.contactPoint.url).toBe(seo.baseUrl + "#plan");
+    expect(organization.email).toBe("armmate.support@gmail.com");
+    expect(organization.contactPoint.email).toBe(organization.email);
     expect(JSON.stringify(schema)).not.toMatch(
       /"(price|aggregateRating|review|telephone|streetAddress|openingHours)"/,
     );
