@@ -911,7 +911,8 @@ textarea:focus {
   font-size: 10px;
   letter-spacing: 1px;
 }
-.contact-card h3 {
+.contact-card h3,
+.contact-card h2 {
   font-size: clamp(24px, 2.4vw, 31px);
   letter-spacing: -0.7px;
   line-height: 1.4;

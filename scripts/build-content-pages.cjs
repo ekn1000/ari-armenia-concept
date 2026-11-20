@@ -33,6 +33,13 @@ module.exports = async function buildContentPages({
       if (family === "contact") {
         contactSection.querySelector(".plan-copy").remove();
         contactSection.classList.add("contact-page-details");
+        const title = contactSection.querySelector("#contact-title");
+        const heading = document.createElement("h2");
+        for (const attribute of title.attributes) {
+          heading.setAttribute(attribute.name, attribute.value);
+        }
+        heading.innerHTML = title.innerHTML;
+        title.replaceWith(heading);
       }
       const sections = copy.sections
         .map(
