@@ -16,7 +16,7 @@ for (const lang of seo.languages) {
     await expect(page.locator("html")).toHaveAttribute("lang", lang);
     await expect(page.locator("h1")).toHaveCount(1);
     await expect(page.locator("h1")).not.toBeEmpty();
-    const brandName = lang === "hy" ? "արմմեյթ" : "ARMMATE";
+    const brandName = { hy: "արմմեյթ", ru: "арммейт", en: "ARMMATE" }[lang];
     await expect(page).toHaveTitle(new RegExp(brandName));
     await expect(page.locator(".brand")).toHaveCount(2);
     for (const brand of await page.locator(".brand").all()) {

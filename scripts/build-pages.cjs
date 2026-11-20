@@ -227,7 +227,7 @@ async function build() {
     for (const file of ["translations.js", "site-config.js", "seo.js"]) {
       $(`script[src*="${file}"]`).setAttribute(
         "src",
-        prefix + file + "?v=email-contact-1",
+        prefix + file + "?v=russian-brand-1",
       );
     }
     document

@@ -1,6 +1,6 @@
 # ARMMATE identity
 
-ARMMATE combines **ARM** (Armenia) and **MATE** (friend or companion). Keep both letters **m** in the name. Armenian prose uses **արմմեյթը**, inflected naturally as **արմմեյթի**, with **արմմեյթ** as the brand name in metadata. Russian and English use `ARMMATE`; the logo uses the lowercase `armmate` wordmark.
+ARMMATE combines **ARM** (Armenia) and **MATE** (friend or companion). Keep both letters **m** in the name. Armenian prose uses **արմմեյթը**, inflected naturally as **արմմեյթի**, with **արմմեյթ** as the brand name in metadata. Russian uses **арммейт**, inflected naturally as **арммейта** and **арммейтом**, including in localized metadata and contact labels. English uses `ARMMATE`; the logo uses the lowercase `armmate` wordmark.
 
 ## Slogan
 

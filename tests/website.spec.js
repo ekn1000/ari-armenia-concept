@@ -122,7 +122,7 @@ test("floating contacts stay compact and support keyboard, dismissal and languag
   const widget = page.locator("#contact-widget");
   const toggle = widget.locator("summary");
   const panel = page.locator("#quick-contact-panel");
-  await expect(toggle).toHaveAccessibleName("Связаться с ARMMATE");
+  await expect(toggle).toHaveAccessibleName("Связаться с арммейтом");
   await expect(panel).toBeHidden();
   await toggle.click();
   await expect(panel).toBeVisible();
